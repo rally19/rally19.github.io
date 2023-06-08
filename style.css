@@ -48,6 +48,7 @@ html {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     transition: top 0.4s;
     z-index: 999;
 }
@@ -59,17 +60,20 @@ html {
 }
 
 .navbar-logo {
-    height: 9vh; /* Adjust the height as needed */
+    height: 8.5vh; /* Adjust the height as needed */
+    width: 8.5vh;
     margin-right: 1vw; /* Adjust the spacing between logo and navbar */
 }
 
-.navbar-title {
+.navbar-title-li {
     display: flex;
+    font-size: 2vh;
 }
 
-.navbar-titling {
+.navbar-title {
     color: white;
-    margin-right: 30vw;
+    width: 2vw;
+    margin-right: 20vw;
 }
 
 .li-navbar {
@@ -78,13 +82,13 @@ html {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
     display: block;
     list-style-type: none;
-    padding: 1.75vh; /*25px*/
+    padding: 1.5vh; /*25px*/
     /*margin: 0vw;*/
     border-radius: 15px;
     font-size: 3.25vh;
     color: white;
     transition: 1s;
-    margin-right: 1vw;
+    margin: 0.25vw;
 }
 
 .li-navbar:hover {
@@ -98,13 +102,17 @@ html {
     white-space: nowrap;
     text-decoration: none;
     font-weight: 400;
-    padding: 1.75vh;
+    padding: 1.5vh;
     transition: 0.5s;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 .a-navbar:hover {
     color: rgb(0, 0, 41);
     background: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 /*CONT*/
