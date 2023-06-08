@@ -11,7 +11,7 @@ html {
 /*NAVBAR*/
 
 .container-navbar {
-    background-color: white;
+    background-color: transparent;
     width: 100%;
     height: 10vh;
     top: 0;
@@ -31,7 +31,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("Ca213434dwpture.PNG");
+    background-image: url("animesher.com_gif-ghost-in-the-shell-coding-2045678.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -39,7 +39,7 @@ html {
 
 .ul-navbar {
     background: rgb(255, 255, 255);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,125,255,0.5) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(136, 136, 136, 0.7) 100%);
     height: 10vh;
     width: 100%;
     display: flex;
@@ -53,33 +53,29 @@ html {
     z-index: 999;
 }
 
-.navbar-logo-li {
+.navbar-left-li {
     display: flex;
     align-items: center;
-    margin-left: 1vw;
+    margin-left: 0.75vw;
+    font-size: 2vh;
+    float: left;
 }
 
 .navbar-logo {
-    height: 8.5vh; /* Adjust the height as needed */
-    width: 8.5vh;
-    margin-right: 1vw; /* Adjust the spacing between logo and navbar */
-}
-
-.navbar-title-li {
-    display: flex;
-    font-size: 2vh;
+    height: 8.25vh;
+    width: 8.25vh;
+    margin-left: 5vh;
 }
 
 .navbar-title {
     color: white;
-    width: 2vw;
-    margin-right: 20vw;
+    width: 20vw;
 }
 
 .li-navbar {
     float: top;
     border: 2px solid white;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
     display: block;
     list-style-type: none;
     padding: 1.5vh; /*25px*/
@@ -113,6 +109,56 @@ html {
     background: transparent;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
+}
+
+.menu-btn {
+    margin-left: 1vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vw;
+    height: 5vh;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid #fff; */
+}
+.menu-btn__burger {
+    width: 3.5vw;
+    height: 0.75vh;
+    background: #fff;
+    border-radius: 5vh;
+    box-shadow: 0 2px 5px rgba(255,101,47,.2);
+    transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 3.5vw;
+    height: 0.75vh;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255,101,47,.2);
+    transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before {
+    transform: translateY(-2vh);
+}
+  .menu-btn__burger::after {
+    transform: translateY(2vh);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-5vh);
+    background: transparent;
+    box-shadow: none;
+}
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(4vh, -4vh);
+}
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(4vh, 4vh);
 }
 
 /*CONT*/
