@@ -9,7 +9,7 @@ window.addEventListener('scroll', function() {
     containerNavbar.style.top = '0';
   } else if (currentScrollPos > prevScrollPos) {
     containerNavbar.style.transition = 'top 0.4s';
-    containerNavbar.style.top = '-10vh';
+    containerNavbar.style.top = '-70px';
   } else {
     containerNavbar.style.transition = 'top 0.4s';
     containerNavbar.style.top = '0';

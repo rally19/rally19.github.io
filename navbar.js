@@ -7,7 +7,7 @@ window.addEventListener("scroll", function() {
     if (prevScrollpos > currentScrollPos) {
         navbar.style.top = "0";
     } else {
-        navbar.style.top = "-10vh";
+        navbar.style.top = "-70px";
     }
     
     prevScrollpos = currentScrollPos;
