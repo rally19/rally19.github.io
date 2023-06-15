@@ -18,7 +18,6 @@ html {
     left: 0;
     transition: top 0.4s;
     position: fixed;
-    overflow: hidden;
 }
 
 .container-navbar.show {
@@ -37,26 +36,34 @@ html {
     background-repeat: no-repeat;
 }
 
-.ul-navbar {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(136, 136, 136, 0.7) 100%);
+.l-ul-navbar {
     height: 70px;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 5;
     transition: top 0.4s;
-    z-index: 999;
+    z-index: 100;
+}
+
+.r-ul-navbar {
+    height: 70px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    top: 0;
+    right: 5;
+    transition: top 0.4s;
+    z-index: 100;
 }
 
 .navbar-left-li {
     display: flex;
     align-items: center;
-    margin-right: 1vw;
+    margin-right: 8px;
     font-size: 15px;
     float: left;
 }
@@ -69,7 +76,7 @@ html {
 
 .navbar-title {
     color: white;
-    width: 22vw;
+    width: 23vw;
 }
 
 .li-navbar {
@@ -85,11 +92,11 @@ html {
     color: white;
     transition: 1s;
     font-weight: 500;
-    margin: 0.25vw;
+    margin: 4px;
 }
 
 .li-navbar:hover {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
     color: black;
     border: 2px solid black;
 }
@@ -117,7 +124,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 7vw;
+    width: 60px;
     height: 50px;
     cursor: pointer;
     padding: 2px;
@@ -135,7 +142,7 @@ html {
 }
 
 .menu-btn__burger {
-    width: 6vw;
+    width: 50px;
     height: 4px;
     background: #fff;
     border-radius: 5px;
@@ -147,7 +154,7 @@ html {
 .menu-btn__burger::after {
     content: '';
     position: absolute;
-    width: 6vw;
+    width: 50px;
     height: 4px;
     background: #fff;
     border-radius: 5px;
@@ -174,21 +181,16 @@ html {
     transform: rotate(-45deg) translate(4px, 4px);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 926px) {
     .menu-btn {
         display: none;
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 926px) {
     .li-navbar {
         display: none;
     }
-
-    .navbar-title {
-        margin-right: 50vw;
-    }
-
 }
 
 /*CONTAINER*/
