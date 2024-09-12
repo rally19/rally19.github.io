@@ -2,56 +2,45 @@
     <head>
         <title>LePortofolio</title>
         <link rel="stylesheet" href="style.css" type="text/css" />
-        <link rel="icon" type="image/x-icon" href="WhatsApp_Image_2023-06-03_at_18_44_36-transformed.jpeg" />
+        <link rel="icon" type="image/x-icon" href="img\WhatsApp_Image_2023-06-03_at_18_44_36-transformed.jpeg" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </head>
-    <body>
-        <div class="container">
-            <!--NAVBAR-->
-            <div class="container-navbar">
-            <script src="navbar2.js"></script>
-                <div class="image-container-navbar"></div>
-                <ul class="l-ul-navbar" id="navbar">
-                    <li class="navbar-left-li">
-                        <img src="WhatsApp_Image_2023-06-03_at_18_44_36-transformed.jpeg" alt="Logo" class="navbar-logo">
-                    </li>
-                    <li class="navbar-left-li" >
-                        <h1 class="navbar-title" >Leonel's Portofolio</h1>
-                    </li>
-                </ul>
-                <ul class="r-ul-navbar" id="navbar">
-                    <li class="li-navbar">
-                        <a href="#" class="a-navbar" >HOME</a>
-                    </li>
-                    <li class="li-navbar">
-                        <a href="about.html" class="a-navbar" >ABOUT ME</a>
-                    </li>
-                    <li class="li-navbar">
-                        <a href="contacts.html" class="a-navbar" >CONTANCTS</a>
-                    </li>
-                    <li class="li-navbar">
-                        <a href="mywork.html" class="a-navbar" >MY WORKS</a>
-                    </li>
-                    <div class="menu-btn">
-                        <div class="menu-btn__burger"></div>
-                    </div>
-                    <script src="hamenu.js"></script>
-                </ul>
-                <script src="navbar.js"></script>
-            </div>
-            <!--NAVBAREND-->
-
-            <!--CONTENT1-->
-            <div class="container-content">
-                <img src="Ca213434dwpture.PNG" width="70%" height="50%" class="img-content"/>
-            </div>
-            <!--CONTENT1END-->
-
-            <!--FOOTER-->
-            <div class="container-footer">
-                <h1 class="h1-footer">THIS PAGE IS NO LONGER IN DEVELOPMENT</h1>
-                <a href="https://rally19.github.io/smkn3dev/" style="font-size: large;">(I'm focusing on this project)</a>
-            </div>
-            <!--FOOTEREND-->
-        </div>
-    </body>
+        <body class="bg-cyan-400">
+            <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+               <div class="flex justify-between items-center ">
+                <span class="text-2xl font-[Poppins] cursor-pointer"><img class="h-10 inline mr-2"src="img\WhatsApp_Image_2023-06-03_at_18_44_36-transformed.jpeg">Leonel R.S.</span>
+      
+                <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+                </span>
+                </div>
+      
+          <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="mx-4 my-6 md:my-0">
+              <a href="#" class="text-xl hover:text-cyan-500 duration-500">HOME</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+              <a href="#" class="text-xl hover:text-cyan-500 duration-500">ABOUT</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+              <a href="#" class="text-xl hover:text-cyan-500 duration-500">PROJECTS</a>
+            </li>
+      
+            <button class="bg-teal-800 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded ">CONTACT</button>
+        <h2 class=""></h2>
+          </ul>
+            </nav>
+      
+      
+        <script>
+          function Menu(e){
+            let list = document.querySelector('ul');
+            e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+          }
+        </script>
+        </body>
 </html>
