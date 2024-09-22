@@ -1,7 +1,7 @@
 <html> 
     <head>
         <title>LePortofolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=3.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="res\css\style.css" type="text/css" />
         <link rel="icon" type="image/x-icon" href="img\leo1.png" />
         <script src="https://cdn.tailwindcss.com"></script>
@@ -13,34 +13,34 @@
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </head>
         <body class="bg-gray-100">
-            <nav class="p-5 bg-white fixed shadow md:flex md:items-center md:justify-between w-full shadow-neutral-500 z-50">
+            <nav class="max-lg:bg-white p-5 fixed shadow lg:flex lg:items-center backdrop-blur-md lg:justify-between w-full shadow-neutral-500 z-50">
                 <div class="flex justify-between items-center">
                 <span class="ml-4 text-2xl font-[Poppins] cursor-pointer"><img class="h-10 inline mr-4"src="img\leo1.png">Leonel R.S.</span>
-                <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                <span class="text-3xl cursor-pointer mx-2 lg:hidden block">
                 <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
                 </span>
                 </div>
-                <ul class="bg-white md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-                <li class="mx-4 my-6 md:my-0">
+                <ul class="backdrop-blur-md max-lg:bg-white max-lg:shadow-xl lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+                <li class="mx-4 my-6 lg:my-0">
                   <a href="#" class="text-xl hover:text-cyan-500 duration-300">HOME</a>
                 </li>
-                <li class="mx-4 my-6 md:my-0">
+                <li class="mx-4 my-6 lg:my-0">
                   <a href="#" class="text-xl hover:text-cyan-500 duration-300">ABOUT</a>
                 </li>
-                <li class="mx-4 my-6 md:my-0">
+                <li class="mx-4 my-6 lg:my-0">
                   <a href="#" class="text-xl hover:text-cyan-500 duration-300">SKILLS</a>
                 </li>
-                <li class="mx-4 my-6 md:my-0">
+                <li class="mx-4 my-6 lg:my-0">
                   <a href="#" class="text-xl hover:text-cyan-500 duration-300">PROJECT</a>
                 </li>
                 <button class="bg-teal-800 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">CONTACT</button>
                 </ul>
             </nav>
-            <div class="w-full h-20 md:h-50"></div>
+            <div class="w-full h-20 lg:h-50"></div>
             <section class="hero">
               <div id="particles-js"></div>
                 <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 z-10">              
-                    <div class="z-10 mr-auto place-self-center lg:col-span-7 md-10">
+                    <div class="z-10 mr-auto place-self-center lg:col-span-7 lg-10 max-lg:justify-center max-lg:items-center">
                       <h1 class="max-w-2xl mb-1 text-4xl font-bold tracking-tight leading-none text-xl text-black">Hello world! </h1>
                         <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none text-4xl text-black">I'm Leonel Rally Squall</h1>
                         <span class="max-w-2xl font-bold text-gray-700" id="element"></span>
@@ -56,7 +56,7 @@
                 </div>
             </section>
         <footer class="rounded-lg shadow m-2 bg-gray-800 mt-3">
-            <div class="w-full mx-auto max-w-screen-xl p-5 flex items-center justify-between z-10">
+            <div class="w-full mx-auto max-w-screen-xl p-5 flex items-center justify-between z-10 max-lg:flex-col-reverse">
               <span class="text-sm text-gray-500 text-center dark:text-gray-400">© 2024 - 2025 <a href="#" class="hover:underline">Leonel R.S</a>. All Rights Reserved.</span>
             <ul class="flex flex-wrap items-center text-sm font-medium dark:text-gray-400 sm:mt-0">
               <a href="mailto:masterrally1808@gmail.com">
@@ -71,21 +71,25 @@
               <a href="https://www.instagram.com/leonelrs18/"  target="_blank">
                 <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-instagram"></i></button>
               </a>
+              <a href="https://www.tiktok.com/@leonelrs18" target="_blank">
               <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-tiktok"></i></i></button>
+              </a>
+              <a href="https://www.facebook.com/leonelrs18/" target="_blank">
               <button class="text-gray-400 duration-300 px-5 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-facebook-f"></i></i></button>
+              </a>
             </ul>
             <ul class="flex flex-wrap items-center text-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
               <li>
-                  <a href="#" class="hover:underline me-4 md:me-6">HOME</a>
+                  <a href="#" class="hover:underline me-4 lg:me-6">HOME</a>
               </li>
               <li>
-                <a href="#" class="hover:underline me-4 md:me-6">ABOUT</a>
+                <a href="#" class="hover:underline me-4 lg:me-6">ABOUT</a>
               </li>
               <li>
-                  <a href="#" class="hover:underline me-4 md:me-6">PROJECT</a>
+                  <a href="#" class="hover:underline me-4 lg:me-6">PROJECT</a>
               </li>
               <li>
-                  <a href="#" class="hover:underline me-4 md:me-6">CONTACT</a>
+                  <a href="#" class="hover:underline me-4 lg:me-6">CONTACT</a>
               </li>
           </ul>
             </div>
