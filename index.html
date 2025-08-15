@@ -1,16 +1,8 @@
 <html> 
     <head>
         <title>Leonel R.S.</title>
-        <meta name="viewport" content="width=device-width, initial-scale=3.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Changed from 3.0 to 1.0 -->
         <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" /> 
-        <!--
-        There's another website I've also tagged with the same meta: https://rally19.github.io/tugasHTML1/
-        I think because of that site my main site got flagged and so does every other site with rally19.github.io/...
-        I didn't meant any malicious or phising intentions
-        I make these website for my school projects
-        Just tell me if there's any problem or if there problem for me to fix.
-        Best regards, Leonel. (sorry for bad english)
-        -->
         <link rel="stylesheet" href="res\css\style.css" type="text/css" />
         <link rel="icon" type="image/x-icon" href="img\leo1.png" />
         <script src="https://cdn.tailwindcss.com"></script>
@@ -21,35 +13,34 @@
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </head>
-        <body class="bg-gray-100" id="body">
-            <nav class="max-lg:bg-white p-5 fixed shadow lg:flex lg:items-center backdrop-blur-sm lg:justify-between w-full shadow-neutral-500 z-50">
-                <div class="flex justify-between items-center">
-                <span class="ml-4 text-2xl font-[Poppins] cursor-pointer"><img class="h-10 inline mr-4"src="img\leo1.png">Leonel R.S.</span>
-                <span class="text-3xl cursor-pointer mx-2 lg:hidden block">
-                <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-                </span>
-                </div>
-                <ul class="backdrop-blur-md max-lg:bg-white max-lg:shadow-xl lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-                <li class="mx-4 my-6 lg:my-0">
-                  <a href="#" class="text-xl hover:text-cyan-500 duration-300">HOME</a>
-                </li>
-                <li class="mx-4 my-6 lg:my-0">
-                  <a href="#" class="text-xl hover:text-cyan-500 duration-300">ABOUT</a>
-                </li>
-                <li class="mx-4 my-6 lg:my-0">
-                  <a href="#" class="text-xl hover:text-cyan-500 duration-300">SKILLS</a>
-                </li>
-                <li class="mx-4 my-6 lg:my-0">
-                  <a href="#" class="text-xl hover:text-cyan-500 duration-300">PROJECT</a>
-                </li>
-                <button class="bg-teal-800 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">CONTACT</button>
-                </ul>
-            </nav>
-            <div class="w-full h-20 lg:h-50"></div>
-            <div id="particles-js" class="h-screen"></div>
+    <body class="bg-gray-100 min-h-screen flex flex-col" id="body"> <!-- Added flex classes -->
+        <nav class="max-lg:bg-white p-5 fixed shadow lg:flex lg:items-center backdrop-blur-sm lg:justify-between w-full shadow-neutral-500 z-50">
+            <div class="flex justify-between items-center">
+            <span class="ml-4 text-2xl font-[Poppins] cursor-pointer"><img class="h-10 inline mr-4"src="img\leo1.png">Leonel R.S.</span>
+            <span class="text-3xl cursor-pointer mx-2 lg:hidden block">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+            </span>
             </div>
-            <section class="hero">
-                <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 z-10">      
+            <ul class="backdrop-blur-md max-lg:bg-white max-lg:shadow-xl lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="mx-4 my-6 lg:my-0">
+              <a href="#" class="text-xl hover:text-cyan-500 duration-300 text-cyan-600">HOME</a>
+            </li>
+            <li class="mx-4 my-6 lg:my-0">
+              <a href="#" class="text-xl hover:text-cyan-500 duration-300">ABOUT</a>
+            </li>
+            <li class="mx-4 my-6 lg:my-0">
+              <a href="#" class="text-xl hover:text-cyan-500 duration-300">SKILLS</a>
+            </li>
+            <li class="mx-4 my-6 lg:my-0">
+              <a href="#" class="text-xl hover:text-cyan-500 duration-300">PROJECT</a>
+            </li>
+            <button class="bg-teal-800 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">CONTACT</button>
+            </ul>
+        </nav>
+        <main class="flex-grow">
+            <div id="particles-js" class="absolute w-full h-[calc(100vh-80px)]"></div>
+            <section class="hero relative z-10 py-10 min-h-[calc(100vh-80px)] flex items-center"> 
+                <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">      
                   <div class="mt-0 col-span-5 flex m-8 z-10" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.1" data-tilt-full-page-listening>
                     <img src="img\leo1.png" alt="heroimg">
                 </div>              
@@ -63,10 +54,10 @@
                         <button class="bg-indigo-900 text-white font-[Poppins] duration-300 px-5 py-3 ml-2 hover:bg-indigo-950 rounded-full hover:scale-105 hover:shadow-xl" onclick="window.alert('Ini biodata saya')">ABOUT ME</button>
                         </ul>
                     </div>
-                              
                 </div>
             </section>
-        <footer class="rounded-lg shadow m-2 bg-gray-800 mt-3" id="footer">
+        </main>
+        <footer class="rounded-lg shadow m-2 bg-gray-800" id="footer">
             <div class="w-full mx-auto max-w-screen-xl p-5 flex items-center justify-between max-lg:flex-col-reverse">
             <span class="text-sm text-gray-500 text-center dark:text-gray-400 max-lg:mt-5">© 2024 - 2025 <a href="#" class="hover:underline">Leonel R.S</a>. All Rights Reserved.</span>
             <ul class="flex flex-wrap items-center text-sm font-medium dark:text-gray-400 sm:mt-0 ">
@@ -122,5 +113,5 @@
         <script type="text/javascript" src="res\scripts\vanilla-tilt.js"></script>
         <script src="res\scripts\particles.js"></script>
         <script src="res\scripts\app.js"></script>
-        </body>
+    </body>
 </html>
