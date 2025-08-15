@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Contact - Leonel R.S.</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" /> 
+        <link rel="stylesheet" href="res\css\style.css" type="text/css" />
+        <link rel="icon" type="image/x-icon" href="img\leo1.png" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    </head>
+    <body class="bg-gray-100 min-h-screen flex flex-col">
+        <nav class="max-lg:bg-white p-5 fixed shadow lg:flex lg:items-center backdrop-blur-sm lg:justify-between w-full shadow-neutral-500 z-50">
+            <div class="flex justify-between items-center">
+            <span class="ml-4 text-2xl font-[Poppins] cursor-pointer"><img class="h-10 inline mr-4"src="img\leo1.png">Leonel R.S.</span>
+            <span class="text-3xl cursor-pointer mx-2 lg:hidden block">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+            </span>
+            </div>
+            <ul class="backdrop-blur-md max-lg:bg-white max-lg:shadow-xl lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="mx-4 my-6 lg:my-0">
+              <a href="index.html" class="text-xl hover:text-cyan-500 duration-300">HOME</a>
+            </li>
+            <li class="mx-4 my-6 lg:my-0">
+              <a href="about.html" class="text-xl hover:text-cyan-500 duration-300">ABOUT</a>
+            </li>
+            <li class="mx-4 my-6 lg:my-0">
+              <a href="project.html" class="text-xl hover:text-cyan-500 duration-300">PROJECT</a>
+            </li>
+            <a href="contact.html">
+                <button class="bg-teal-800 text-cyan-200 font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">
+                    CONTACT
+                </button>
+            </a>
+            </ul>
+        </nav>
+        <main class="flex-grow pt-20">
+            <div id="particles-js" class="absolute w-full h-full"></div>
+            <section class="relative z-10 py-10">
+                <div class="max-w-4xl mx-auto px-4">
+                    <h1 class="text-4xl font-bold mb-8 text-center">Contact Me</h1>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h2 class="text-2xl font-bold mb-4 text-cyan-600">Get In Touch</h2>
+                            <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLScIpALRlJDe-d7vJuVNkPUXT-qVUOq0OytlXqNxJ1I9esMZDA/formResponse" method="POST" target="_self">
+                                <input type="hidden" name="entry.1595467050" id="timestamp" value="">
+                                
+                                <div class="mb-4">
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                    <input type="text" id="name" name="entry.1050107103" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                    <input type="email" id="email" name="entry.3876349" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                    <input type="text" id="subject" name="entry.64073964" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                    <textarea id="message" name="entry.1503968320" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required></textarea>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="cf-turnstile" data-sitekey="0x4AAAAAABr-AERL8GcnCf_B" data-callback="turnstileCallback"></div>
+                                </div>
+                                
+                                <button type="submit" id="submitBtn" class="bg-teal-800 text-white font-[Poppins] duration-500 px-6 py-2 hover:bg-teal-950 rounded-lg hover:scale-105 w-full disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                                    <span id="submitText">Send Message</span>
+                                    <span id="spinner" class="hidden ml-2">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                    </span>
+                                </button>
+                                
+                                <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                                    Message sent successfully! I'll get back to you soon.
+                                </div>
+                                <div id="errorMessage" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
+                                    There was an error sending your message. Please try again later.
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <h2 class="text-2xl font-bold mb-4 text-cyan-600">Contact Information</h2>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-cyan-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-map-marker-alt text-cyan-600"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold">Location</h3>
+                                        <p class="text-gray-600">Sleman, Yogyakarta</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-cyan-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-envelope text-cyan-600"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold">Email</h3>
+                                        <p class="text-gray-600">masterrally1808@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-cyan-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-globe text-cyan-600"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold">Website</h3>
+                                        <p class="text-gray-600">rally19.github.io</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h2 class="text-2xl font-bold mt-8 mb-4 text-cyan-600">Social Media</h2>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/rally19" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="https://www.instagram.com/leonelrs18/" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.tiktok.com/@leonelrs18" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                                <a href="https://www.facebook.com/leonelrs18/" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                            
+                            <h2 class="text-2xl font-bold mt-8 mb-4 text-cyan-600">Availability</h2>
+                            <p class="text-gray-600">I'm currently available for freelance work and collaboration. Feel free to reach out to me through any of the channels above.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="rounded-lg shadow m-2 bg-gray-800">
+            <div class="w-full mx-auto max-w-screen-xl p-5 flex items-center justify-between max-lg:flex-col-reverse">
+            <span class="text-sm text-gray-500 text-center dark:text-gray-400 max-lg:mt-5">© 2024 - 2025 <a href="#" class="hover:underline">Leonel R.S</a>. All Rights Reserved.</span>
+            <ul class="flex flex-wrap items-center text-sm font-medium dark:text-gray-400 sm:mt-0 ">
+              <a href="mailto:masterrally1808@gmail.com">
+                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-regular fa-envelope"></i></button>
+              </a>
+              <a href="https://github.com/rally19" target="_blank">
+                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-github"></i></i></button>
+              </a>
+              <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank">
+                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-youtube"></i></i></button>
+              </a>
+              <a href="https://www.instagram.com/leonelrs18/"  target="_blank">
+                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-instagram"></i></button>
+              </a>
+              <a href="https://www.tiktok.com/@leonelrs18" target="_blank">
+              <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-tiktok"></i></i></button>
+              </a>
+              <a href="https://www.facebook.com/leonelrs18/" target="_blank">
+              <button class="text-gray-400 duration-300 px-5 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-facebook-f"></i></i></button>
+              </a>
+            </ul>
+            <ul class="flex justify-center flex-wrap items-center text-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 max-lg:mb-5">
+              <li>
+                  <a href="index.html" class="hover:underline me-4 lg:me-6">HOME</a>
+              </li>
+              <li>
+                <a href="about.html" class="hover:underline me-4 lg:me-6">ABOUT</a>
+              </li>
+              <li>
+                  <a href="project.html" class="hover:underline me-4 lg:me-6">PROJECT</a>
+              </li>
+              <li>
+                  <a href="contact.html" class="hover:underline me-4 lg:me-6">CONTACT</a>
+              </li>
+          </ul>
+            </div>
+        </footer>
+
+        <script>
+          function Menu(e){
+            let list = document.querySelector('ul');
+            e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+          }
+          
+          // Cloudflare Turnstile callback
+          function turnstileCallback(token) {
+              document.getElementById('submitBtn').disabled = false;
+          }
+          
+          // Form submission handler
+          document.getElementById('contactForm').addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              const submitBtn = document.getElementById('submitBtn');
+              const submitText = document.getElementById('submitText');
+              const spinner = document.getElementById('spinner');
+              
+              // Show loading state
+              submitBtn.disabled = true;
+              submitText.textContent = 'Sending...';
+              spinner.classList.remove('hidden');
+              
+              // Get current timestamp
+              document.getElementById('timestamp').value = new Date().toISOString();
+              
+              // Create a hidden iframe for form submission
+              const iframe = document.createElement('iframe');
+              iframe.name = 'hidden-iframe';
+              iframe.style.display = 'none';
+              document.body.appendChild(iframe);
+              
+              // Set form target to the iframe
+              this.target = 'hidden-iframe';
+              
+              // Submit the form
+              this.submit();
+              
+              // Show success message after a short delay
+              setTimeout(function() {
+                  submitText.textContent = 'Message Sent!';
+                  spinner.classList.add('hidden');
+                  document.getElementById('successMessage').classList.remove('hidden');
+                  
+                  // Reset form after 3 seconds
+                  setTimeout(function() {
+                      document.getElementById('contactForm').reset();
+                      submitText.textContent = 'Send Message';
+                      submitBtn.disabled = true;
+                      document.getElementById('successMessage').classList.add('hidden');
+                  }, 3000);
+              }, 1000);
+          });
+          
+          // Reset Turnstile when form is reset
+          document.getElementById('contactForm').addEventListener('reset', function() {
+              // This would require re-rendering the Turnstile widget
+              // You might need to implement a more sophisticated solution
+              // For now, we'll just disable the submit button again
+              document.getElementById('submitBtn').disabled = true;
+          });
+        </script>
+        <script type="text/javascript" src="res\scripts\vanilla-tilt.js"></script>
+        <script src="res\scripts\particles.js"></script>
+        <script src="res\scripts\app.js"></script>
+    </body>
+</html>
