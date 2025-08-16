@@ -33,7 +33,7 @@
               <a href="project.html" class="text-xl hover:text-cyan-500 duration-300">PROJECT</a>
             </li>
             <a href="contact.html">
-                <button class="bg-teal-800 text-cyan-200 font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">
+                <button class="bg-teal-800 text-gray-300 font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">
                     CONTACT
                 </button>
             </a>
@@ -44,56 +44,54 @@
             <section class="relative z-10 py-10">
                 <div class="max-w-4xl mx-auto px-4">
                     <h1 class="text-4xl font-bold mb-8 text-center">Contact Me</h1>
-                    
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
                         <div class="bg-white rounded-lg shadow-lg p-6">
                             <h2 class="text-2xl font-bold mb-4 text-cyan-600">Get In Touch</h2>
-                            <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLScIpALRlJDe-d7vJuVNkPUXT-qVUOq0OytlXqNxJ1I9esMZDA/formResponse" method="POST" target="_self">
+                            <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLScIpALRlJDe-d7vJuVNkPUXT-qVUOq0OytlXqNxJ1I9esMZDA/formResponse" method="POST" target="hidden-iframe">
                                 <input type="hidden" name="entry.1595467050" id="timestamp" value="">
                                 
                                 <div class="mb-4">
-                                    <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Name *</label>
                                     <input type="text" id="name" name="entry.1050107103" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email *</label>
                                     <input type="email" id="email" name="entry.3876349" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Subject *</label>
                                     <input type="text" id="subject" name="entry.64073964" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                    <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
                                     <textarea id="message" name="entry.1503968320" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required></textarea>
                                 </div>
-                                
-                                <div class="mb-4">
-                                    <div class="cf-turnstile" data-sitekey="0x4AAAAAABr-AERL8GcnCf_B" data-callback="turnstileCallback"></div>
-                                </div>
-                                
+
+                                <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAABr-AERL8GcnCf_B" data-callback="turnstileCallback"></div>
+
                                 <button type="submit" id="submitBtn" class="bg-teal-800 text-white font-[Poppins] duration-500 px-6 py-2 hover:bg-teal-950 rounded-lg hover:scale-105 w-full disabled:opacity-50 disabled:cursor-not-allowed" disabled>
                                     <span id="submitText">Send Message</span>
                                     <span id="spinner" class="hidden ml-2">
                                         <i class="fas fa-spinner fa-spin"></i>
                                     </span>
                                 </button>
-                                
+
                                 <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
                                     Message sent successfully! I'll get back to you soon.
                                 </div>
                                 <div id="errorMessage" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
-                                    There was an error sending your message. Please try again later.
+                                    Error: Please fill all fields and complete the captcha.
                                 </div>
                             </form>
+                            <iframe name="hidden-iframe" class="hidden"></iframe>
                         </div>
                         
                         <div class="bg-white rounded-lg shadow-lg p-6">
                             <h2 class="text-2xl font-bold mb-4 text-cyan-600">Contact Information</h2>
                             <div class="space-y-4">
                                 <div class="flex items-start">
-                                    <div class="bg-cyan-100 p-3 rounded-full mr-4">
-                                        <i class="fas fa-map-marker-alt text-cyan-600"></i>
+                                    <div class="bg-cyan-100 p-3 rounded-full mr-4">‎ 
+                                        <i class="fas fa-map-marker-alt text-cyan-600"></i>‎ 
                                     </div>
                                     <div>
                                         <h3 class="font-semibold">Location</h3>
@@ -187,67 +185,74 @@
         </footer>
 
         <script>
-          function Menu(e){
-            let list = document.querySelector('ul');
-            e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
-          }
-          
-          // Cloudflare Turnstile callback
-          function turnstileCallback(token) {
-              document.getElementById('submitBtn').disabled = false;
-          }
-          
-          // Form submission handler
-          document.getElementById('contactForm').addEventListener('submit', function(e) {
-              e.preventDefault();
-              
-              const submitBtn = document.getElementById('submitBtn');
-              const submitText = document.getElementById('submitText');
-              const spinner = document.getElementById('spinner');
-              
-              // Show loading state
-              submitBtn.disabled = true;
-              submitText.textContent = 'Sending...';
-              spinner.classList.remove('hidden');
-              
-              // Get current timestamp
-              document.getElementById('timestamp').value = new Date().toISOString();
-              
-              // Create a hidden iframe for form submission
-              const iframe = document.createElement('iframe');
-              iframe.name = 'hidden-iframe';
-              iframe.style.display = 'none';
-              document.body.appendChild(iframe);
-              
-              // Set form target to the iframe
-              this.target = 'hidden-iframe';
-              
-              // Submit the form
-              this.submit();
-              
-              // Show success message after a short delay
-              setTimeout(function() {
-                  submitText.textContent = 'Message Sent!';
-                  spinner.classList.add('hidden');
-                  document.getElementById('successMessage').classList.remove('hidden');
-                  
-                  // Reset form after 3 seconds
-                  setTimeout(function() {
-                      document.getElementById('contactForm').reset();
-                      submitText.textContent = 'Send Message';
-                      submitBtn.disabled = true;
-                      document.getElementById('successMessage').classList.add('hidden');
-                  }, 3000);
-              }, 1000);
-          });
-          
-          // Reset Turnstile when form is reset
-          document.getElementById('contactForm').addEventListener('reset', function() {
-              // This would require re-rendering the Turnstile widget
-              // You might need to implement a more sophisticated solution
-              // For now, we'll just disable the submit button again
-              document.getElementById('submitBtn').disabled = true;
-          });
+            // Turnstile callback
+            let isTurnstileVerified = false;
+            function turnstileCallback(token) {
+                isTurnstileVerified = true;
+                validateForm();
+            }
+
+            // Form validation
+            function validateForm() {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                const submitBtn = document.getElementById('submitBtn');
+                
+                // Enable button only if all fields are filled + Turnstile verified
+                submitBtn.disabled = !(name && email && subject && message && isTurnstileVerified);
+            }
+
+            // Attach event listeners to form fields
+            document.getElementById('name').addEventListener('input', validateForm);
+            document.getElementById('email').addEventListener('input', validateForm);
+            document.getElementById('subject').addEventListener('input', validateForm);
+            document.getElementById('message').addEventListener('input', validateForm);
+
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const form = this;
+                const submitBtn = document.getElementById('submitBtn');
+                const submitText = document.getElementById('submitText');
+                const spinner = document.getElementById('spinner');
+                const successMessage = document.getElementById('successMessage');
+                const errorMessage = document.getElementById('errorMessage');
+
+                // Show loading state
+                submitBtn.disabled = true;
+                submitText.textContent = 'Sending...';
+                spinner.classList.remove('hidden');
+                errorMessage.classList.add('hidden');
+
+                // Set timestamp
+                document.getElementById('timestamp').value = new Date().toISOString();
+
+                // Submit form to Google
+                form.submit();
+
+                // Simulate response (Google Forms doesn't return success/fail)
+                setTimeout(() => {
+                    // Show success
+                    submitText.textContent = 'Sent!';
+                    spinner.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        form.reset();
+                        submitText.textContent = 'Send Message';
+                        successMessage.classList.add('hidden');
+                        isTurnstileVerified = false;
+                        validateForm(); // Re-check form state
+                        
+                        // Re-render Turnstile (hacky workaround)
+                        document.querySelector('.cf-turnstile').innerHTML = '';
+                        turnstile.render(document.querySelector('.cf-turnstile'));
+                    }, 3000);
+                }, 1500);
+            });
         </script>
         <script type="text/javascript" src="res\scripts\vanilla-tilt.js"></script>
         <script src="res\scripts\particles.js"></script>
