@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html> 
     <head>
         <title>Leonel R.S. - Projects</title>
@@ -9,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
@@ -39,13 +41,13 @@
             </ul>
         </nav>
         <main class="flex-grow pt-20">
-            <div id="particles-js" class="absolute w-full h-[calc(100vh-80px)]"></div>
-            <section class="relative z-10 py-10 min-h-[calc(100vh-80px)]">
+            <div data-aos="zoom-out" id="particles-js" class="absolute w-full h-[calc(100vh-80px)]"></div>
+            <section data-aos="zoom-in" class="relative z-10 py-10 min-h-[calc(100vh-80px)]">
                 <div class="max-w-screen-xl px-4 mx-auto">
                     <h1 class="text-4xl font-bold text-center text-gray-800">My Projects</h1>
-                    <p class="text-gray-600 mb-10 text-center">For more projects visit my <a class="text-cyan-500 hover:underline" target="_blank" href="https://github.com/rally19">repository</a></p>
+                    <p class="text-gray-600 mb-10 text-center">For more projects visit my <a class="text-cyan-500 hover:underline" target="_blank" href="https://github.com/rally19">repositories <i class="fa-brands fa-github"></i></a></p>
                     <!-- ClimaGlobe Project -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex max-lg:flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div data-aos="fade-up" class="project-card bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex max-lg:flex-col hover:shadow-xl transition-shadow duration-300">
                         <div class="lg:w-1/3 max-lg:w-full aspect-video overflow-hidden">
                             <a target="_blank" href="img\ClimaGlobe.png"><img src="img\ClimaGlobe.png" alt="ClimaGlobe" class="w-full h-full object-cover"></a>
                         </div>
@@ -70,7 +72,7 @@
                     </div>
                     
                     <!-- Travelid Project -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex max-lg:flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div data-aos="fade-up" class="project-card bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex max-lg:flex-col hover:shadow-xl transition-shadow duration-300">
                         <div class="lg:w-1/3 max-lg:w-full aspect-video overflow-hidden">
                             <a target="_blank" href="img\TravelID.png"><img src="img\TravelID.png" alt="Travelid" class="w-full h-full object-cover"></a>
                         </div>
@@ -99,7 +101,7 @@
                     </div>
                     
                     <!-- Calculatora Project -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex max-lg:flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div data-aos="fade-up" class="project-card bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex max-lg:flex-col hover:shadow-xl transition-shadow duration-300">
                         <div class="lg:w-1/3 max-lg:w-full aspect-video overflow-hidden">
                             <a target="_blank" href="img\calculatora.png"><img src="img\calculatora.png" alt="Calculatora" class="w-full h-full object-cover"></a>
                         </div>
@@ -175,5 +177,9 @@
         <script type="text/javascript" src="res\scripts\vanilla-tilt.js"></script>
         <script src="res\scripts\particles.js"></script>
         <script src="res\scripts\app.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
     <head>
-        <title>Contact - Leonel R.S.</title>
+        <title>Leonel R.S. - Contact</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" /> 
         <link rel="stylesheet" href="res\css\style.css" type="text/css" />
@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -33,15 +34,15 @@
               <a href="project.html" class="text-xl hover:text-cyan-500 duration-300">PROJECT</a>
             </li>
             <a href="contact.html">
-                <button class="bg-teal-800 text-gray-300 font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">
+                <button class="bg-teal-800 text-cyan-100 font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">
                     CONTACT
                 </button>
             </a>
             </ul>
         </nav>
         <main class="flex-grow pt-20">
-            <div id="particles-js" class="absolute w-full h-full"></div>
-            <section class="relative z-10 py-10">
+            <div data-aos="zoom-out" id="particles-js" class="absolute w-full h-full"></div>
+            <section data-aos="zoom-in" class="relative z-10 py-10">
                 <div class="max-w-4xl mx-auto px-4">
                     <h1 class="text-4xl font-bold mb-8 text-center">Contact Me</h1>
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
@@ -51,19 +52,19 @@
                                 <input type="hidden" name="entry.1595467050" id="timestamp" value="">
                                 
                                 <div class="mb-4">
-                                    <label for="name" class="block text-gray-700 font-medium mb-2">Name *</label>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Name <span class="text-red-500">*</span></label>
                                     <input type="text" id="name" name="entry.1050107103" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email *</label>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email <span class="text-red-500">*</span></label>
                                     <input type="email" id="email" name="entry.3876349" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Subject *</label>
+                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Subject <span class="text-red-500">*</span></label>
                                     <input type="text" id="subject" name="entry.64073964" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+                                    <label for="message" class="block text-gray-700 font-medium mb-2">Message <span class="text-red-500">*</span></label>
                                     <textarea id="message" name="entry.1503968320" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required></textarea>
                                 </div>
 
@@ -185,6 +186,12 @@
         </footer>
 
         <script>
+          function Menu(e){
+            let list = document.querySelector('ul');
+            e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+          }
+        </script>
+        <script>
             // Turnstile callback
             let isTurnstileVerified = false;
             function turnstileCallback(token) {
@@ -257,5 +264,9 @@
         <script type="text/javascript" src="res\scripts\vanilla-tilt.js"></script>
         <script src="res\scripts\particles.js"></script>
         <script src="res\scripts\app.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>

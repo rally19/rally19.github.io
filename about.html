@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
     <head>
-        <title>About - Leonel R.S.</title>
+        <title>Leonel R.S. - About</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" /> 
         <link rel="stylesheet" href="res\css\style.css" type="text/css" />
@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </head>
@@ -39,12 +40,12 @@
             </ul>
         </nav>
         <main class="flex-grow pt-20">
-            <div id="particles-js" class="absolute w-full h-full"></div>
-            <section class="relative z-10 py-10">
+            <div data-aos="zoom-out" id="particles-js" class="absolute w-full h-full"></div>
+            <section data-aos="zoom-in" class="relative z-10 py-10">
                 <div class="max-w-4xl mx-auto px-4">
                     <h1 class="text-4xl font-bold mb-8 text-center">About Me</h1>
                     
-                    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                    <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6 mb-8">
                         <h2 class="text-2xl font-bold mb-4 text-cyan-600">Personal Information</h2>
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
@@ -60,7 +61,7 @@
                         </div>
                     </div>
                     
-                    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                    <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6 mb-8">
                         <h2 class="text-2xl font-bold mb-4 text-cyan-600">About Me</h2>
                         <p class="mb-4">I am a Software Engineering student at SMKN 3 Palu. I have a strong interest in technology and coding, with practical experience in software development, software design, and database management. I am passionate about applying technical skills and continuing to learn in a professional environment.</p>
                     </div>
@@ -80,7 +81,7 @@
                     </div> -->
                     
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
-                        <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
                             <h2 class="text-2xl font-bold mb-4 text-cyan-600">Education</h2>
                             <div class="mb-4">
                                 <h3 class="text-xl font-semibold">Software Engineering (2023-2026)</h3>
@@ -92,7 +93,7 @@
                             </div>
                         </div>
                         
-                        <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
                             <h2 class="text-2xl font-bold mb-4 text-cyan-600">Courses</h2>
                             <div class="mb-4">
                                 <h3 class="text-xl font-semibold">English Language (2015-2016)</h3>
@@ -114,12 +115,12 @@
                     </div>
                     
                     <div class="grid md:grid-cols-3 gap-8 mb-8">
-                        <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
                             <h2 class="text-2xl font-bold mb-4 text-cyan-600">Certifications</h2>
                             <p><span class="font-semibold">TOEIC</span> (Score 740) - Strong English language skills in listening and reading</p>
                         </div>
                         
-                        <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
                             <h2 class="text-2xl font-bold mb-4 text-cyan-600">Languages</h2>
                             <ul class="list-disc pl-5">
                                 <li>Indonesian</li>
@@ -128,7 +129,7 @@
                             </ul>
                         </div>
                         
-                        <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
                             <h2 class="text-2xl font-bold mb-4 text-cyan-600">Interests</h2>
                             <div class="flex flex-wrap gap-2">
                                 <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Software Development</span>
@@ -145,7 +146,7 @@
                         </div>
                     </div>
                     
-                    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                    <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6 mb-8">
                         <h2 class="text-2xl font-bold mb-4 text-cyan-600">Skills</h2>
                         <div class="grid md:grid-cols-3 gap-4">
                             <div>
@@ -256,5 +257,9 @@
         <script type="text/javascript" src="res\scripts\vanilla-tilt.js"></script>
         <script src="res\scripts\particles.js"></script>
         <script src="res\scripts\app.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>
