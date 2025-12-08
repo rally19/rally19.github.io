@@ -201,14 +201,14 @@
 
             // Form validation
             function validateForm() {
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value;
+                // const name = document.getElementById('name').value;
+                // const email = document.getElementById('email').value;
+                // const subject = document.getElementById('subject').value;
+                // const message = document.getElementById('message').value;
                 const submitBtn = document.getElementById('submitBtn');
                 
-                // Enable button only if all fields are filled + Turnstile verified
-                submitBtn.disabled = !(name && email && subject && message && isTurnstileVerified);
+                // Enable button only if all fields are filled + Turnstile verified ( name && email && subject && message && )
+                submitBtn.disabled = !(isTurnstileVerified);
             }
 
             // Attach event listeners to form fields
