@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html> 
     <head>
-        <title>Leonel R.S. - Projects</title>
+        <title>Projects by Leonel R.S. | Web & Game Development Portfolio</title>
+        <meta name="description" content="Explore projects by Leonel R.S. including ClimaGlobe (AR/Unity), Travelid (Laravel/Livewire), Calculatora (Python), and Stealth Note Reader.">
+        <meta name="keywords" content="Leonel R.S. Projects, ClimaGlobe, Travelid, Calculatora, Laravel Project, Unity AR Project, Python GUI">
+        <link rel="canonical" href="https://rally19.github.io/project.html">
+
+        <meta property="og:title" content="Leonel R.S. - Project Portfolio">
+        <meta property="og:description" content="Check out my latest work in Web Development, AR, and Software Design.">
+        <meta property="og:image" content="https://rally19.github.io/img/TravelID.png">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" /> 
         <link rel="stylesheet" href="res\css\style.css" type="text/css" />
@@ -14,6 +22,39 @@
         <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+            "@type": "SoftwareSourceCode",
+            "name": "ClimaGlobe",
+            "programmingLanguage": "Unity C#",
+            "description": "Augmented Reality & AI Generatif app for climate change awareness."
+            },
+            {
+            "@type": "SoftwareSourceCode",
+            "name": "Coffeemeex",
+            "programmingLanguage": "Laravel",
+            "description": "Coffee shop/Cafe website using Livewire and FluxUI."
+            },
+            {
+            "@type": "SoftwareSourceCode",
+            "name": "Travelid",
+            "programmingLanguage": "Laravel",
+            "description": "Bus and travel ticketing website using Livewire and FluxUI."
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "name": "Calculatora",
+                "programmingLanguage": "Python",
+                "description": "Simple calculator using Kivy GUI."
+            }
+        ]
+        }
+        </script>
     </head>
     <body class="bg-gray-100 min-h-screen flex flex-col" id="body">
         <nav class="max-lg:bg-white p-5 fixed shadow lg:flex lg:items-center backdrop-blur-sm lg:justify-between w-full shadow-neutral-500 z-50">
@@ -70,6 +111,32 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Coffeemeex Project -->
+                    <div data-aos="fade-up" class="project-card bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex max-lg:flex-col hover:shadow-xl transition-shadow duration-300">
+                        <div class="lg:w-1/3 max-lg:w-full aspect-video overflow-hidden">
+                            <a target="_blank" href="img\Coffeemeex.png"><img src="img\Coffeemeex.png" alt="Coffeemeex" class="w-full h-full object-cover"></a>
+                        </div>
+                        
+                        <div class="lg:w-1/2 max-lg:w-full p-6 flex flex-col">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-2">Coffeemeex</h2>
+                            <p class="text-gray-600 mb-4">Coffeemeex is a Coffee shop/Cafe website developed for an intern project at Wesclic. It uses Laravel 12, Livewire, Livewire Volt, Alpine.js, and FluxUI. It also have an excellent speed and pure performance.</p>
+                            <div class="mt-auto">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Laravel</span>
+                                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Livewire</span>
+                                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Alpine.js</span>
+                                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">FluxUI</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:w-1/6 max-lg:w-full flex flex-col items-center justify-center p-6 max-lg:pb-6 max-lg:pt-0 gap-3">
+                            <a href="https://coffeemeex.rally19.my.id/" target="_blank" class="bg-teal-600 text-white font-[Poppins] duration-300 px-6 py-3 hover:bg-teal-700 rounded-lg hover:scale-105 flex items-center w-full justify-center">
+                                <i class="fas fa-globe mr-2"></i> Website
+                            </a>
+                        </div>
+                    </div>
                     
                     <!-- Travelid Project -->
                     <div data-aos="fade-up" class="project-card bg-white rounded-lg shadow-lg overflow-hidden mb-8 flex max-lg:flex-col hover:shadow-xl transition-shadow duration-300">
@@ -91,7 +158,7 @@
                         </div>
                         
                         <div class="lg:w-1/6 max-lg:w-full flex flex-col items-center justify-center p-6 max-lg:pb-6 max-lg:pt-0 gap-3">
-                            <a href="http://travelid.ct.ws/" target="_blank" class="bg-teal-600 text-white font-[Poppins] duration-300 px-6 py-3 hover:bg-teal-700 rounded-lg hover:scale-105 flex items-center w-full justify-center">
+                            <a href="https://travelid.ct.ws/" target="_blank" class="bg-teal-600 text-white font-[Poppins] duration-300 px-6 py-3 hover:bg-teal-700 rounded-lg hover:scale-105 flex items-center w-full justify-center">
                                 <i class="fas fa-globe mr-2"></i> Website
                             </a>
                             <a href="https://github.com/rally19/travelid" target="_blank" class="bg-gray-800 text-white font-[Poppins] duration-300 px-6 py-3 hover:bg-gray-900 rounded-lg hover:scale-105 flex items-center w-full justify-center">
