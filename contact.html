@@ -1,285 +1,286 @@
 <!DOCTYPE html>
-<html> 
-    <head>
-        <title>Contact Leonel R.S. | Hire for Freelance & Collaboration</title>
-        <meta name="description" content="Get in touch with Leonel Rally Squall. Available for freelance web development, software projects, and collaboration. Based in Yogyakarta.">
-        <meta name="keywords" content="Contact Leonel R.S., Hire Web Developer, Freelance Developer Yogyakarta, Leonel Rally Squall Email">
-        <link rel="canonical" href="https://rally19.github.io/contact.html">
+<html lang="en">
 
-        <meta property="og:title" content="Contact Leonel R.S.">
-        <meta property="og:description" content="Let's build something together. Reach out for collaborations or inquiries.">
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" /> 
-        <link rel="stylesheet" href="res\css\style.css" type="text/css" />
-        <link rel="icon" type="image/x-icon" href="img\leo1.png" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    </head>
-    <body class="bg-gray-100 min-h-screen flex flex-col">
-        <nav class="max-lg:bg-white p-5 fixed shadow lg:flex lg:items-center backdrop-blur-sm lg:justify-between w-full shadow-neutral-500 z-50">
-            <div class="flex justify-between items-center">
-            <span class="ml-4 text-2xl font-[Poppins] cursor-pointer"><img class="h-10 inline mr-4"src="img\leo1.png">Leonel R.S.</span>
-            <span class="text-3xl cursor-pointer mx-2 lg:hidden block">
-            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-            </span>
-            </div>
-            <ul class="backdrop-blur-md max-lg:bg-white max-lg:shadow-xl lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-            <li class="mx-4 my-6 lg:my-0">
-              <a href="index.html" class="text-xl hover:text-cyan-500 duration-300">HOME</a>
-            </li>
-            <li class="mx-4 my-6 lg:my-0">
-              <a href="about.html" class="text-xl hover:text-cyan-500 duration-300">ABOUT</a>
-            </li>
-            <li class="mx-4 my-6 lg:my-0">
-              <a href="project.html" class="text-xl hover:text-cyan-500 duration-300">PROJECT</a>
-            </li>
-            <a href="contact.html">
-                <button class="bg-teal-800 text-cyan-100 font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">
-                    CONTACT
-                </button>
-            </a>
-            </ul>
-        </nav>
-        <main class="flex-grow pt-20">
-            <div data-aos="zoom-out" id="particles-js" class="absolute w-full h-full"></div>
-            <section data-aos="zoom-in" class="relative z-10 py-10">
-                <div class="max-w-4xl mx-auto px-4">
-                    <h1 class="text-4xl font-bold mb-8 text-center">Contact Me</h1>
-                    <div class="grid md:grid-cols-2 gap-8 mb-8">
-                        <div class="bg-white rounded-lg shadow-lg p-6">
-                            <h2 class="text-2xl font-bold mb-4 text-cyan-600">Get In Touch</h2>
-                            <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLScIpALRlJDe-d7vJuVNkPUXT-qVUOq0OytlXqNxJ1I9esMZDA/formResponse" method="POST" target="hidden-iframe">
-                                <input type="hidden" name="entry.1595467050" id="timestamp" value="">
-                                
-                                <div class="mb-4">
-                                    <label for="name" class="block text-gray-700 font-medium mb-2">Name <span class="text-red-500">*</span></label>
-                                    <input type="text" id="name" name="entry.1050107103" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email <span class="text-red-500">*</span></label>
-                                    <input type="email" id="email" name="entry.3876349" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Subject <span class="text-red-500">*</span></label>
-                                    <input type="text" id="subject" name="entry.64073964" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="message" class="block text-gray-700 font-medium mb-2">Message <span class="text-red-500">*</span></label>
-                                    <textarea id="message" name="entry.1503968320" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required></textarea>
-                                </div>
+<head>
+    <title>Contact Leonel R.S. | Hire for Freelance & Collaboration</title>
+    <meta name="description"
+        content="Get in touch with Leonel Rally Squall. Available for freelance web development, software projects, and collaboration. Based in Yogyakarta.">
+    <meta name="keywords"
+        content="Contact Leonel R.S., Hire Web Developer, Freelance Developer Yogyakarta, Leonel Rally Squall Email">
+    <link rel="canonical" href="https://rally19.github.io/contact.html">
 
-                                <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAABr-AERL8GcnCf_B" data-callback="turnstileCallback"></div>
+    <meta property="og:title" content="Contact Leonel R.S.">
+    <meta property="og:description"
+        content="Let's build something together. Reach out for collaborations or inquiries.">
 
-                                <button type="submit" id="submitBtn" class="bg-teal-800 text-white font-[Poppins] duration-500 px-6 py-2 hover:bg-teal-950 rounded-lg hover:scale-105 w-full disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-                                    <span id="submitText">Send Message</span>
-                                    <span id="spinner" class="hidden ml-2">
-                                        <i class="fas fa-spinner fa-spin"></i>
-                                    </span>
-                                </button>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" />
+    <meta charset="UTF-8">
 
-                                <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
-                                    Message sent successfully! I'll get back to you soon.
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="res/css/style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="img/leo1.png">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+
+<body>
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="img/leo1.png" alt="Leonel R.S.">
+            <span><span class="accent">~/</span>leonel_r.s.</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="project.html">projects</a>
+            <a href="contact.html" class="nav-cta active">contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="section">
+            <div class="container">
+                <div class="section-header gs-hidden">
+                    <p class="section-label">contact</p>
+                    <h1 class="section-title" style="font-size: 2.5rem;">Get In Touch</h1>
+                    <p class="section-subtitle">Have a project in mind? Let's build something together.</p>
+                </div>
+
+                <div class="grid-2" style="gap: 2.5rem;">
+                    <!-- Contact Form -->
+                    <div class="card gs-hidden-left">
+                        <h2 class="card-title"><i class="fas fa-paper-plane text-accent"></i>&nbsp; Send a Message</h2>
+                        <form id="contactForm"
+                            action="https://docs.google.com/forms/d/e/1FAIpQLScIpALRlJDe-d7vJuVNkPUXT-qVUOq0OytlXqNxJ1I9esMZDA/formResponse"
+                            method="POST" target="hidden-iframe" style="margin-top: 1.25rem;">
+                            <input type="hidden" name="entry.1595467050" id="timestamp" value="">
+
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="entry.1050107103" class="form-input" required
+                                    placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="entry.3876349" class="form-input" required
+                                    placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject <span class="required">*</span></label>
+                                <input type="text" id="subject" name="entry.64073964" class="form-input" required
+                                    placeholder="Project inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message <span class="required">*</span></label>
+                                <textarea id="message" name="entry.1503968320" rows="5" class="form-textarea" required
+                                    placeholder="Tell me about your project..."></textarea>
+                            </div>
+
+                            <div class="cf-turnstile mb-2" data-sitekey="0x4AAAAAABr-AERL8GcnCf_B"
+                                data-callback="turnstileCallback" data-theme="dark"></div>
+
+                            <button type="submit" id="submitBtn" class="form-submit" disabled>
+                                <span id="submitText">Send Message</span>
+                                <span id="spinner" class="hidden">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
+
+                            <div id="successMessage" class="form-message" style="display: none;">
+                                <i class="fas fa-check-circle"></i> Message sent successfully! I'll get back to you
+                                soon.
+                            </div>
+                            <div id="errorMessage" class="form-message" style="display: none;">
+                                <i class="fas fa-exclamation-circle"></i> Error: Please fill all fields and complete the
+                                captcha.
+                            </div>
+                        </form>
+                        <iframe name="hidden-iframe" style="display: none;"></iframe>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="gs-hidden-right">
+                        <div class="card" style="margin-bottom: 1.5rem;">
+                            <h2 class="card-title"><i class="fas fa-info-circle text-accent"></i>&nbsp; Contact
+                                Information</h2>
+                            <div style="margin-top: 1.25rem;">
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <p class="contact-info-label">Location</p>
+                                        <p class="contact-info-value">Sleman, Yogyakarta</p>
+                                    </div>
                                 </div>
-                                <div id="errorMessage" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
-                                    Error: Please fill all fields and complete the captcha.
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="fas fa-globe"></i>
+                                    </div>
+                                    <div>
+                                        <p class="contact-info-label">Website</p>
+                                        <p class="contact-info-value">rally19.github.io</p>
+                                    </div>
                                 </div>
-                            </form>
-                            <iframe name="hidden-iframe" class="hidden"></iframe>
+                            </div>
                         </div>
-                        
-                        <div class="bg-white rounded-lg shadow-lg p-6">
-                            <h2 class="text-2xl font-bold mb-4 text-cyan-600">Contact Information</h2>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <div class="bg-cyan-100 p-3 rounded-full mr-4">‎ 
-                                        <i class="fas fa-map-marker-alt text-cyan-600"></i>‎ 
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold">Location</h3>
-                                        <p class="text-gray-600">Sleman, Yogyakarta</p>
-                                    </div>
-                                </div>
-                                <!-- <div class="flex items-start">
-                                    <div class="bg-cyan-100 p-3 rounded-full mr-4">
-                                        <i class="fas fa-envelope text-cyan-600"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold">Email</h3>
-                                        <p class="text-gray-600"></p>
-                                    </div>
-                                </div> -->
-                                <div class="flex items-start">
-                                    <div class="bg-cyan-100 p-3 rounded-full mr-4">
-                                        <i class="fas fa-globe text-cyan-600"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-semibold">Website</h3>
-                                        <p class="text-gray-600">rally19.github.io</p>
-                                    </div>
-                                </div>
+
+                        <div class="card" style="margin-bottom: 1.5rem;">
+                            <h2 class="card-title"><i class="fas fa-share-alt text-accent"></i>&nbsp; Social Media</h2>
+                            <div class="social-links" style="margin-top: 1rem;">
+                                <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank" class="social-link custom-cursor-target"
+                                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/rally19" target="_blank" class="social-link custom-cursor-target"
+                                    aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank"
+                                    class="social-link custom-cursor-target" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.instagram.com/leonelrs18/" target="_blank" class="social-link custom-cursor-target"
+                                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.tiktok.com/@leonelrs18" target="_blank" class="social-link custom-cursor-target"
+                                    aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                                <a href="https://www.facebook.com/leonelrs18/" target="_blank" class="social-link custom-cursor-target"
+                                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                             </div>
-                            
-                            <h2 class="text-2xl font-bold mt-8 mb-4 text-cyan-600">Social Media</h2>
-                            <div class="flex space-x-4">
-                                <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
-                                     <i class="fab fa-linkedin"></i> 
-                                </a>
-                                <a href="https://github.com/rally19" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="https://www.instagram.com/leonelrs18/" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://www.tiktok.com/@leonelrs18" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
-                                    <i class="fab fa-tiktok"></i>
-                                </a>
-                                <a href="https://www.facebook.com/leonelrs18/" target="_blank" class="bg-gray-200 p-3 rounded-full hover:bg-cyan-100 hover:text-cyan-600 duration-300">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </div>
-                            
-                            <h2 class="text-2xl font-bold mt-8 mb-4 text-cyan-600">Availability</h2>
-                            <p class="text-gray-600">I'm currently available for freelance work and collaboration. Feel free to reach out to me through any of the channels above.</p>
+                        </div>
+
+                        <div class="card">
+                            <h2 class="card-title"><i class="fas fa-clock text-accent"></i>&nbsp; Availability</h2>
+                            <p class="card-text" style="margin-top: 0.5rem;">I'm currently available for freelance work
+                                and collaboration. Feel free to reach out to me through any of the channels above.</p>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <footer class="rounded-lg shadow m-2 bg-gray-800">
-            <div class="w-full mx-auto max-w-screen-xl p-5 flex items-center justify-between max-lg:flex-col-reverse">
-            <span class="text-sm text-gray-500 text-center dark:text-gray-400 max-lg:mt-5">© 2024 - 2025 <a href="#" class="hover:underline">Leonel R.S</a>. All Rights Reserved.</span>
-            <ul class="flex flex-wrap items-center text-sm font-medium dark:text-gray-400 sm:mt-0 ">
-              <!-- <a href="mailto:">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-regular fa-envelope"></i></button>
-              </a> -->
-              <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-linkedin"></i></i></button>
-              </a>
-              <a href="https://github.com/rally19" target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-github"></i></i></button>
-              </a>
-              <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-youtube"></i></i></button>
-              </a>
-              <a href="https://www.instagram.com/leonelrs18/"  target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-instagram"></i></button>
-              </a>
-              <a href="https://www.tiktok.com/@leonelrs18" target="_blank">
-              <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-tiktok"></i></i></button>
-              </a>
-              <a href="https://www.facebook.com/leonelrs18/" target="_blank">
-              <button class="text-gray-400 duration-300 px-5 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-facebook-f"></i></i></button>
-              </a>
-            </ul>
-            <ul class="flex justify-center flex-wrap items-center text-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 max-lg:mb-5">
-              <li>
-                  <a href="index.html" class="hover:underline me-4 lg:me-6">HOME</a>
-              </li>
-              <li>
-                <a href="about.html" class="hover:underline me-4 lg:me-6">ABOUT</a>
-              </li>
-              <li>
-                  <a href="project.html" class="hover:underline me-4 lg:me-6">PROJECT</a>
-              </li>
-              <li>
-                  <a href="contact.html" class="hover:underline me-4 lg:me-6">CONTACT</a>
-              </li>
-          </ul>
             </div>
-        </footer>
+        </section>
+    </main>
 
-        <script>
-          function Menu(e){
-            let list = document.querySelector('ul');
-            e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
-          }
-        </script>
-        <script>
-            // Turnstile callback
-            let isTurnstileVerified = false;
-            function turnstileCallback(token) {
-                isTurnstileVerified = true;
-                validateForm();
-            }
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-nav">
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="project.html">projects</a>
+                <a href="contact.html">contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rally19" target="_blank" class="footer-social custom-cursor-target" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@leonelrs18" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <span class="footer-copy">© 2023–2026 <a href="#">Leonel R.S.</a> All Rights Reserved.</span>
+        </div>
+    </footer>
 
-            // Form validation
-            function validateForm() {
-                // const name = document.getElementById('name').value;
-                // const email = document.getElementById('email').value;
-                // const subject = document.getElementById('subject').value;
-                // const message = document.getElementById('message').value;
-                const submitBtn = document.getElementById('submitBtn');
-                
-                // Enable button only if all fields are filled + Turnstile verified ( name && email && subject && message && )
-                submitBtn.disabled = !(isTurnstileVerified);
-            }
+    <div id="custom-cursor-icon">
+        <i class="fa-solid fa-up-right-from-square"></i>
+    </div>
+    <script type="text/javascript" src="res/scripts/app.js"></script>
 
-            // Attach event listeners to form fields
-            document.getElementById('name').addEventListener('input', validateForm);
-            document.getElementById('email').addEventListener('input', validateForm);
-            document.getElementById('subject').addEventListener('input', validateForm);
-            document.getElementById('message').addEventListener('input', validateForm);
+    <!-- Contact Form Script -->
+    <script>
+        // Turnstile callback
+        let isTurnstileVerified = false;
+        function turnstileCallback(token) {
+            isTurnstileVerified = true;
+            validateForm();
+        }
 
-            // Form submission
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const form = this;
-                const submitBtn = document.getElementById('submitBtn');
-                const submitText = document.getElementById('submitText');
-                const spinner = document.getElementById('spinner');
-                const successMessage = document.getElementById('successMessage');
-                const errorMessage = document.getElementById('errorMessage');
+        // Form validation
+        function validateForm() {
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = !(isTurnstileVerified);
+        }
 
-                // Show loading state
-                submitBtn.disabled = true;
-                submitText.textContent = 'Sending...';
-                spinner.classList.remove('hidden');
-                errorMessage.classList.add('hidden');
+        // Attach event listeners to form fields
+        document.getElementById('name').addEventListener('input', validateForm);
+        document.getElementById('email').addEventListener('input', validateForm);
+        document.getElementById('subject').addEventListener('input', validateForm);
+        document.getElementById('message').addEventListener('input', validateForm);
 
-                // Set timestamp
-                document.getElementById('timestamp').value = new Date().toISOString();
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = this;
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const spinner = document.getElementById('spinner');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
 
-                // Submit form to Google
-                form.submit();
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.textContent = 'Sending...';
+            spinner.classList.remove('hidden');
+            errorMessage.style.display = 'none';
 
-                // Simulate response (Google Forms doesn't return success/fail)
+            // Set timestamp
+            document.getElementById('timestamp').value = new Date().toISOString();
+
+            // Submit form to Google
+            form.submit();
+
+            // Simulate response (Google Forms doesn't return success/fail)
+            setTimeout(() => {
+                // Show success
+                submitText.textContent = 'Sent!';
+                spinner.classList.add('hidden');
+                successMessage.style.display = 'block';
+                successMessage.classList.add('success');
+
+                // Reset form after 3 seconds
                 setTimeout(() => {
-                    // Show success
-                    submitText.textContent = 'Sent!';
-                    spinner.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
+                    form.reset();
+                    submitText.textContent = 'Send Message';
+                    successMessage.style.display = 'none';
+                    isTurnstileVerified = false;
+                    validateForm();
 
-                    // Reset form after 3 seconds
-                    setTimeout(() => {
-                        form.reset();
-                        submitText.textContent = 'Send Message';
-                        successMessage.classList.add('hidden');
-                        isTurnstileVerified = false;
-                        validateForm(); // Re-check form state
-                        
-                        // Re-render Turnstile (hacky workaround)
-                        document.querySelector('.cf-turnstile').innerHTML = '';
-                        turnstile.render(document.querySelector('.cf-turnstile'));
-                    }, 3000);
-                }, 1500);
-            });
-        </script>
-        <script type="text/javascript" src="res\scripts\vanilla-tilt.js"></script>
-        <script src="res\scripts\particles.js"></script>
-        <script src="res\scripts\app.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-    </body>
+                    // Re-render Turnstile
+                    document.querySelector('.cf-turnstile').innerHTML = '';
+                    turnstile.render(document.querySelector('.cf-turnstile'));
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+
+    <!-- Background Animation -->
+    <script src="res/js/background.js"></script>
+    <!-- GSAP Animations -->
+    <script src="res/js/animations.js"></script>
+</body>
+
 </html>

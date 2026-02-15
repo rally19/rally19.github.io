@@ -1,315 +1,382 @@
 <!DOCTYPE html>
-<html> 
-    <head>
-        <title>About Leonel R.S. | Skills, Education & Experience</title>
-        <meta name="description" content="Learn about Leonel Rally Squall's background. A web developer intern at Wesclic and student at SMKN 3 Palu skilled in Laravel, Python, Unity, and UI/UX design.">
-        <meta name="keywords" content="About Leonel, Resume, CV, Web Developer Skills, Laravel, Unity, Python, Wesclic Internship">
-        <link rel="canonical" href="https://rally19.github.io/about.html">
+<html lang="en">
 
-        <meta property="og:type" content="profile">
-        <meta property="og:title" content="About Leonel R.S. - Developer & Student">
-        <meta property="og:description" content="Software Engineering student with experience in Laravel, Unity, and Python. Intern at PT. Wesclic Indonesia Neotech.">
-        <meta property="og:image" content="https://rally19.github.io/img/leo1.png">
+<head>
+    <title>About Leonel R.S. | Skills, Education & Experience</title>
+    <meta name="description"
+        content="Learn about Leonel Rally Squall's background. A web developer intern at Wesclic and student at SMKN 3 Palu skilled in Laravel, Python, Unity, and UI/UX design.">
+    <meta name="keywords"
+        content="About Leonel, Resume, CV, Web Developer Skills, Laravel, Unity, Python, Wesclic Internship">
+    <link rel="canonical" href="https://rally19.github.io/about.html">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" /> 
-        <link rel="stylesheet" href="res\css\style.css" type="text/css" />
-        <link rel="icon" type="image/x-icon" href="img\leo1.png" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="About Leonel R.S. - Developer & Student">
+    <meta property="og:description"
+        content="Software Engineering student with experience in Laravel, Unity, and Python. Intern at PT. Wesclic Indonesia Neotech.">
+    <meta property="og:image" content="https://rally19.github.io/img/leo1.png">
 
-        <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        "mainEntity": {
-            "@type": "Person",
-            "name": "Leonel Rally Squall",
-            "alternateName": "Leonel R.S.",
-            "description": "Software Engineering Student and Web Developer Intern"
-        }
-        }
-        </script>
-    </head>
-    <body class="bg-gray-100 min-h-screen flex flex-col">
-        <nav class="max-lg:bg-white p-5 fixed shadow lg:flex lg:items-center backdrop-blur-sm lg:justify-between w-full shadow-neutral-500 z-50">
-            <div class="flex justify-between items-center">
-            <span class="ml-4 text-2xl font-[Poppins] cursor-pointer"><img class="h-10 inline mr-4"src="img\leo1.png">Leonel R.S.</span>
-            <span class="text-3xl cursor-pointer mx-2 lg:hidden block">
-            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-            </span>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" />
+    <meta charset="UTF-8">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="res/css/style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="img/leo1.png">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Leonel Rally Squall",
+        "alternateName": "Leonel R.S.",
+        "description": "Software Engineering Student and Web Developer Intern"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="img/leo1.png" alt="Leonel R.S.">
+            <span><span class="accent">~/</span>leonel_r.s.</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">home</a>
+            <a href="about.html" class="active">about</a>
+            <a href="project.html">projects</a>
+            <a href="contact.html" class="nav-cta">contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="section" style="padding-bottom: 2rem;">
+            <div class="container">
+                <div class="section-header gs-hidden">
+                    <p class="section-label">about</p>
+                    <h1 class="section-title" style="font-size: 2.5rem;">About Me</h1>
+                    <p class="section-subtitle">Software Engineering student passionate about building meaningful
+                        technology.</p>
+                </div>
             </div>
-            <ul class="backdrop-blur-md max-lg:bg-white max-lg:shadow-xl lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-            <li class="mx-4 my-6 lg:my-0">
-              <a href="index.html" class="text-xl hover:text-cyan-500 duration-300">HOME</a>
-            </li>
-            <li class="mx-4 my-6 lg:my-0">
-              <a href="about.html" class="text-xl hover:text-cyan-500 duration-300 text-cyan-700">ABOUT</a>
-            </li>
-            <li class="mx-4 my-6 lg:my-0">
-              <a href="project.html" class="text-xl hover:text-cyan-500 duration-300">PROJECT</a>
-            </li>
-            <a href="contact.html">
-                <button class="bg-teal-800 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">
-                    CONTACT
-                </button>
-            </a>
-            </ul>
-        </nav>
-        <main class="flex-grow pt-20">
-            <div data-aos="zoom-out" id="particles-js" class="absolute w-full h-full"></div>
-            <section data-aos="zoom-in" class="relative z-10 py-10">
-                <div class="max-w-4xl mx-auto px-4">
-                    <h1 class="text-4xl font-bold mb-8 text-center">About Me</h1>
-                    
-                    <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6 mb-8">
-                        <h2 class="text-2xl font-bold mb-4 text-cyan-600">Personal Information</h2>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <p><span class="font-semibold">Full Name:</span> Leonel Rally Squall</p>
-                                <p><span class="font-semibold">Address:</span> Sleman, Yogyakarta</p>
-                            </div>
-                            <div>
-                                <p><span class="font-semibold">Website:</span> <a href="https://rally19.github.io/" class="text-cyan-600 hover:underline">rally19.github.io</a></p>
-                                <p><span class="font-semibold">GitHub:</span> <a href="https://github.com/rally19" class="text-cyan-600 hover:underline">github.com/rally19</a></p>
-                                <p><span class="font-semibold">Linkedin:</span> <a href="https://www.linkedin.com/in/leonelrs18" class="text-cyan-600 hover:underline">linkedin.com/in/leonelrs18</a></p>
-                            </div>
+        </section>
+
+        <!-- Personal Information -->
+        <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+            <div class="container">
+                <div class="card gs-hidden">
+                    <h2 class="card-title"><i class="fas fa-id-card text-accent"></i>&nbsp; Personal Information</h2>
+                    <div class="info-grid" style="margin-top: 1rem;">
+                        <div class="info-item">
+                            <span class="info-label">Full Name</span>
+                            <span class="info-value">Leonel Rally Squall</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Address</span>
+                            <span class="info-value">Sleman, Yogyakarta</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Website</span>
+                            <span class="info-value"><a href="https://rally19.github.io/">rally19.github.io</a></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">GitHub</span>
+                            <span class="info-value"><a href="https://github.com/rally19">github.com/rally19</a></span>
+                        </div>
+                        <div class="info-item" style="grid-column: 1 / -1;">
+                            <span class="info-label">LinkedIn</span>
+                            <span class="info-value"><a
+                                    href="https://www.linkedin.com/in/leonelrs18">linkedin.com/in/leonelrs18</a></span>
                         </div>
                     </div>
-                    
-                    <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6 mb-8">
-                        <h2 class="text-2xl font-bold mb-4 text-cyan-600">About Me</h2>
-                        <p class="mb-4">I am a Software Engineering student at SMKN 3 Palu. I have a strong interest in technology and coding, with practical experience in software development, software design, and database management. I am passionate about applying technical skills and continuing to learn in a professional environment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+            <div class="container">
+                <div class="card gs-hidden">
+                    <h2 class="card-title"><i class="fas fa-user text-accent"></i>&nbsp; About Me</h2>
+                    <p class="card-text" style="margin-top: 0.75rem;">I am a Software Engineering student at SMKN 3
+                        Palu. I have a strong interest in technology and coding, with practical experience in software
+                        development, software design, and database management. I am passionate about applying technical
+                        skills and continuing to learn in a professional environment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+            <div class="container">
+                <div class="section-header gs-hidden">
+                    <p class="section-label">experience</p>
+                    <h2 class="section-title">Work Experience</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025 – 2026</div>
+                        <h3 class="timeline-title">Web Developer Intern</h3>
+                        <p class="timeline-subtitle">PT. Wesclic Indonesia Neotech, Bantul, Yogyakarta</p>
+                        <ul class="timeline-body">
+                            <li>Participated in an internship program at Wesclic, a trusted technology company focused
+                                on digital transformation since 2020</li>
+                            <li>Served as an intern in the web development team, using modern technologies with industry
+                                standards</li>
+                            <li>Gained hands-on experience in the software development lifecycle, from requirements
+                                analysis, coding, testing to deployment</li>
+                            <li>Worked in a professional environment with work principles emphasizing quality,
+                                innovation, and client success</li>
+                        </ul>
                     </div>
-                    
-                    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-                        <h2 class="text-2xl font-bold mb-4 text-cyan-600">Work Experience</h2>
-                        <div class="mb-4">
-                            <h3 class="text-xl font-semibold">Web Developer Intern (2025-2026)</h3>
-                            <p class="font-medium text-gray-700">PT. Wesclic Indonesia Neotech, Bantul, Yogyakarta</p>
-                            <ul class="list-disc pl-5 mt-2">
-                                <li>Participated in an internship program at Wesclic, a trusted technology company focused on digital transformation since 2020</li>
-                                <li>Served as an intern in the web development team, using modern technologies with industry standards</li>
-                                <li>Gained hands-on experience in the software development lifecycle, from requirements analysis, coding, testing to deployment</li>
-                                <li>Worked in a professional environment with work principles emphasizing quality, innovation, and client success</li>
-                            </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Courses -->
+        <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+            <div class="container">
+                <div class="grid-2">
+                    <!-- Education -->
+                    <div>
+                        <div class="section-header gs-hidden">
+                            <p class="section-label">education</p>
+                            <h2 class="section-title">Education</h2>
                         </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mb-8">
-                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
-                            <h2 class="text-2xl font-bold mb-4 text-cyan-600">Education</h2>
-                            <div class="mb-4">
-                                <h3 class="text-xl font-semibold">Software Engineering (2023-2026)</h3>
-                                <p class="font-medium text-gray-700">SMKN 3 Palu, Central Sulawesi</p>
-                                <ul class="list-disc pl-5 mt-2">
-                                    <li>Focused on practical and theoretical aspects of software development including web programming, database management, and UI/UX design</li>
-                                    <li>Gained hands-on experience through real projects, team collaboration, and use of industry-standard tools</li>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2023 – 2026</div>
+                                <h3 class="timeline-title">Software Engineering</h3>
+                                <p class="timeline-subtitle">SMKN 3 Palu, Central Sulawesi</p>
+                                <ul class="timeline-body">
+                                    <li>Focused on practical and theoretical aspects of software development including
+                                        web programming, database management, and UI/UX design</li>
+                                    <li>Gained hands-on experience through real projects, team collaboration, and use of
+                                        industry-standard tools</li>
                                 </ul>
                             </div>
                         </div>
-                        
-                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
-                            <h2 class="text-2xl font-bold mb-4 text-cyan-600">Courses</h2>
-                            <div class="mb-4">
-                                <h3 class="text-xl font-semibold">English Language (2015-2016)</h3>
-                                <p class="font-medium text-gray-700">Happy Honey Bee, Sleman, Yogyakarta</p>
-                                <ul class="list-disc pl-5 mt-2">
-                                    <li>Focused on improving communication skills in reading, writing, speaking, and listening</li>
+                    </div>
+                    <!-- Courses -->
+                    <div>
+                        <div class="section-header gs-hidden">
+                            <p class="section-label">courses</p>
+                            <h2 class="section-title">Courses</h2>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2015 – 2016</div>
+                                <h3 class="timeline-title">English Language</h3>
+                                <p class="timeline-subtitle">Happy Honey Bee, Sleman, Yogyakarta</p>
+                                <ul class="timeline-body">
+                                    <li>Focused on improving communication skills in reading, writing, speaking, and
+                                        listening</li>
                                     <li>Increased confidence in using English for academic and everyday contexts</li>
                                 </ul>
                             </div>
-                            <div>
-                                <h3 class="text-xl font-semibold">Mathematics (2020)</h3>
-                                <p class="font-medium text-gray-700">Merelin Private Tutoring, Sleman, Yogyakarta</p>
-                                <ul class="list-disc pl-5 mt-2">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2020</div>
+                                <h3 class="timeline-title">Mathematics</h3>
+                                <p class="timeline-subtitle">Merelin Private Tutoring, Sleman, Yogyakarta</p>
+                                <ul class="timeline-body">
                                     <li>Focused on strengthening understanding of basic mathematical concepts</li>
-                                    <li>Improved problem-solving skills and academic performance through private learning sessions</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-3 gap-8 mb-8">
-                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
-                            <h2 class="text-2xl font-bold mb-4 text-cyan-600">Certifications</h2>
-                            <p><span class="font-semibold">TOEIC</span> (Score 940) - Strong English language skills in listening and reading</p>
-                        </div>
-                        
-                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
-                            <h2 class="text-2xl font-bold mb-4 text-cyan-600">Languages</h2>
-                            <ul class="list-disc pl-5">
-                                <li>Indonesian</li>
-                                <li>English</li>
-                                <li>Javanese</li>
-                            </ul>
-                        </div>
-                        
-                        <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6">
-                            <h2 class="text-2xl font-bold mb-4 text-cyan-600">Interests</h2>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Software Development</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Web Development</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Game Development</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">UI/UX Design</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Gaming</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Science</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Computers</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Transportation</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Architecture</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Drawing</span>
-                                <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Art</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div data-aos="fade-up" class="bg-white rounded-lg shadow-lg p-6 mb-8">
-                        <h2 class="text-2xl font-bold mb-4 text-cyan-600">Skills</h2>
-                        <div class="grid md:grid-cols-3 gap-4">
-                            <div>
-                                <h3 class="text-lg font-semibold mb-2">Operating Systems</h3>
-                                <ul class="list-disc pl-5">
-                                    <li>Windows</li>
-                                    <li>Linux</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold mb-2">Office Software</h3>
-                                <ul class="list-disc pl-5">
-                                    <li>Microsoft Word</li>
-                                    <li>Microsoft PowerPoint</li>
-                                    <li>Microsoft Excel</li>
-                                    <li>Microsoft Access</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold mb-2">Programming Languages</h3>
-                                <ul class="list-disc pl-5">
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>JavaScript</li>
-                                    <li>php</li>
-                                    <li>Python</li>
-                                    <li>C++</li>
-                                    <li>C#</li>
-                                    <li>Lua</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold mb-2">Databases</h3>
-                                <ul class="list-disc pl-5">
-                                    <li>MySQL</li>
-                                    <li>PHPmyAdmin</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold mb-2">Frameworks & CMS</h3>
-                                <ul class="list-disc pl-5">
-                                    <li>Laravel</li>
-                                    <li>WordPress</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold mb-2">Development Tools</h3>
-                                <ul class="list-disc pl-5">
-                                    <li>Apache</li>
-                                    <li>XAMPP</li>
-                                    <li>Laragon</li>
-                                    <li>Git</li>
-                                    <li>VMWare</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold mb-2">IDEs</h3>
-                                <ul class="list-disc pl-5">
-                                    <li>Roblox Studio</li>
-                                    <li>Android Studio</li>
-                                    <li>Visual Studio Code</li>
-                                    <li>IntelliJ IDEA</li>
-                                    <li>Unity</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold mb-2">Creative & Multimedia</h3>
-                                <ul class="list-disc pl-5">
-                                    <li>Wondershare Filmora</li>
-                                    <li>Adobe Photoshop</li>
-                                    <li>Adobe Premiere</li>
-                                    <li>Canva</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold mb-2">Creative & Multimedia</h3>
-                                <ul class="list-disc pl-5">
-                                    <li>Wondershare Filmora</li>
-                                    <li>Adobe Photoshop</li>
-                                    <li>Adobe Premiere</li>
-                                    <li>Figma</li>
-                                    <li>Canva</li>
+                                    <li>Improved problem-solving skills and academic performance through private
+                                        learning sessions</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <footer class="rounded-lg shadow m-2 bg-gray-800">
-            <div class="w-full mx-auto max-w-screen-xl p-5 flex items-center justify-between max-lg:flex-col-reverse">
-            <span class="text-sm text-gray-500 text-center dark:text-gray-400 max-lg:mt-5">© 2024 - 2025 <a href="#" class="hover:underline">Leonel R.S</a>. All Rights Reserved.</span>
-            <ul class="flex flex-wrap items-center text-sm font-medium dark:text-gray-400 sm:mt-0 ">
-              <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-linkedin"></i></i></button>
-              </a>
-              <a href="https://github.com/rally19" target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-github"></i></i></button>
-              </a>
-              <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-youtube"></i></i></button>
-              </a>
-              <a href="https://www.instagram.com/leonelrs18/"  target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-instagram"></i></button>
-              </a>
-              <a href="https://www.tiktok.com/@leonelrs18" target="_blank">
-              <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-tiktok"></i></i></button>
-              </a>
-              <a href="https://www.facebook.com/leonelrs18/" target="_blank">
-              <button class="text-gray-400 duration-300 px-5 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-facebook-f"></i></i></button>
-              </a>
-            </ul>
-            <ul class="flex justify-center flex-wrap items-center text-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 max-lg:mb-5">
-              <li>
-                  <a href="index.html" class="hover:underline me-4 lg:me-6">HOME</a>
-              </li>
-              <li>
-                <a href="about.html" class="hover:underline me-4 lg:me-6">ABOUT</a>
-              </li>
-              <li>
-                  <a href="project.html" class="hover:underline me-4 lg:me-6">PROJECT</a>
-              </li>
-              <li>
-                  <a href="contact.html" class="hover:underline me-4 lg:me-6">CONTACT</a>
-              </li>
-          </ul>
             </div>
-        </footer>
+        </section>
 
-        <script>
-          function Menu(e){
-            let list = document.querySelector('ul');
-            e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
-          }
-        </script>
-        <script type="text/javascript" src="res\scripts\vanilla-tilt.js"></script>
-        <script src="res\scripts\particles.js"></script>
-        <script src="res\scripts\app.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-    </body>
+        <!-- Certifications, Languages, Interests -->
+        <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+            <div class="container">
+                <div class="grid-3 stagger-group">
+                    <div class="card stagger-item">
+                        <h2 class="card-title"><i class="fas fa-award text-accent"></i>&nbsp; Certifications</h2>
+                        <p class="card-text"><strong style="color: var(--accent);">TOEIC</strong> (Score 940) — Strong
+                            English language skills in listening and reading</p>
+                    </div>
+                    <div class="card stagger-item">
+                        <h2 class="card-title"><i class="fas fa-language text-accent"></i>&nbsp; Languages</h2>
+                        <div class="interest-tags" style="margin-top: 0.5rem;">
+                            <span class="interest-tag">Indonesian</span>
+                            <span class="interest-tag">English</span>
+                            <span class="interest-tag">Javanese</span>
+                        </div>
+                    </div>
+                    <div class="card stagger-item">
+                        <h2 class="card-title"><i class="fas fa-heart text-accent"></i>&nbsp; Interests</h2>
+                        <div class="interest-tags" style="margin-top: 0.5rem;">
+                            <span class="interest-tag">Software Development</span>
+                            <span class="interest-tag">Web Development</span>
+                            <span class="interest-tag">Game Development</span>
+                            <span class="interest-tag">UI/UX Design</span>
+                            <span class="interest-tag">Gaming</span>
+                            <span class="interest-tag">Science</span>
+                            <span class="interest-tag">Computers</span>
+                            <span class="interest-tag">Transportation</span>
+                            <span class="interest-tag">Architecture</span>
+                            <span class="interest-tag">Drawing</span>
+                            <span class="interest-tag">Art</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header gs-hidden">
+                    <p class="section-label">tech stack</p>
+                    <h2 class="section-title">Skills</h2>
+                </div>
+                <div class="card gs-hidden">
+                    <div class="grid-3" style="gap: 2rem;">
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-desktop"></i> Operating Systems</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Windows</span>
+                                <span class="skill-tag">Linux</span>
+                            </div>
+                        </div>
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-file-alt"></i> Office Software</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Microsoft Word</span>
+                                <span class="skill-tag">Microsoft PowerPoint</span>
+                                <span class="skill-tag">Microsoft Excel</span>
+                                <span class="skill-tag">Microsoft Access</span>
+                            </div>
+                        </div>
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-code"></i> Programming Languages</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">Lua</span>
+                            </div>
+                        </div>
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-database"></i> Databases</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">PHPMyAdmin</span>
+                            </div>
+                        </div>
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-layer-group"></i> Frameworks & CMS</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Laravel</span>
+                                <span class="skill-tag">WordPress</span>
+                            </div>
+                        </div>
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-tools"></i> Development Tools</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Apache</span>
+                                <span class="skill-tag">XAMPP</span>
+                                <span class="skill-tag">Laragon</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">NodeJS</span>
+                                <span class="skill-tag">VMWare</span>
+                            </div>
+                        </div>
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-laptop-code"></i> IDEs</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Roblox Studio</span>
+                                <span class="skill-tag">Android Studio</span>
+                                <span class="skill-tag">Visual Studio Code</span>
+                                <span class="skill-tag">IntelliJ IDEA</span>
+                                <span class="skill-tag">Unity</span>
+                            </div>
+                        </div>
+                        <div class="skills-group">
+                            <h3 class="skills-group-title"><i class="fas fa-paint-brush"></i> Creative & Multimedia</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Wondershare Filmora</span>
+                                <span class="skill-tag">Adobe Photoshop</span>
+                                <span class="skill-tag">Adobe Premiere</span>
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Canva</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-nav">
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="project.html">projects</a>
+                <a href="contact.html">contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rally19" target="_blank" class="footer-social custom-cursor-target" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@leonelrs18" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <span class="footer-copy">© 2023–2026 <a href="#">Leonel R.S.</a> All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <div id="custom-cursor-icon">
+        <i class="fa-solid fa-up-right-from-square"></i>
+    </div>
+    <script type="text/javascript" src="res/scripts/app.js"></script>
+
+    <!-- Background Animation -->
+    <script src="res/js/background.js"></script>
+    <!-- GSAP Animations -->
+    <script src="res/js/animations.js"></script>
+</body>
+
 </html>

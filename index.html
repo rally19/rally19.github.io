@@ -1,166 +1,275 @@
 <!DOCTYPE html>
-<html> 
-    <head>
-        <title>Leonel R.S. | Software Engineering Student & Developer</title>
-        <meta name="description" content="Portfolio of Leonel Rally Squall, a Software Engineering student at SMKN 3 Palu specializing in web development, software design, and game development.">
-        <meta name="keywords" content="Leonel R.S., Leonel Rally Squall, SMKN 3 Palu, Web Developer, Portfolio, Software Engineer Student, Indonesia">
-        <meta name="author" content="Leonel Rally Squall">
-        <meta name="robots" content="index, follow">
-        <link rel="canonical" href="https://rally19.github.io/index.html">
+<html lang="en">
 
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://rally19.github.io/">
-        <meta property="og:title" content="Leonel R.S. | Software Engineering Student">
-        <meta property="og:description" content="Welcome to the personal portfolio of Leonel Rally Squall. Explore my journey in software and game development.">
-        <meta property="og:image" content="https://rally19.github.io/img/leo1.png">
+<head>
+    <title>Leonel R.S. | Software Engineering Student & Developer</title>
+    <meta name="description"
+        content="Portfolio of Leonel Rally Squall, a Software Engineering student at SMKN 3 Palu specializing in web development, software design, and game development.">
+    <meta name="keywords"
+        content="Leonel R.S., Leonel Rally Squall, SMKN 3 Palu, Web Developer, Portfolio, Software Engineer Student, Indonesia">
+    <meta name="author" content="Leonel Rally Squall">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rally19.github.io/index.html">
 
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://rally19.github.io/">
-        <meta property="twitter:title" content="Leonel R.S. | Software Engineering Student">
-        <meta property="twitter:description" content="Welcome to the personal portfolio of Leonel Rally Squall.">
-        <meta property="twitter:image" content="https://rally19.github.io/img/leo1.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rally19.github.io/">
+    <meta property="og:title" content="Leonel R.S. | Software Engineering Student">
+    <meta property="og:description"
+        content="Welcome to the personal portfolio of Leonel Rally Squall. Explore my journey in software and game development.">
+    <meta property="og:image" content="https://rally19.github.io/img/leo1.png">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" /> 
-        <link rel="stylesheet" href="res\css\style.css" type="text/css" />
-        <link rel="icon" type="image/x-icon" href="img\leo1.png" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rally19.github.io/">
+    <meta property="twitter:title" content="Leonel R.S. | Software Engineering Student">
+    <meta property="twitter:description" content="Welcome to the personal portfolio of Leonel Rally Squall.">
+    <meta property="twitter:image" content="https://rally19.github.io/img/leo1.png">
 
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Leonel Rally Squall",
-          "url": "https://rally19.github.io/",
-          "image": "https://rally19.github.io/img/leo1.png",
-          "jobTitle": "Student",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "SMKN 3 Palu"
-          },
-          "sameAs": [
-            "https://github.com/rally19",
-            "https://www.instagram.com/leonelrs18/",
-            "https://www.linkedin.com/in/leonelrs/" 
-          ]
-        }
-        </script>
-    </head>
-    <body class="bg-gray-100 min-h-screen flex flex-col" id="body">
-        <nav class="max-lg:bg-white p-5 fixed shadow lg:flex lg:items-center backdrop-blur-sm lg:justify-between w-full shadow-neutral-500 z-50">
-            <div class="flex justify-between items-center">
-            <span class="ml-4 text-2xl font-[Poppins] cursor-pointer"><img class="h-10 inline mr-4"src="img\leo1.png">Leonel R.S.</span>
-            <span class="text-3xl cursor-pointer mx-2 lg:hidden block">
-            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-            </span>
-            </div>
-            <ul class="backdrop-blur-md max-lg:bg-white max-lg:shadow-xl lg:flex lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-            <li class="mx-4 my-6 lg:my-0">
-              <a href="index.html" class="text-xl hover:text-cyan-500 duration-300 text-cyan-700">HOME</a>
-            </li>
-            <li class="mx-4 my-6 lg:my-0">
-              <a href="about.html" class="text-xl hover:text-cyan-500 duration-300">ABOUT</a>
-            </li>
-            <li class="mx-4 my-6 lg:my-0">
-              <a href="project.html" class="text-xl hover:text-cyan-500 duration-300">PROJECT</a>
-            </li>
-            <a href="contact.html">
-                <button class="bg-teal-800 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-teal-950 rounded-lg hover:scale-105 ">
-                    CONTACT
-                </button>
-            </a>
-            </ul>
-        </nav>
-        <main class="flex-grow">
-            <div data-aos="zoom-out" id="particles-js" class="absolute w-full h-[calc(100vh-0px)]"></div>
-            <section data-aos="zoom-in" class="hero relative z-10 py-10 min-h-[calc(100vh-80px)] flex items-center"> 
-                <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">      
-                  <div class="mt-0 col-span-5 flex m-8 z-10" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.1" data-tilt-full-page-listening>
-                    <img src="img\leo1.png" alt="heroimg">
-                </div>              
-                    <div class="z-10 mr-auto place-self-center lg:col-span-7 lg-10 max-lg:justify-center max-lg:items-center">
-                      <h1 class="max-w-2xl mb-1 text-4xl font-bold tracking-tight leading-none text-xl text-black">Hello world! </h1>
-                        <h1 class="max-w-2xl mb-1 text-4xl font-extrabold tracking-tight leading-none text-4xl text-black">I'm Leonel Rally Squall</h1>
-                        <span class="max-w-2xl font-bold text-gray-700" id="element"></span>
-                        <p class="mb-2 font-bold text-gray-800 text-xl">SOFTWARE AND GAME DEVELOPMENT STUDENT AT SMKN 3 PALU</p>
-                        <ul class="mt-5">
-                          <a href="contact.html">
-                            <button class="bg-indigo-900 text-white font-[Poppins] duration-300 px-5 py-3 hover:bg-indigo-950 rounded-full hover:scale-105 hover:shadow-xl">CONTACT ME</button>
-                          </a>
-                          <a href="about.html">
-                            <button class="bg-indigo-900 text-white font-[Poppins] duration-300 px-5 py-3 ml-2 hover:bg-indigo-950 rounded-full hover:scale-105 hover:shadow-xl mt-3 min-[310px]:mt-0">ABOUT ME</button>
-                          </a>
-                        </ul>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="WJGWN36aR9lWsrFTJqJWEcyN_ieLJK-8FDdnfEfmIiw" />
+    <meta charset="UTF-8">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="res/css/style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="img/leo1.png">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
+
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Leonel Rally Squall",
+      "url": "https://rally19.github.io/",
+      "image": "https://rally19.github.io/img/leo1.png",
+      "jobTitle": "Student",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SMKN 3 Palu"
+      },
+      "sameAs": [
+        "https://github.com/rally19",
+        "https://www.instagram.com/leonelrs18/",
+        "https://www.linkedin.com/in/leonelrs/"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="img/leo1.png" alt="Leonel R.S.">
+            <span><span class="accent">~/</span>leonel_r.s.</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" class="active">home</a>
+            <a href="about.html">about</a>
+            <a href="project.html">projects</a>
+            <a href="contact.html" class="nav-cta">contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Text Content -->
+                    <div class="hero-content">
+                        <p class="hero-greeting">Hello world!</p>
+                        <h1 class="hero-name">Leonel Rally Squall</h1>
+                        <p class="hero-title">Software and Game Development Student at SMKN 3 Palu</p>
+                        <div class="hero-typed-wrap">
+                            <span>$ </span><span id="typed-element"></span>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="contact.html" class="btn btn-primary">
+                                <i class="fas fa-terminal"></i> Contact Me
+                            </a>
+                            <a href="about.html" class="btn btn-outline">
+                                <i class="fas fa-user"></i> About Me
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <div class="hero-stat-value">3</div>
+                                <div class="hero-stat-label">Languages</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-value">5</div>
+                                <div class="hero-stat-label">Projects</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-value">940</div>
+                                <div class="hero-stat-label">TOEIC Score</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Image -->
+                    <div class="hero-image">
+                        <div class="hero-image-glow" data-tilt data-tilt-reverse="true" data-tilt-glare
+                            data-tilt-max-glare="0.1" data-tilt-full-page-listening></div>
+                        <img src="img/leo1.png" alt="Leonel Rally Squall" data-tilt data-tilt-reverse="true"
+                            data-tilt-glare data-tilt-max-glare="0.1" data-tilt-full-page-listening>
                     </div>
                 </div>
-            </section>
-        </main>
-        <footer class="rounded-lg shadow m-2 bg-gray-800" id="footer">
-            <div class="w-full mx-auto max-w-screen-xl p-5 flex items-center justify-between max-lg:flex-col-reverse">
-            <span class="text-sm text-gray-500 text-center dark:text-gray-400 max-lg:mt-5">© 2024 - 2025 <a href="#" class="hover:underline">Leonel R.S</a>. All Rights Reserved.</span>
-            <ul class="flex flex-wrap items-center text-sm font-medium dark:text-gray-400 sm:mt-0 ">
-              <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-linkedin"></i></i></button>
-              </a>
-              <a href="https://github.com/rally19" target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-github"></i></i></button>
-              </a>
-              <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-youtube"></i></i></button>
-              </a>
-              <a href="https://www.instagram.com/leonelrs18/"  target="_blank">
-                <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-instagram"></i></button>
-              </a>
-              <a href="https://www.tiktok.com/@leonelrs18" target="_blank">
-              <button class="text-gray-400 duration-300 px-4 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-tiktok"></i></i></button>
-              </a>
-              <a href="https://www.facebook.com/leonelrs18/" target="_blank">
-              <button class="text-gray-400 duration-300 px-5 py-3 rounded-full hover:text-gray-300"><i class="fa-brands fa-facebook-f"></i></i></button>
-              </a>
-            </ul>
-            <ul class="flex justify-center flex-wrap items-center text-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 max-lg:mb-5">
-              <li>
-                  <a href="index.html" class="hover:underline me-4 lg:me-6">HOME</a>
-              </li>
-              <li>
-                <a href="about.html" class="hover:underline me-4 lg:me-6">ABOUT</a>
-              </li>
-              <li>
-                  <a href="project.html" class="hover:underline me-4 lg:me-6">PROJECT</a>
-              </li>
-              <li>
-                  <a href="contact.html" class="hover:underline me-4 lg:me-6">CONTACT</a>
-              </li>
-          </ul>
             </div>
-        </footer>
+        </section>
 
-        <script>
-          function Menu(e){
-            let list = document.querySelector('ul');
-            e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
-          }
-        </script>
-        <script>
-          var typed = new Typed('#element', {
-            strings: ['HEY YALL', 'MA NAME IS', 'LEONEL RALLY SQUALL', 'IM A STUDENT AT', 'SMKN 3 PALU', 'CURRENTLY LEARNING', 'SOFTWARE ENGINEERING', 'PEACE YALL'],
-            typeSpeed: 75,
-            loop: true
-          });
-        </script>
-        <script type="text/javascript" src="res\scripts\vanilla-tilt.js"></script>
-        <script src="res\scripts\particles.js"></script>
-        <script src="res\scripts\app.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-    </body>
+        <!-- Quick About Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header gs-hidden">
+                    <p class="section-label">about</p>
+                    <h2 class="section-title">Who I Am</h2>
+                    <p class="section-subtitle">More about me. <a href="about.html" style="color: var(--accent);">View
+                            all →</a></p>
+                </div>
+                <div class="grid-2">
+                    <div class="card gs-hidden-left">
+                        <div class="card-title"><i class="fas fa-code text-accent"></i>&nbsp; Developer</div>
+                        <p class="card-text">I am a Software Engineering student at SMKN 3 Palu with a strong interest
+                            in technology and coding. I have practical experience in software development, software
+                            design, and database management.</p>
+                    </div>
+                    <div class="card gs-hidden-right">
+                        <div class="card-title"><i class="fas fa-briefcase text-accent"></i>&nbsp; Experience</div>
+                        <p class="card-text">Currently interning at PT. Wesclic Indonesia Neotech as a Web Developer,
+                            working with Laravel, Livewire, and modern web technologies in a professional environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header gs-hidden">
+                    <p class="section-label">work</p>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">A selection of recent work. <a href="project.html"
+                            style="color: var(--accent);">View all →</a></p>
+                </div>
+                <div class="grid-2 stagger-group">
+                    <div class="project-card stagger-item">
+                        <a href="img/ClimaGlobe.png" target="_blank" class="custom-cursor-target">
+                            <img src="img/ClimaGlobe.png" alt="ClimaGlobe" class="project-card-image">
+                        </a>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">ClimaGlobe</h3>
+                            <p class="project-card-desc">AR & AI Generatif app for climate change awareness, built with
+                                Unity.</p>
+                            <div class="project-card-tags">
+                                <span class="tag tag-blue">Unity</span>
+                                <span class="tag tag-blue">AR</span>
+                                <span class="tag tag-blue">AI Generatif</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://rally19.github.io/climaglobe/" target="_blank"
+                                    class="btn btn-sm btn-primary custom-cursor-target">
+                                    <i class="fas fa-globe"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card stagger-item">
+                        <a href="img/Coffeemeex.png" target="_blank" class="custom-cursor-target">
+                            <img src="img/Coffeemeex.png" alt="Coffeemeex" class="project-card-image">
+                        </a>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">Coffeemeex</h3>
+                            <p class="project-card-desc">Coffee shop website built with Laravel 12, Livewire, and
+                                FluxUI.</p>
+                            <div class="project-card-tags">
+                                <span class="tag tag-amber">Laravel</span>
+                                <span class="tag tag-amber">Livewire</span>
+                                <span class="tag tag-amber">FluxUI</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://coffeemeex.rally19.my.id/" target="_blank"
+                                    class="btn btn-sm btn-primary custom-cursor-target"><i class="fas fa-globe"></i> Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container footer-inner">
+            <div class="footer-nav">
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="project.html">projects</a>
+                <a href="contact.html">contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rally19" target="_blank" class="footer-social custom-cursor-target" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@leonelrs18" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <span class="footer-copy">© 2023–2026 <a href="#">Leonel R.S.</a> All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <div id="custom-cursor-icon">
+        <i class="fa-solid fa-up-right-from-square"></i>
+    </div>
+    <script type="text/javascript" src="res/scripts/app.js"></script>
+    <script type="text/javascript" src="res/scripts/vanilla-tilt.js"></script>
+
+    <!-- Typed.js Init -->
+    <script>
+        var typed = new Typed('#typed-element', {
+            strings: ['Hello everyone!', 'My name is Leonel Rally Squall', 'I\'m a student at SMKN 3 Palu', 'Currently learning Software Engineering', 'Welcome to my portfolio!'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true,
+            backDelay: 1500,
+            showCursor: true,
+            cursorChar: '█'
+        });
+    </script>
+
+    <!-- Background Animation -->
+    <script src="res/js/background.js"></script>
+    <!-- GSAP Animations -->
+    <script src="res/js/animations.js"></script>
+    
+</body>
+
 </html>
