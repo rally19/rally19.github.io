@@ -138,12 +138,159 @@
             </div>
         </section>
 
-        <!-- Quick About Section -->
+        <!-- Featured Projects Section -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header gs-hidden">
+                    <p class="section-label">work</p>
+                    <h2 class="section-title" data-text="Featured Projects">Featured Projects</h2>
+                    <p class="section-subtitle">A selection of recent work. <a href="project.html"
+                            style="color: var(--accent);">View all →</a></p>
+                </div>
+            </div>
+
+            <!-- GSAP Scrolling Carousel Wrapper -->
+            <div class="gsap-pinned-carousel">
+                <div class="gsap-carousel-track">
+
+                    <!-- ClimaGlobe Project -->
+                    <div class="project-card gsap-carousel-card">
+                        <!-- Custom Image Slider -->
+                        <div class="custom-cursor-target slider-container">
+                            <div class="slider-track" id="slider1">
+                                <img src="img/ClimaGlobe1.png" alt="ClimaGlobe 1" class="slider-image">
+                                <img src="img/ClimaGlobe2.jpeg" alt="ClimaGlobe 2" class="slider-image">
+                                <img src="img/ClimaGlobe3.jpeg" alt="ClimaGlobe 3" class="slider-image">
+                                <img src="img/ClimaGlobe4.png" alt="ClimaGlobe 4" class="slider-image">
+                                <img src="img/ClimaGlobe5.png" alt="ClimaGlobe 5" class="slider-image">
+                            </div>
+                            <div class="slider-click-zone left custom-cursor-target" data-cursor-text="←"
+                                onclick="moveSlider('slider1', -1)"></div>
+                            <div class="slider-click-zone right custom-cursor-target" data-cursor-text="→"
+                                onclick="moveSlider('slider1', 1)"></div>
+                            <div class="slider-nav" id="nav1">
+                                <div class="slider-dot active" onclick="setSlider('slider1', 0)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider1', 1)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider1', 2)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider1', 3)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider1', 4)"></div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <div class="project-card-content-inner">
+                                <h3 class="project-card-title">ClimaGlobe</h3>
+                                <p class="project-card-desc">AR & AI Generatif app for climate change awareness, built
+                                    with
+                                    Unity.</p>
+                                <div class="project-card-tags">
+                                    <span class="tag tag-blue">Unity</span>
+                                    <span class="tag tag-blue">AR</span>
+                                    <span class="tag tag-blue">AI Generatif</span>
+                                </div>
+                                <div class="project-card-links">
+                                    <a href="https://rally19.github.io/climaglobe/" target="_blank"
+                                        class="btn btn-sm btn-primary custom-cursor-target">
+                                        <i class="fas fa-globe"></i> Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coffeemeex Project -->
+                    <div class="project-card gsap-carousel-card">
+                        <div class="custom-cursor-target slider-container">
+                            <div class="slider-track" id="slider2">
+                                <img src="img/Coffeemeex1.png" alt="Coffeemeex 1" class="slider-image">
+                                <img src="img/Coffeemeex2.png" alt="Coffeemeex 2" class="slider-image">
+                                <img src="img/Coffeemeex3.png" alt="Coffeemeex 3" class="slider-image">
+                                <img src="img/Coffeemeex4.png" alt="Coffeemeex 4" class="slider-image">
+                                <img src="img/Coffeemeex5.png" alt="Coffeemeex 5" class="slider-image">
+                            </div>
+                            <div class="slider-click-zone left custom-cursor-target" data-cursor-text="←"
+                                onclick="moveSlider('slider2', -1)"></div>
+                            <div class="slider-click-zone right custom-cursor-target" data-cursor-text="→"
+                                onclick="moveSlider('slider2', 1)"></div>
+                            <div class="slider-nav" id="nav2">
+                                <div class="slider-dot active" onclick="setSlider('slider2', 0)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider2', 1)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider2', 2)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider2', 3)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider2', 4)"></div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <div class="project-card-content-inner">
+                                <h3 class="project-card-title">Coffeemeex</h3>
+                                <p class="project-card-desc">Coffee shop website built with Laravel 12, Livewire, and
+                                    FluxUI.</p>
+                                <div class="project-card-tags">
+                                    <span class="tag tag-amber">Laravel</span>
+                                    <span class="tag tag-amber">Livewire</span>
+                                    <span class="tag tag-amber">FluxUI</span>
+                                </div>
+                                <div class="project-card-links">
+                                    <a href="https://coffeemeex.rally19.my.id/" target="_blank"
+                                        class="btn btn-sm btn-primary custom-cursor-target"><i class="fas fa-globe"></i>
+                                        Website</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Profile Project -->
+                    <div class="project-card gsap-carousel-card">
+                        <div class="custom-cursor-target slider-container">
+                            <div class="slider-track" id="slider3">
+                                <img src="img/CompanyProfile1.png" alt="Company Profile 1" class="slider-image">
+                                <img src="img/CompanyProfile2.png" alt="Company Profile 2" class="slider-image">
+                                <img src="img/CompanyProfile3.png" alt="Company Profile 3" class="slider-image">
+                                <img src="img/CompanyProfile4.png" alt="Company Profile 4" class="slider-image">
+                                <img src="img/CompanyProfile5.png" alt="Company Profile 5" class="slider-image">
+                            </div>
+                            <div class="slider-click-zone left custom-cursor-target" data-cursor-text="←"
+                                onclick="moveSlider('slider3', -1)"></div>
+                            <div class="slider-click-zone right custom-cursor-target" data-cursor-text="→"
+                                onclick="moveSlider('slider3', 1)"></div>
+                            <div class="slider-nav" id="nav3">
+                                <div class="slider-dot active" onclick="setSlider('slider3', 0)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider3', 1)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider3', 2)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider3', 3)"></div>
+                                <div class="slider-dot" onclick="setSlider('slider3', 4)"></div>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <div class="project-card-content-inner">
+                                <h3 class="project-card-title">Company Profile</h3>
+                                <p class="project-card-desc">Modern company profile & dashboard using React, NextJS, and
+                                    Framer Motion.</p>
+                                <div class="project-card-tags">
+                                    <span class="tag tag-blue">NextJS</span>
+                                    <span class="tag tag-blue">Framer</span>
+                                    <span class="tag tag-blue">React</span>
+                                </div>
+                                <div class="project-card-links">
+                                    <a href="https://company-profile-landing-page-tawny.vercel.app/" target="_blank"
+                                        class="btn btn-sm btn-primary custom-cursor-target">
+                                        <i class="fas fa-rocket"></i> Visit Live
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Empty div for margin balance -->
+            <div></div>
+        </section>
+
+        <!-- Quick About Section (Moved Here) -->
         <section class="section">
             <div class="container">
                 <div class="section-header gs-hidden">
                     <p class="section-label">about</p>
-                    <h2 class="section-title">Who I Am</h2>
+                    <h2 class="section-title" data-text="Who I Am">Who I Am</h2>
                     <p class="section-subtitle">More about me. <a href="about.html" style="color: var(--accent);">View
                             all →</a></p>
                 </div>
@@ -164,53 +311,96 @@
             </div>
         </section>
 
-        <!-- Featured Projects Section -->
+        <!-- Contact Summary Section -->
         <section class="section" style="padding-top: 0;">
             <div class="container">
                 <div class="section-header gs-hidden">
-                    <p class="section-label">work</p>
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-subtitle">A selection of recent work. <a href="project.html"
-                            style="color: var(--accent);">View all →</a></p>
+                    <p class="section-label">contact</p>
+                    <h2 class="section-title" data-text="Let's Connect">Let's Connect</h2>
+                    <p class="section-subtitle">Interested in working together or have a question?
+                        <a href="contact.html" style="color: var(--accent);">Contact me →</a>
+                    </p>
                 </div>
-                <div class="grid-2 stagger-group">
-                    <div class="project-card stagger-item">
-                        <a href="img/ClimaGlobe.png" target="_blank" class="custom-cursor-target">
-                            <img src="img/ClimaGlobe.png" alt="ClimaGlobe" class="project-card-image">
+                <div class="grid-2" style="gap: 2rem;">
+                    <div class="card gs-hidden-left"
+                        style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem;">
+                        <i class="fas fa-paper-plane"
+                            style="font-size: 3rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text);">Ready to start a
+                            project?</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 400px;">Whether it's a
+                            freelance opportunity, an open-source collaboration, or just a quick chat, I'm always open
+                            to discussing new ideas.</p>
+                        <a href="contact.html" class="btn btn-primary custom-cursor-target"
+                            style="padding: 1rem 2.5rem; font-size: 1.1rem;">
+                            Say Hello
                         </a>
-                        <div class="project-card-body">
-                            <h3 class="project-card-title">ClimaGlobe</h3>
-                            <p class="project-card-desc">AR & AI Generatif app for climate change awareness, built with
-                                Unity.</p>
-                            <div class="project-card-tags">
-                                <span class="tag tag-blue">Unity</span>
-                                <span class="tag tag-blue">AR</span>
-                                <span class="tag tag-blue">AI Generatif</span>
+                    </div>
+                    <div class="card gs-hidden-right"
+                        style="display: flex; flex-direction: column; justify-content: center;">
+                        <h3
+                            style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--text); padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            Quick Info</h3>
+
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,255,136,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent);">
+                                <i class="fas fa-envelope"></i>
                             </div>
-                            <div class="project-card-links">
-                                <a href="https://rally19.github.io/climaglobe/" target="_blank"
-                                    class="btn btn-sm btn-primary custom-cursor-target">
-                                    <i class="fas fa-globe"></i> Website
-                                </a>
+                            <div>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem;">Email
+                                </p>
+                                <a href="contact.html" style="color: var(--text); font-weight: 500;">Available on
+                                    Request</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="project-card stagger-item">
-                        <a href="img/Coffeemeex.png" target="_blank" class="custom-cursor-target">
-                            <img src="img/Coffeemeex.png" alt="Coffeemeex" class="project-card-image">
-                        </a>
-                        <div class="project-card-body">
-                            <h3 class="project-card-title">Coffeemeex</h3>
-                            <p class="project-card-desc">Coffee shop website built with Laravel 12, Livewire, and
-                                FluxUI.</p>
-                            <div class="project-card-tags">
-                                <span class="tag tag-amber">Laravel</span>
-                                <span class="tag tag-amber">Livewire</span>
-                                <span class="tag tag-amber">FluxUI</span>
+
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,255,136,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent);">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div class="project-card-links">
-                                <a href="https://coffeemeex.rally19.my.id/" target="_blank"
-                                    class="btn btn-sm btn-primary custom-cursor-target"><i class="fas fa-globe"></i> Website</a>
+                            <div>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem;">
+                                    Location</p>
+                                <p style="color: var(--text); font-weight: 500;">Sleman, Yogyakarta</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,255,136,0.1); display: flex; align-items: center; justify-content: center; color: var(--accent);">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem;">Social
+                                </p>
+                                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                                    <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank"
+                                        style="color: var(--text); font-size: 1.25rem;"
+                                        class="custom-cursor-target hover-lift" aria-label="LinkedIn"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="https://github.com/rally19" target="_blank"
+                                        style="color: var(--text); font-size: 1.25rem;"
+                                        class="custom-cursor-target hover-lift" aria-label="GitHub"><i
+                                            class="fab fa-github"></i></a>
+                                    <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank"
+                                        style="color: var(--text); font-size: 1.25rem;"
+                                        class="custom-cursor-target hover-lift" aria-label="YouTube"><i
+                                            class="fab fa-youtube"></i></a>
+                                    <a href="https://www.instagram.com/leonelrs18/" target="_blank"
+                                        style="color: var(--text); font-size: 1.25rem;"
+                                        class="custom-cursor-target hover-lift" aria-label="Instagram"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://www.tiktok.com/@leonelrs18" target="_blank"
+                                        style="color: var(--text); font-size: 1.25rem;"
+                                        class="custom-cursor-target hover-lift" aria-label="TikTok"><i
+                                            class="fab fa-tiktok"></i></a>
+                                    <a href="https://www.facebook.com/leonelrs18/" target="_blank"
+                                        style="color: var(--text); font-size: 1.25rem;"
+                                        class="custom-cursor-target hover-lift" aria-label="Facebook"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -229,26 +419,27 @@
                 <a href="contact.html">contact</a>
             </div>
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
-                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/rally19" target="_blank" class="footer-social custom-cursor-target" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank" class="footer-social custom-cursor-target"
-                    aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
-                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank"
+                    class="footer-social custom-cursor-target" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rally19" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank"
+                    class="footer-social custom-cursor-target" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/leonelrs18/" target="_blank"
+                    class="footer-social custom-cursor-target" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@leonelrs18" target="_blank" class="footer-social custom-cursor-target"
                     aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.facebook.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
-                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/leonelrs18/" target="_blank"
+                    class="footer-social custom-cursor-target" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
             </div>
             <span class="footer-copy">© 2023–2026 <a href="#">Leonel R.S.</a> All Rights Reserved.</span>
         </div>
     </footer>
 
-    <div id="custom-cursor-icon">
-        <i class="fa-solid fa-up-right-from-square"></i>
-    </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
     <script type="text/javascript" src="res/scripts/app.js"></script>
     <script type="text/javascript" src="res/scripts/vanilla-tilt.js"></script>
 
@@ -269,7 +460,7 @@
     <script src="res/js/background.js"></script>
     <!-- GSAP Animations -->
     <script src="res/js/animations.js"></script>
-    
+
 </body>
 
 </html>

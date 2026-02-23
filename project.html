@@ -96,127 +96,306 @@
             <div class="container">
                 <div class="section-header gs-hidden">
                     <p class="section-label">portfolio</p>
-                    <h1 class="section-title" style="font-size: 2.5rem;">My Projects</h1>
+                    <h1 class="section-title" data-text="My Projects" style="font-size: 2.5rem;">My Projects</h1>
                     <p class="section-subtitle">For more projects visit my <a href="https://github.com/rally19"
                             target="_blank" style="color: var(--accent);"><i class="fab fa-github"></i> repositories</a>
                     </p>
                 </div>
 
-                <div class="grid-2 stagger-group">
-                    <!-- ClimaGlobe -->
-                    <div class="project-card stagger-item">
-                        <a href="img/ClimaGlobe.png" target="_blank" class="custom-cursor-target">
-                            <img src="img/ClimaGlobe.png" alt="ClimaGlobe" class="project-card-image">
-                        </a>
-                        <div class="project-card-body">
-                            <h2 class="project-card-title">ClimaGlobe</h2>
-                            <p class="project-card-desc">Jelajahi dampak dan solusi perubahan iklim langsung dari
-                                smartphone-mu dengan teknologi Augmented Reality & AI Generatif! Made with Unity.</p>
-                            <div class="project-card-tags">
+                <!-- Giant Project: ClimaGlobe -->
+                <div class="giant-project gs-hidden">
+                    <div class="giant-project-bg" style="background-image: url('img/ClimaGlobe.png');" data-speed="0.5">
+                    </div>
+                    <div class="giant-project-content">
+                        <div class="giant-project-slider-wrapper slider-container custom-cursor-target">
+                            <div class="slider-track" id="proj-slider1">
+                                <img src="img/ClimaGlobe1.png" alt="ClimaGlobe 1" class="slider-image">
+                                <img src="img/ClimaGlobe2.jpeg" alt="ClimaGlobe 2" class="slider-image">
+                                <img src="img/ClimaGlobe3.jpeg" alt="ClimaGlobe 3" class="slider-image">
+                                <img src="img/ClimaGlobe4.png" alt="ClimaGlobe 4" class="slider-image">
+                                <img src="img/ClimaGlobe5.png" alt="ClimaGlobe 5" class="slider-image">
+                            </div>
+                            <div class="slider-click-zone left custom-cursor-target" data-cursor-text="←"
+                                onclick="moveSlider('proj-slider1', -1)"></div>
+                            <div class="slider-click-zone right custom-cursor-target" data-cursor-text="→"
+                                onclick="moveSlider('proj-slider1', 1)"></div>
+                            <div class="slider-nav" id="proj-nav1">
+                                <div class="slider-dot active" onclick="setSlider('proj-slider1', 0)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider1', 1)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider1', 2)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider1', 3)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider1', 4)"></div>
+                            </div>
+                        </div>
+                        <div class="giant-project-text">
+                            <p class="section-label" style="text-align: left; margin-bottom: 0.5rem;">01 / AR App</p>
+                            <h2 class="giant-title">ClimaGlobe</h2>
+                            <p
+                                style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; font-size: 1.1rem;">
+                                Jelajahi dampak dan solusi perubahan iklim langsung dari smartphone-mu dengan teknologi
+                                Augmented Reality & AI Generatif! Built meticulously with Unity to create a visceral
+                                educational experience bridging the physical and digital gap.
+                            </p>
+                            <div class="project-card-tags" style="margin-bottom: 2rem;">
                                 <span class="tag tag-blue">Unity</span>
-                                <span class="tag tag-blue">AR</span>
+                                <span class="tag tag-blue">AR Foundation</span>
                                 <span class="tag tag-blue">AI Generatif</span>
                             </div>
                             <div class="project-card-links">
                                 <a href="https://rally19.github.io/climaglobe/" target="_blank"
-                                    class="btn btn-sm btn-primary custom-cursor-target"><i class="fas fa-globe"></i> Website</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Coffeemeex -->
-                    <div class="project-card stagger-item">
-                        <a href="img/Coffeemeex.png" target="_blank" class="custom-cursor-target">
-                            <img src="img/Coffeemeex.png" alt="Coffeemeex" class="project-card-image">
-                        </a>
-                        <div class="project-card-body">
-                            <h2 class="project-card-title">Coffeemeex</h2>
-                            <p class="project-card-desc">Coffeemeex is a Coffee shop/Cafe website developed for an
-                                intern project at Wesclic. It uses Laravel 12, Livewire, Livewire Volt, Alpine.js, and
-                                FluxUI. It also have an excellent speed and pure performance.</p>
-                            <div class="project-card-tags">
-                                <span class="tag tag-amber">Laravel</span>
-                                <span class="tag tag-amber">Livewire</span>
-                                <span class="tag tag-amber">Alpine.js</span>
-                                <span class="tag tag-amber">FluxUI</span>
-                            </div>
-                            <div class="project-card-links">
-                                <a href="https://coffeemeex.rally19.my.id/" target="_blank"
-                                    class="btn btn-sm btn-primary custom-cursor-target"><i class="fas fa-globe"></i> Website</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Travelid -->
-                    <div class="project-card stagger-item">
-                        <a href="img/TravelID.png" target="_blank" class="custom-cursor-target">
-                            <img src="img/TravelID.png" alt="Travelid" class="project-card-image">
-                        </a>
-                        <div class="project-card-body">
-                            <h2 class="project-card-title">Travelid</h2>
-                            <p class="project-card-desc">Travelid is a bus and travel ticketing website developed as a
-                                final project for my 11th-grade Software Engineering class in SMKN 3 PALU. It leverages
-                                Laravel 12, Livewire, Livewire Volt, Alpine.js, and FluxUI for a modern and dynamic user
-                                experience.</p>
-                            <div class="project-card-tags">
-                                <span class="tag tag-green">Laravel</span>
-                                <span class="tag tag-green">Livewire</span>
-                                <span class="tag tag-green">Alpine.js</span>
-                                <span class="tag tag-green">FluxUI</span>
-                            </div>
-                            <div class="project-card-links">
-                                <a href="https://travelid.ct.ws/" target="_blank" class="btn btn-sm btn-primary custom-cursor-target"><i
-                                        class="fas fa-globe"></i> Website</a>
-                                <a href="https://github.com/rally19/travelid" target="_blank"
-                                    class="btn btn-sm btn-dark custom-cursor-target"><i class="fab fa-github"></i> Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Calculatora -->
-                    <div class="project-card stagger-item">
-                        <a href="img/calculatora.png" target="_blank" class="custom-cursor-target">
-                            <img src="img/calculatora.png" alt="Calculatora" class="project-card-image">
-                        </a>
-                        <div class="project-card-body">
-                            <h2 class="project-card-title">Calculatora</h2>
-                            <p class="project-card-desc">Simple python calculator using Kivy as GUI. A lightweight
-                                application that demonstrates basic calculator functionality with a clean user
-                                interface.</p>
-                            <div class="project-card-tags">
-                                <span class="tag tag-purple">Python</span>
-                                <span class="tag tag-purple">Kivy</span>
-                                <span class="tag tag-purple">GUI</span>
-                            </div>
-                            <div class="project-card-links">
-                                <a href="https://github.com/rally19/calculatora" target="_blank"
-                                    class="btn btn-sm btn-dark custom-cursor-target"><i class="fab fa-github"></i> View Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stealth Note Reader -->
-                    <div class="project-card stagger-item">
-                        <a href="img/SNR.jpg" target="_blank" class="custom-cursor-target">
-                            <img src="img/SNR.jpg" alt="Stealth Note Reader" class="project-card-image">
-                        </a>
-                        <div class="project-card-body">
-                            <h2 class="project-card-title">Stealth Note Reader</h2>
-                            <p class="project-card-desc">A desktop app that displays text files while blocking their
-                                content (window) from screen recordings and screenshots. Ideal for presentations or
-                                content creating with 'sensitive' notes.</p>
-                            <div class="project-card-tags">
-                                <span class="tag tag-purple">Python</span>
-                                <span class="tag tag-purple">PyQt5</span>
-                                <span class="tag tag-purple">GUI</span>
-                            </div>
-                            <div class="project-card-links">
-                                <a href="https://github.com/rally19/stealth-note-reader" target="_blank"
-                                    class="btn btn-sm btn-dark custom-cursor-target"><i class="fab fa-github"></i> View Code</a>
+                                    class="btn btn-primary custom-cursor-target">
+                                    <i class="fas fa-globe"></i> Visit Website
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Giant Project: Coffeemeex -->
+                <div class="giant-project gs-hidden">
+                    <div class="giant-project-bg" style="background-image: url('img/Coffeemeex.png');" data-speed="0.5">
+                    </div>
+                    <div class="giant-project-content">
+                        <div class="giant-project-slider-wrapper slider-container custom-cursor-target">
+                            <div class="slider-track" id="proj-slider2">
+                                <img src="img/Coffeemeex1.png" alt="Coffeemeex 1" class="slider-image">
+                                <img src="img/Coffeemeex2.png" alt="Coffeemeex 2" class="slider-image">
+                                <img src="img/Coffeemeex3.png" alt="Coffeemeex 3" class="slider-image">
+                                <img src="img/Coffeemeex4.png" alt="Coffeemeex 4" class="slider-image">
+                                <img src="img/Coffeemeex5.png" alt="Coffeemeex 5" class="slider-image">
+                            </div>
+                            <div class="slider-click-zone left custom-cursor-target" data-cursor-text="←"
+                                onclick="moveSlider('proj-slider2', -1)"></div>
+                            <div class="slider-click-zone right custom-cursor-target" data-cursor-text="→"
+                                onclick="moveSlider('proj-slider2', 1)"></div>
+                            <div class="slider-nav" id="proj-nav2">
+                                <div class="slider-dot active" onclick="setSlider('proj-slider2', 0)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider2', 1)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider2', 2)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider2', 3)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider2', 4)"></div>
+                            </div>
+                        </div>
+                        <div class="giant-project-text">
+                            <p class="section-label" style="text-align: left; margin-bottom: 0.5rem;">02 / Web
+                                Architecture</p>
+                            <h2 class="giant-title">Coffeemeex</h2>
+                            <p
+                                style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; font-size: 1.1rem;">
+                                Coffeemeex is a Coffee shop/Cafe website developed for an intern project at Wesclic. It
+                                pushes the boundaries of modern PHP by utilizing Laravel 12, Livewire Volt, and
+                                Alpine.js to deliver instant, SPA-like pure performance without heavy client JS
+                                frameworks.
+                            </p>
+                            <div class="project-card-tags" style="margin-bottom: 2rem;">
+                                <span class="tag tag-amber">Laravel</span>
+                                <span class="tag tag-amber">Livewire Volt</span>
+                                <span class="tag tag-amber">Alpine.js</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://coffeemeex.rally19.my.id/" target="_blank"
+                                    class="btn btn-primary custom-cursor-target">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giant Project: Company Profile -->
+                <div class="giant-project gs-hidden">
+                    <div class="giant-project-bg" style="background-image: url('img/CompanyProfile.png');"
+                        data-speed="0.5"></div>
+                    <div class="giant-project-content">
+                        <div class="giant-project-slider-wrapper slider-container custom-cursor-target">
+                            <div class="slider-track" id="proj-slider3">
+                                <img src="img/CompanyProfile1.png" alt="Company Profile 1" class="slider-image">
+                                <img src="img/CompanyProfile2.png" alt="Company Profile 2" class="slider-image">
+                                <img src="img/CompanyProfile3.png" alt="Company Profile 3" class="slider-image">
+                                <img src="img/CompanyProfile4.png" alt="Company Profile 4" class="slider-image">
+                                <img src="img/CompanyProfile5.png" alt="Company Profile 5" class="slider-image">
+                            </div>
+                            <div class="slider-click-zone left custom-cursor-target" data-cursor-text="←"
+                                onclick="moveSlider('proj-slider3', -1)"></div>
+                            <div class="slider-click-zone right custom-cursor-target" data-cursor-text="→"
+                                onclick="moveSlider('proj-slider3', 1)"></div>
+                            <div class="slider-nav" id="proj-nav3">
+                                <div class="slider-dot active" onclick="setSlider('proj-slider3', 0)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider3', 1)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider3', 2)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider3', 3)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider3', 4)"></div>
+                            </div>
+                        </div>
+                        <div class="giant-project-text">
+                            <p class="section-label" style="text-align: left; margin-bottom: 0.5rem;">03 / Enterprise
+                                Frontend</p>
+                            <h2 class="giant-title">Company Profile</h2>
+                            <p
+                                style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; font-size: 1.1rem;">
+                                A highly polished company profile and dashboard interface developed during a Wesclic
+                                internship. Leveraging the bleeding edge of the React ecosystem including NextJS, Framer
+                                Motion, and Tanstack to create silky smooth routing and data fetching.
+                            </p>
+                            <div class="project-card-tags" style="margin-bottom: 2rem;">
+                                <span class="tag tag-blue">NextJS</span>
+                                <span class="tag tag-blue">Framer Motion</span>
+                                <span class="tag tag-blue">Tanstack Query</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://company-profile-landing-page-tawny.vercel.app/" target="_blank"
+                                    class="btn btn-primary custom-cursor-target">
+                                    <i class="fas fa-rocket"></i> Visit Live
+                                </a>
+                                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                                    <a href="https://github.com/rally19/company-profile-landing-page" target="_blank"
+                                        class="btn btn-sm btn-dark custom-cursor-target"><i class="fab fa-github"></i>
+                                        UI Repo</a>
+                                    <a href="https://github.com/rally19/company-profile-dashboard" target="_blank"
+                                        class="btn btn-sm btn-dark custom-cursor-target"><i class="fab fa-github"></i>
+                                        Dash Repo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giant Project: Travelid -->
+                <div class="giant-project gs-hidden">
+                    <div class="giant-project-bg" style="background-image: url('img/TravelID.png');" data-speed="0.5">
+                    </div>
+                    <div class="giant-project-content">
+                        <div class="giant-project-slider-wrapper slider-container custom-cursor-target">
+                            <div class="slider-track" id="proj-slider4">
+                                <img src="img/TravelID1.png" alt="Travelid 1" class="slider-image">
+                                <img src="img/TravelID2.png" alt="Travelid 2" class="slider-image">
+                                <img src="img/TravelID3.png" alt="Travelid 3" class="slider-image">
+                                <img src="img/TravelID4.png" alt="Travelid 4" class="slider-image">
+                                <img src="img/TravelID5.png" alt="Travelid 5" class="slider-image">
+                            </div>
+                            <div class="slider-click-zone left custom-cursor-target" data-cursor-text="←"
+                                onclick="moveSlider('proj-slider4', -1)"></div>
+                            <div class="slider-click-zone right custom-cursor-target" data-cursor-text="→"
+                                onclick="moveSlider('proj-slider4', 1)"></div>
+                            <div class="slider-nav" id="proj-nav4">
+                                <div class="slider-dot active" onclick="setSlider('proj-slider4', 0)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider4', 1)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider4', 2)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider4', 3)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider4', 4)"></div>
+                            </div>
+                        </div>
+                        <div class="giant-project-text">
+                            <p class="section-label" style="text-align: left; margin-bottom: 0.5rem;">04 / Academic
+                                Fullstack</p>
+                            <h2 class="giant-title">Travelid</h2>
+                            <p
+                                style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; font-size: 1.1rem;">
+                                Travelid is a comprehensive bus and travel ticketing website developed as a final
+                                project for my 11th-grade Software Engineering class. It leverages Laravel 12, Livewire,
+                                and Alpine.js for a seriously robust and dynamic booking experience.
+                            </p>
+                            <div class="project-card-tags" style="margin-bottom: 2rem;">
+                                <span class="tag tag-green">Laravel</span>
+                                <span class="tag tag-green">Livewire</span>
+                                <span class="tag tag-green">FluxUI</span>
+                            </div>
+                            <div class="project-card-links" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <a href="https://travelid.ct.ws/" target="_blank"
+                                    class="btn btn-primary custom-cursor-target">
+                                    <i class="fas fa-globe"></i> Live App
+                                </a>
+                                <a href="https://github.com/rally19/travelid" target="_blank"
+                                    class="btn btn-dark custom-cursor-target">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giant Project: Calculatora -->
+                <div class="giant-project gs-hidden">
+                    <div class="giant-project-bg" style="background-image: url('img/calculatora.png');"
+                        data-speed="0.5"></div>
+                    <div class="giant-project-content">
+                        <div class="giant-project-slider-wrapper slider-container custom-cursor-target">
+                            <div class="slider-track" id="proj-slider5">
+                                <img src="img/calculatora.png" alt="Calculatora 1" class="slider-image">
+                            </div>
+                        </div>
+                        <div class="giant-project-text">
+                            <p class="section-label" style="text-align: left; margin-bottom: 0.5rem;">05 / Desktop GUI
+                            </p>
+                            <h2 class="giant-title">Calculatora</h2>
+                            <p
+                                style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; font-size: 1.1rem;">
+                                A clean, lightweight python calculator utilizing Kivy for the graphical user interface.
+                                Demonstrating structural python logic combined with responsive desktop application
+                                layouts.
+                            </p>
+                            <div class="project-card-tags" style="margin-bottom: 2rem;">
+                                <span class="tag tag-purple">Python</span>
+                                <span class="tag tag-purple">Kivy Framework</span>
+                                <span class="tag tag-purple">GUI Design</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://github.com/rally19/calculatora" target="_blank"
+                                    class="btn btn-dark custom-cursor-target">
+                                    <i class="fab fa-github"></i> View Source
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giant Project: Stealth Note Reader -->
+                <div class="giant-project gs-hidden">
+                    <div class="giant-project-bg" style="background-image: url('img/SNR.jpg');" data-speed="0.5"></div>
+                    <div class="giant-project-content">
+                        <div class="giant-project-slider-wrapper slider-container custom-cursor-target">
+                            <div class="slider-track" id="proj-slider6">
+                                <img src="img/StealthNoteReader1.jpg" alt="Stealth Note Reader 1" class="slider-image">
+                                <img src="img/StealthNoteReader2.png" alt="Stealth Note Reader 2" class="slider-image">
+                                <img src="img/StealthNoteReader3.png" alt="Stealth Note Reader 3" class="slider-image">
+                                <img src="img/StealthNoteReader4.png" alt="Stealth Note Reader 4" class="slider-image">
+                            </div>
+                            <div class="slider-click-zone left custom-cursor-target" data-cursor-text="←"
+                                onclick="moveSlider('proj-slider6', -1)"></div>
+                            <div class="slider-click-zone right custom-cursor-target" data-cursor-text="→"
+                                onclick="moveSlider('proj-slider6', 1)"></div>
+                            <div class="slider-nav" id="proj-nav6">
+                                <div class="slider-dot active" onclick="setSlider('proj-slider6', 0)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider6', 1)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider6', 2)"></div>
+                                <div class="slider-dot" onclick="setSlider('proj-slider6', 3)"></div>
+                            </div>
+                        </div>
+                        <div class="giant-project-text">
+                            <p class="section-label" style="text-align: left; margin-bottom: 0.5rem;">06 / Privacy
+                                Tooling</p>
+                            <h2 class="giant-title">Stealth Note Reader</h2>
+                            <p
+                                style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; font-size: 1.1rem;">
+                                A desktop application that displays text files while intentionally blocking its window
+                                content from screen recordings and screenshots. Exceptionally useful for presentations,
+                                content creation, or streaming sensitive notes seamlessly.
+                            </p>
+                            <div class="project-card-tags" style="margin-bottom: 2rem;">
+                                <span class="tag tag-purple">Python</span>
+                                <span class="tag tag-purple">PyQt5</span>
+                                <span class="tag tag-purple">Desktop API</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://github.com/rally19/stealth-note-reader" target="_blank"
+                                    class="btn btn-dark custom-cursor-target">
+                                    <i class="fab fa-github"></i> View Source
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
     </main>
@@ -231,26 +410,27 @@
                 <a href="contact.html">contact</a>
             </div>
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
-                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/rally19" target="_blank" class="footer-social custom-cursor-target" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank" class="footer-social custom-cursor-target"
-                    aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
-                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/leonelrs18/" target="_blank"
+                    class="footer-social custom-cursor-target" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rally19" target="_blank" class="footer-social custom-cursor-target"
+                    aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/channel/UC20HfwdpgMROvpPHdpBwbzQ" target="_blank"
+                    class="footer-social custom-cursor-target" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/leonelrs18/" target="_blank"
+                    class="footer-social custom-cursor-target" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@leonelrs18" target="_blank" class="footer-social custom-cursor-target"
                     aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.facebook.com/leonelrs18/" target="_blank" class="footer-social custom-cursor-target"
-                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/leonelrs18/" target="_blank"
+                    class="footer-social custom-cursor-target" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
             </div>
             <span class="footer-copy">© 2023–2026 <a href="#">Leonel R.S.</a> All Rights Reserved.</span>
         </div>
     </footer>
 
-    <div id="custom-cursor-icon">
-        <i class="fa-solid fa-up-right-from-square"></i>
-    </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
     <script type="text/javascript" src="res/scripts/app.js"></script>
 
     <!-- Background Animation -->

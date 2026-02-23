@@ -33,15 +33,45 @@ function resize() {
 window.addEventListener('resize', resize);
 resize();
 
-// Mouse tracking
+// Mouse and Touch tracking
 const mouse = { x: null, y: null };
+let isTouchActive = false;
+
 window.addEventListener('mousemove', (e) => {
+    if (isTouchActive) return; // Ignore emulated mouse events after touch
     mouse.x = e.clientX;
     mouse.y = e.clientY;
 });
 window.addEventListener('mouseout', () => {
+    if (isTouchActive) return;
     mouse.x = null;
     mouse.y = null;
+});
+
+// Touch support to prevent sticky particles on mobile
+window.addEventListener('touchstart', (e) => {
+    isTouchActive = true;
+    if (e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+    }
+});
+window.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+    }
+});
+window.addEventListener('touchend', () => {
+    mouse.x = null;
+    mouse.y = null;
+    // Keep touch active slightly longer to block the simulated mouse events that browsers fire after touchend
+    setTimeout(() => { isTouchActive = false; }, 500);
+});
+window.addEventListener('touchcancel', () => {
+    mouse.x = null;
+    mouse.y = null;
+    setTimeout(() => { isTouchActive = false; }, 500);
 });
 
 // Particle class
@@ -142,5 +172,25 @@ function animate() {
     }
     requestAnimationFrame(animate);
 }
+
+// Add burst effect on click
+window.addEventListener('click', (e) => {
+    particles.forEach(p => {
+        let dx = e.clientX - p.x;
+        let dy = e.clientY - p.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < mouseDistance * 1.5) {
+            const forceDirectionX = dx / distance;
+            const forceDirectionY = dy / distance;
+            // Strong burst outward
+            p.vx -= forceDirectionX * 4;
+            p.vy -= forceDirectionY * 4;
+
+            // Temporary glow
+            p.size += 2;
+            setTimeout(() => { p.size = Math.max(0.5, p.size - 2); }, 300);
+        }
+    });
+});
 
 animate();
