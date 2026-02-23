@@ -445,15 +445,24 @@
 
     <!-- Typed.js Init -->
     <script>
-        var typed = new Typed('#typed-element', {
-            strings: ['Hello everyone!', 'My name is Leonel Rally Squall', 'I\'m a student at SMKN 3 Palu', 'Currently learning Software Engineering', 'Welcome to my portfolio!'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true,
-            backDelay: 1500,
-            showCursor: true,
-            cursorChar: '█'
-        });
+        function initTyped() {
+            var typed = new Typed('#typed-element', {
+                strings: ['Hello everyone!', 'My name is Leonel Rally Squall', 'I\'m a student at SMKN 3 Palu', 'Currently learning Software Engineering', 'Welcome to my portfolio!'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true,
+                backDelay: 1500,
+                showCursor: true,
+                cursorChar: '█'
+            });
+        }
+
+        // Wait for terminal splash screen to finish glitching before starting hero text typing
+        if (document.querySelector('.terminal-splash')) {
+            document.addEventListener('splashFinished', initTyped);
+        } else {
+            initTyped();
+        }
     </script>
 
     <!-- Background Animation -->
