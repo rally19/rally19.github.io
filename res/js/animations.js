@@ -432,17 +432,27 @@ function animateFooter() {
 
 // --- Init all ---
 document.addEventListener('DOMContentLoaded', () => {
-  initScrollProgress();
-  initMobileNav();
-  animateNav();
-  animateFooter();
+  function initAllAnimations() {
+    initScrollProgress();
+    initMobileNav();
+    animateNav();
+    animateFooter();
 
-  // Page-specific
-  if (document.querySelector('.hero')) animateHero();
-  if (document.querySelector('.gs-hidden, .gs-hidden-left, .gs-hidden-right')) animateSections();
-  if (document.querySelector('.gsap-pinned-carousel')) animatePinnedCarousel();
-  if (document.querySelector('.giant-project')) animateParallax();
-  if (document.querySelector('.stagger-group')) animateCards();
-  if (document.querySelector('.timeline-item')) animateTimeline();
-  if (document.querySelector('.skills-tags')) animateSkillTags();
+    // Page-specific
+    if (document.querySelector('.hero')) animateHero();
+    if (document.querySelector('.gs-hidden, .gs-hidden-left, .gs-hidden-right')) animateSections();
+    if (document.querySelector('.gsap-pinned-carousel')) animatePinnedCarousel();
+    if (document.querySelector('.giant-project')) animateParallax();
+    if (document.querySelector('.stagger-group')) animateCards();
+    if (document.querySelector('.timeline-item')) animateTimeline();
+    if (document.querySelector('.skills-tags')) animateSkillTags();
+  }
+
+  // If the splash screen is currently active in the DOM, wait for it to finish and glitch out.
+  // Otherwise, if it was skipped (already seen), run animations immediately.
+  if (document.querySelector('.terminal-splash')) {
+    document.addEventListener('splashFinished', initAllAnimations);
+  } else {
+    initAllAnimations();
+  }
 });

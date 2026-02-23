@@ -959,6 +959,7 @@ h4 {
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.03);
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 .tag-blue {
@@ -968,11 +969,23 @@ h4 {
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
 }
 
+.tag-blue:hover {
+  background: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
+
 .tag-green {
   background: rgba(16, 185, 129, 0.1);
   color: #6ee7b7;
   border: 1px solid rgba(16, 185, 129, 0.4);
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.15);
+}
+
+.tag-green:hover {
+  background: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  transform: translateY(-2px);
 }
 
 .tag-amber {
@@ -982,6 +995,12 @@ h4 {
   box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
 }
 
+.tag-amber:hover {
+  background: rgba(245, 158, 11, 0.2);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px);
+}
+
 .tag-purple {
   background: rgba(139, 92, 246, 0.1);
   color: #c4b5fd;
@@ -989,11 +1008,23 @@ h4 {
   box-shadow: 0 0 10px rgba(139, 92, 246, 0.15);
 }
 
+.tag-purple:hover {
+  background: rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
 .tag-cyan {
   background: rgba(34, 211, 238, 0.1);
   color: #67e8f9;
   border: 1px solid rgba(34, 211, 238, 0.4);
   box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+}
+
+.tag-cyan:hover {
+  background: rgba(34, 211, 238, 0.2);
+  box-shadow: 0 4px 15px rgba(34, 211, 238, 0.4);
+  transform: translateY(-2px);
 }
 
 /* --- Project Cards (Background Hover Redesign) --- */
@@ -1072,13 +1103,21 @@ h4 {
   transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s;
 }
 
-.project-card-links a {
+.project-card .project-card-links a {
   pointer-events: none;
   /* Only clickable when overlay is active */
 }
 
 .project-card:hover .project-card-content-inner {
   transform: translateY(0);
+}
+
+.project-card .tag {
+  pointer-events: none;
+}
+
+.project-card:hover .tag {
+  pointer-events: auto;
 }
 
 .project-card:hover .project-card-links a {
@@ -1646,6 +1685,10 @@ h4 {
     pointer-events: none;
   }
 
+  .project-card:hover .tag {
+    pointer-events: none;
+  }
+
   /* Use explicit JS-toggled class instead */
   .project-card.mobile-overlay-active .project-card-body {
     opacity: 1;
@@ -1656,6 +1699,10 @@ h4 {
   }
 
   .project-card.mobile-overlay-active .project-card-links a {
+    pointer-events: auto;
+  }
+
+  .project-card.mobile-overlay-active .tag {
     pointer-events: auto;
   }
 }
@@ -1920,8 +1967,63 @@ main.fade-out {
   transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.terminal-splash.hidden-up {
-  transform: translateY(-100%);
+.terminal-splash.glitch-out {
+  animation: splashGlitchOutFade 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.terminal-splash.glitch-out .terminal-text-container {
+  animation: glitch-skew 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  text-shadow: 3px 0 var(--accent-cyan), -3px 0 var(--accent);
+  position: relative;
+}
+
+.terminal-splash.glitch-out .terminal-text-container::before,
+.terminal-splash.glitch-out .terminal-text-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.terminal-splash.glitch-out .terminal-text {
+  animation: glitch-anim-1 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite reverse;
+  display: inline-block;
+}
+
+@keyframes splashGlitchOutFade {
+  0% {
+    opacity: 1;
+    filter: saturate(150%) contrast(150%);
+  }
+
+  20% {
+    opacity: 0.8;
+    background-color: rgba(0, 255, 136, 0.05);
+    transform: scale(1.02);
+  }
+
+  40% {
+    opacity: 0.9;
+    background-color: rgba(255, 0, 85, 0.05);
+    transform: scale(0.98);
+  }
+
+  60% {
+    opacity: 0.4;
+    filter: invert(0.2) hue-rotate(90deg);
+  }
+
+  80% {
+    opacity: 0.15;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .terminal-text-container {

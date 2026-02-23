@@ -95,6 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Terminal Splash Screen (Applies to all pages)
     // Skip splash if already seen this session
     if (!sessionStorage.getItem('splashSeen')) {
+        // Lock scrolling during splash
+        document.body.style.overflow = 'hidden';
+
         const splash = document.createElement('div');
         splash.classList.add('terminal-splash');
         splash.innerHTML = `
@@ -108,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const messages = [
             "Initializing connection...",
             "Loading assets...",
-            "Bypassing security protocols...",
-            "Welcome, to my portofolio. System Ready."
+            "System ready...",
+            "Welcome, to my portofolio."
         ];
 
         let messageIndex = 0;
@@ -130,10 +133,15 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 // Finished typing
                 setTimeout(() => {
-                    splash.classList.add('hidden-up');
+                    splash.classList.add('glitch-out');
                     sessionStorage.setItem('splashSeen', 'true');
-                    // Optional: delay removal from DOM
-                    setTimeout(() => splash.remove(), 1000);
+
+                    // Wait for glitch animation (600ms) to finish
+                    setTimeout(() => {
+                        splash.remove();
+                        document.body.style.overflow = ''; // Restore scrolling
+                        document.dispatchEvent(new Event('splashFinished')); // Notify animations
+                    }, 600);
                 }, 500);
             }
         }
