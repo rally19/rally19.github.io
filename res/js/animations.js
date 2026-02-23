@@ -255,6 +255,24 @@ window.setSlider = function (sliderId, index) {
       dot.classList.toggle('active', i === index);
     });
   }
+
+  // Sync the giant project background with a fade effect
+  const giantProject = track.closest('.giant-project');
+  if (giantProject) {
+    const bg = giantProject.querySelector('.giant-project-bg');
+    const activeImg = track.children[index];
+    if (bg && activeImg && activeImg.src) {
+      gsap.to(bg, {
+        opacity: 0,
+        duration: 0.3,
+        onComplete: () => {
+          bg.style.backgroundImage = `url('${activeImg.src}')`;
+          // Clear inline opacity so it gracefully fades back to the CSS class value (0.15)
+          gsap.to(bg, { clearProps: 'opacity', opacity: 0.15, duration: 0.3 });
+        }
+      });
+    }
+  }
 };
 
 window.moveSlider = function (sliderId, direction) {
@@ -270,6 +288,57 @@ window.moveSlider = function (sliderId, direction) {
 
   setSlider(sliderId, current);
 };
+
+// --- Image Slider Touch/Swipe Support ---
+document.querySelectorAll('.slider-container').forEach(container => {
+  let startX = 0;
+  let currentX = 0;
+
+  container.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    currentX = startX; // Reset currentX to prevent carry-over
+  }, { passive: true });
+
+  container.addEventListener('touchmove', (e) => {
+    currentX = e.touches[0].clientX;
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+    if (!startX || !currentX) return;
+    let diffX = startX - currentX;
+
+    // 50px threshold for a valid swipe
+    if (Math.abs(diffX) > 50) {
+      const track = container.querySelector('.slider-track');
+      if (track && track.id) {
+        if (diffX > 0) {
+          window.moveSlider(track.id, 1); // Swiped left -> Next Image
+        } else {
+          window.moveSlider(track.id, -1); // Swiped right -> Previous Image
+        }
+      }
+    }
+    startX = 0;
+    currentX = 0;
+  });
+});
+
+// --- Mobile Overlay Toggle on Project Cards ---
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    // Only apply toggle logic on mobile screens
+    if (window.innerWidth <= 768) {
+      // Prevent toggling if the user clicked on a button, link, or slider controls
+      if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.slider-nav') || e.target.closest('.slider-click-zone')) {
+        return;
+      }
+
+      // Toggle the active class that forces the text overlay to appear
+      card.classList.toggle('mobile-overlay-active');
+    }
+  });
+});
+
 
 // --- Global Parallax ---
 function animateParallax() {

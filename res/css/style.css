@@ -1073,12 +1073,16 @@ h4 {
 }
 
 .project-card-links a {
-  pointer-events: auto;
-  /* Only buttons become clickable */
+  pointer-events: none;
+  /* Only clickable when overlay is active */
 }
 
 .project-card:hover .project-card-content-inner {
   transform: translateY(0);
+}
+
+.project-card:hover .project-card-links a {
+  pointer-events: auto;
 }
 
 /* --- GSAP Pinned Carousel Specifics --- */
@@ -1626,6 +1630,33 @@ h4 {
 
   .giant-title {
     font-size: 2.5rem;
+  }
+
+  /* --- Mobile Project Dashboard Text Overlay Toggle --- */
+  /* Disable sticky standard hover effects on touch */
+  .project-card:hover .project-card-body {
+    opacity: 0;
+  }
+
+  .project-card:hover .project-card-content-inner {
+    transform: translateY(20px);
+  }
+
+  .project-card:hover .project-card-links a {
+    pointer-events: none;
+  }
+
+  /* Use explicit JS-toggled class instead */
+  .project-card.mobile-overlay-active .project-card-body {
+    opacity: 1;
+  }
+
+  .project-card.mobile-overlay-active .project-card-content-inner {
+    transform: translateY(0);
+  }
+
+  .project-card.mobile-overlay-active .project-card-links a {
+    pointer-events: auto;
   }
 }
 
