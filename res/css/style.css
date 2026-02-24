@@ -537,39 +537,76 @@ h4 {
   justify-content: center;
   align-items: center;
   position: relative;
+  animation: float-hero 6s ease-in-out infinite;
+  /* Prevent pointer events on the wrapper so corners don't trigger anything */
+  pointer-events: none;
+}
+
+@keyframes float-hero {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 .hero-image img {
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  border: 3px solid var(--border-light);
+  border: 4px solid var(--border-light);
   object-fit: cover;
   position: relative;
   z-index: 2;
+  filter: grayscale(35%) contrast(1.1);
+  transition: filter 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+  /* Specifically restore pointer events directly to the circular image so ONLY the image triggers hovers */
+  pointer-events: auto;
+}
+
+.hero-image img:hover {
+  filter: grayscale(0%) contrast(1.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 35px rgba(0, 255, 136, 0.4);
 }
 
 .hero-image-glow {
   position: absolute;
-  width: 340px;
-  height: 340px;
+  width: 320px;
+  height: 320px;
+  /* Matched strictly to the image size */
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 255, 136, 0.12) 0%, transparent 70%);
+  background: transparent;
   z-index: 1;
   animation: pulse-glow 4s ease-in-out infinite;
+  transition: opacity 0.5s ease, background 0.5s ease;
+  pointer-events: none;
+  /* Ignore all interactions for the glow layer */
+}
+
+/* Use modern :has selector so the wrapper listens to its child 'img' being hovered to affect the sibling 'glow' */
+.hero-image:has(img:hover) .hero-image-glow {
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.4) 0%, transparent 80%);
+  animation: none;
+  /* Pause the breathing effect on hover so the solid glow takes over */
 }
 
 @keyframes pulse-glow {
 
   0%,
   100% {
-    transform: scale(1);
-    opacity: 0.6;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1),
+      0 0 30px rgba(0, 255, 136, 0.05);
   }
 
   50% {
-    transform: scale(1.1);
-    opacity: 1;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3),
+      0 0 60px rgba(0, 255, 136, 0.15);
+    /* Soft, expanding neon light spill */
   }
 }
 
@@ -1914,6 +1951,49 @@ h4 {
 
 .cursor-dot.hidden {
   opacity: 0;
+}
+
+/* Custom Cursor Emoji Animation */
+.wave-emoji {
+  display: inline-block;
+  animation: wave-animation 2.5s infinite;
+  transform-origin: 70% 70%;
+  /* Pivot point near the wrist of the emoji */
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0.0deg)
+  }
+
+  10% {
+    transform: rotate(14.0deg)
+  }
+
+  20% {
+    transform: rotate(-8.0deg)
+  }
+
+  30% {
+    transform: rotate(14.0deg)
+  }
+
+  40% {
+    transform: rotate(-4.0deg)
+  }
+
+  50% {
+    transform: rotate(10.0deg)
+  }
+
+  60% {
+    transform: rotate(0.0deg)
+  }
+
+  /* Pauses waving for the remaining 40% of standard interval */
+  100% {
+    transform: rotate(0.0deg)
+  }
 }
 
 @media (max-width: 768px) {
