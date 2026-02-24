@@ -23,7 +23,7 @@ if (window.gsap) {
     gsap.to(canvas, {
         opacity: 1,
         filter: 'blur(0px)',
-        duration: 2,
+        duration: 1.5,
         ease: 'power2.out',
         delay: 0.2
     });
@@ -34,11 +34,12 @@ if (window.gsap) {
 
 let width, height;
 let particles = [];
+const cursorDot = document.querySelector('.cursor-dot');
 
 // Configuration
 const particleCount = 60; // Number of nodes
 const connectionDistance = 150; // Distance to draw lines
-const mouseDistance = 200; // Interaction radius
+const mouseDistance = 100; // Interaction radius
 
 // Resize handler
 function resize() {
@@ -119,10 +120,10 @@ class Particle {
                 const forceDirectionX = dx / distance;
                 const forceDirectionY = dy / distance;
                 const force = (mouseDistance - distance) / mouseDistance;
-                const directionX = forceDirectionX * force * 0.05;
-                const directionY = forceDirectionY * force * 0.05;
-                this.vx += directionX;
-                this.vy += directionY;
+                const directionX = forceDirectionX * force * 0.01;
+                const directionY = forceDirectionY * force * 0.01;
+                this.vx -= directionX; // Repulse
+                this.vy -= directionY; // Repulse
             }
         }
 
@@ -152,6 +153,13 @@ for (let i = 0; i < particleCount; i++) {
 function animate() {
     ctx.clearRect(0, 0, width, height);
 
+    // Sync internal mouse target with the delayed CSS cursor visually
+    if (cursorDot && !isTouchActive && mouse.x !== null) {
+        const rect = cursorDot.getBoundingClientRect();
+        mouse.x = rect.left + rect.width / 2;
+        mouse.y = rect.top + rect.height / 2;
+    }
+
     for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
@@ -177,8 +185,8 @@ function animate() {
             let dx = particles[i].x - mouse.x;
             let dy = particles[i].y - mouse.y;
             let distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < mouseDistance) {
-                ctx.strokeStyle = `rgba(0, 255, 136, ${(1 - distance / mouseDistance) * 0.5})`;
+            if (distance < mouseDistance * 2) {
+                ctx.strokeStyle = `rgba(0, 255, 136, ${1 - distance / (mouseDistance * 2)})`;
                 ctx.lineWidth = 0.5;
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
