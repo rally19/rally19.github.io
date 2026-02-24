@@ -4,6 +4,7 @@
  */
 
 const canvas = document.createElement('canvas');
+canvas.id = 'bg-canvas';
 const ctx = canvas.getContext('2d');
 document.body.appendChild(canvas);
 
@@ -14,6 +15,22 @@ canvas.style.width = '100%';
 canvas.style.height = '100%';
 canvas.style.zIndex = '-1';
 canvas.style.pointerEvents = 'none';
+canvas.style.opacity = '0';
+canvas.style.filter = 'blur(10px)';
+
+// Fade in the background smoothly
+if (window.gsap) {
+    gsap.to(canvas, {
+        opacity: 1,
+        filter: 'blur(0px)',
+        duration: 2,
+        ease: 'power2.out',
+        delay: 0.2
+    });
+} else {
+    canvas.style.opacity = '1';
+    canvas.style.filter = 'none';
+}
 
 let width, height;
 let particles = [];

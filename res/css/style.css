@@ -50,7 +50,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -191,7 +191,7 @@ h4 {
   background: var(--accent-dim);
 }
 
-.nav-links a.active::after {
+.nav-links a.active:not(.nav-cta)::after {
   content: '';
   position: absolute;
   bottom: 2px;
@@ -220,6 +220,23 @@ h4 {
   background: var(--accent-hover) !important;
   transform: translateY(-1px);
   box-shadow: 0 4px 16px rgba(0, 255, 136, 0.3);
+}
+
+.nav-cta.active {
+  background: var(--accent-hover) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+.nav-cta.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: #000;
+  border-radius: 1px;
 }
 
 /* Mobile nav */

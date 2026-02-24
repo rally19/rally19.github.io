@@ -1,6 +1,34 @@
 /* app.js - Enhanced Interactive Cursor & Magnetic Buttons */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lenis for smooth scrolling
+    if (typeof Lenis !== 'undefined') {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Default easing
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        // Sync Lenis with GSAP ScrollTrigger
+        if (window.ScrollTrigger) {
+            lenis.on('scroll', window.ScrollTrigger.update);
+
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0, 0);
+        } else {
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+        }
+    }
     // 1. Setup Custom Cursor Setup
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
@@ -51,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Magnetic effect for primary buttons and nav links
-    const magneticElements = document.querySelectorAll('.btn, .nav-links a');
+    // 3. Magnetic effect for primary buttons and nav-cta
+    const magneticElements = document.querySelectorAll('.btn, .nav-cta');
 
     magneticElements.forEach(elem => {
         elem.addEventListener('mousemove', (e) => {
@@ -170,6 +198,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     document.body.style.transition = 'opacity 0.5s ease';
                     document.body.style.opacity = '0';
+                }
+
+                // Animate Navbar out
+                if (window.gsap && document.querySelector('.nav')) {
+                    gsap.to('.nav', {
+                        y: -64,
+                        autoAlpha: 0,
+                        filter: 'blur(10px)',
+                        duration: 0.5,
+                        ease: 'power2.inOut'
+                    });
+                }
+
+                // Animate Background out
+                if (window.gsap && document.getElementById('bg-canvas')) {
+                    gsap.to('#bg-canvas', {
+                        autoAlpha: 0,
+                        filter: 'blur(10px)',
+                        duration: 0.5,
+                        ease: 'power2.inOut'
+                    });
                 }
 
                 setTimeout(() => {
