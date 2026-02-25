@@ -360,28 +360,71 @@ function animateParallax() {
   });
 }
 
-// --- Timeline items ---
+// --- Timeline items & Sticky Image Swap ---
 function animateTimeline() {
-  gsap.utils.toArray('.timeline-item').forEach((item, i) => {
-    gsap.fromTo(item,
-      { x: -30, autoAlpha: 0 },
-      {
-        x: 0,
-        autoAlpha: 1,
-        duration: 0.7,
-        delay: i * 0.1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 90%',
-          toggleActions: 'play none none none'
-        },
-        onComplete: () => {
-          gsap.set(item, { clearProps: 'transform' });
-        }
-      }
-    );
+  const container = document.querySelector('.journey-image-container');
+
+  gsap.utils.toArray('.timeline-trigger').forEach((item, i) => {
+    // 1. Entrance animation removed to avoid conflict with pinning and visibility bugs
+
+    // 2. Image Swap & Pin Focus mechanism
+    if (container) {
+      ScrollTrigger.create({
+        trigger: item,
+        start: () => window.innerWidth < 769 ? 'top 45%' : 'center center',   // On mobile, trigger slightly higher but still below image
+        end: '+=40%',             // Pin the text item for 40% of viewport height scrub distance (shorter distance)
+        pin: true,                // Physically lock the text in place while scrolling
+        pinSpacing: true,         // Push the next item down automatically
+        toggleClass: 'active-timeline',
+        invalidateOnRefresh: true, // Re-calculate offsets if the user resizes their window or rotates their phone
+        onEnter: () => swapTimelineImage(item.getAttribute('data-image')),
+        onEnterBack: () => swapTimelineImage(item.getAttribute('data-image'))
+      });
+    }
   });
+
+  // Crossfade helper function
+  let currentImageSrc = '';
+  function swapTimelineImage(newSrc) {
+    if (!newSrc || !container) return;
+
+    // Initial check: don't crossfade the very first time we scroll into the first item if it matches the hardcoded one
+    if (currentImageSrc === '') {
+      const initialImg = container.querySelector('.journey-dynamic-image');
+      if (initialImg && initialImg.getAttribute('src') === newSrc) {
+        currentImageSrc = newSrc;
+        return;
+      }
+    }
+
+    if (newSrc === currentImageSrc) return;
+    currentImageSrc = newSrc;
+
+    // Create the new image and layer it on top
+    const newImg = document.createElement('img');
+    newImg.src = newSrc;
+    newImg.alt = "Journey Milestone";
+    newImg.className = "journey-dynamic-image";
+    newImg.style.opacity = 0; // Starts invisible
+
+    container.appendChild(newImg);
+
+    // Smoothly fade in the new image
+    gsap.to(newImg, { opacity: 1, duration: 0.6, ease: 'power2.inOut' });
+
+    // Smoothly fade out the old images and delete them
+    const oldImgs = container.querySelectorAll('.journey-dynamic-image:not(:last-child)');
+    if (oldImgs.length > 0) {
+      gsap.to(oldImgs, {
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.inOut',
+        onComplete: () => {
+          oldImgs.forEach(img => img.remove());
+        }
+      });
+    }
+  }
 }
 
 // --- Skill tags stagger ---
