@@ -54,6 +54,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 body {
@@ -64,7 +65,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -647,6 +648,7 @@ h4 {
 
   .hero-image {
     order: -1;
+    margin-top: 2.5rem;
   }
 
   .hero-image img {
@@ -1055,7 +1057,7 @@ h4 {
   .timeline-trigger {
     position: relative;
     border-radius: 12px;
-    padding: 1.5rem 1.25rem 1.5rem 2.25rem;
+    padding: 1rem 1rem 1rem 1rem;
     background: linear-gradient(135deg,
         rgba(10, 10, 18, 0.88) 0%,
         rgba(10, 10, 18, 0.70) 100%);
