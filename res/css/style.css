@@ -1063,6 +1063,7 @@ h4 {
         rgba(10, 10, 18, 0.70) 100%);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    will-change: transform;
   }
 
   .journey-image-container {

@@ -375,7 +375,9 @@ function animateTimeline() {
         end: '+=40%',             // Pin the text item for 40% of viewport height scrub distance (shorter distance)
         pin: true,                // Physically lock the text in place while scrolling
         pinSpacing: true,         // Push the next item down automatically
+        pinType: 'transform',     // Use transform-based pinning instead of position:fixed (smoother on mobile)
         toggleClass: 'active-timeline',
+        force3D: true,            // Force GPU-accelerated 3D transforms for smoother compositing
         invalidateOnRefresh: true, // Re-calculate offsets if the user resizes their window or rotates their phone
         onEnter: () => swapTimelineImage(item.getAttribute('data-image')),
         onEnterBack: () => swapTimelineImage(item.getAttribute('data-image'))
