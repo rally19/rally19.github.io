@@ -4,6 +4,9 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Prevent mobile address bar from causing constant refresh and jitter during scroll
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 // --- Scroll Progress Bar ---
 function initScrollProgress() {
   const bar = document.getElementById('scroll-progress');
@@ -375,9 +378,8 @@ function animateTimeline() {
         end: '+=40%',             // Pin the text item for 40% of viewport height scrub distance (shorter distance)
         pin: true,                // Physically lock the text in place while scrolling
         pinSpacing: true,         // Push the next item down automatically
-        pinType: 'fixed',
+        anticipatePin: 1,         // Smooths out the pinning on native scroll devices
         toggleClass: 'active-timeline',
-        force3D: true,            // Force GPU-accelerated 3D transforms for smoother compositing
         invalidateOnRefresh: true, // Re-calculate offsets if the user resizes their window or rotates their phone
         onEnter: () => swapTimelineImage(item.getAttribute('data-image')),
         onEnterBack: () => swapTimelineImage(item.getAttribute('data-image'))
