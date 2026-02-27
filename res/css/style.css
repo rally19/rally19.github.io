@@ -617,7 +617,7 @@ h4 {
 /* Hero stats bar */
 .hero-stats {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-top: 2.5rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border);
