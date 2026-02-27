@@ -18,6 +18,20 @@ canvas.style.pointerEvents = 'none';
 canvas.style.opacity = '0';
 canvas.style.filter = 'blur(10px)';
 
+const vignette = document.createElement('div');
+vignette.id = 'bg-vignette';
+document.body.appendChild(vignette);
+
+vignette.style.position = 'fixed';
+vignette.style.top = '0';
+vignette.style.left = '0';
+vignette.style.width = '100%';
+vignette.style.height = '100%';
+vignette.style.zIndex = '-1';
+vignette.style.pointerEvents = 'none';
+vignette.style.background = 'radial-gradient(circle at center, transparent 20%, #0a0a0f 120%)';
+vignette.style.opacity = '0';
+
 // Fade in the background smoothly
 if (window.gsap) {
     gsap.to(canvas, {
@@ -27,9 +41,16 @@ if (window.gsap) {
         ease: 'power2.out',
         delay: 0.2
     });
+    gsap.to(vignette, {
+        opacity: 1,
+        duration: 1.5,
+        ease: 'power2.out',
+        delay: 0.2
+    });
 } else {
     canvas.style.opacity = '1';
     canvas.style.filter = 'none';
+    vignette.style.opacity = '1';
 }
 
 let width, height;
@@ -37,7 +58,7 @@ let particles = [];
 const cursorDot = document.querySelector('.cursor-dot');
 
 // Configuration
-const particleCount = 60; // Number of nodes
+const particleCount = 40; // Number of nodes
 const connectionDistance = 150; // Distance to draw lines
 const mouseDistance = 100; // Interaction radius
 
