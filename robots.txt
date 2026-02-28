@@ -1,3 +1,8 @@
 User-agent: *
+Disallow: /img/TravelID*
+Disallow: /img/Coffeemeex*
+Disallow: /img/TOEIC_Leonel.jpg
+Disallow: /img/LOMBA_CLIMAGLOBE_UNTAD.jpg
+Disallow: /img/Foto_bersama_wesclic.jpeg
 Allow: /
 Sitemap: https://rally19.github.io/sitemap.xml
