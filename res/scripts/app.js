@@ -2,8 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lenis for smooth scrolling
+    let lenis;
     if (typeof Lenis !== 'undefined') {
-        const lenis = new Lenis({
+        lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Default easing
             direction: 'vertical',
@@ -124,7 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Skip splash if already seen this session
     if (!sessionStorage.getItem('splashSeen')) {
         // Lock scrolling during splash
-        document.body.style.overflow = 'hidden';
+        document.documentElement.classList.add('no-scroll');
+        if (lenis) lenis.stop();
 
         const splash = document.createElement('div');
         splash.classList.add('terminal-splash');
@@ -167,7 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Wait for glitch animation (600ms) to finish
                     setTimeout(() => {
                         splash.remove();
-                        document.body.style.overflow = ''; // Restore scrolling
+                        document.documentElement.classList.remove('no-scroll');
+                        if (lenis) lenis.start();
                         document.dispatchEvent(new Event('splashFinished')); // Notify animations
                     }, 600);
                 }, 500);
