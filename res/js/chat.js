@@ -58,20 +58,36 @@
 
         // --- Turnstile Setup for Chat ---
         const tsContainer = document.createElement('div');
-        consoleEl.appendChild(tsContainer);
-        let chatWidgetId = null;
+        tsContainer.style.display = 'none';
+        tsContainer.style.background = 'var(--bg-lighter)';
+        tsContainer.style.borderTop = '1px solid var(--border)';
+        tsContainer.style.padding = '10px';
+        tsContainer.style.justifyContent = 'center';
+        consoleEl.insertBefore(tsContainer, form);
 
-        function renderChatTurnstile() {
-            if (typeof turnstile !== 'undefined') {
-                chatWidgetId = turnstile.render(tsContainer, {
-                    sitekey: TURNSTILE_SITEKEY,
-                    size: 'invisible'
-                });
-            } else {
-                setTimeout(renderChatTurnstile, 200);
+        let chatWidgetId = null;
+        let isTurnstileVisible = false;
+
+        function renderChatTurnstile(visible = false) {
+            if (typeof turnstile === 'undefined') {
+                setTimeout(() => renderChatTurnstile(visible), 200);
+                return;
             }
+
+            if (chatWidgetId !== null) {
+                turnstile.remove(chatWidgetId);
+            }
+
+            isTurnstileVisible = visible;
+            tsContainer.style.display = visible ? 'flex' : 'none';
+
+            chatWidgetId = turnstile.render(tsContainer, {
+                sitekey: TURNSTILE_SITEKEY,
+                size: visible ? 'normal' : 'invisible',
+                theme: 'dark'
+            });
         }
-        renderChatTurnstile();
+        renderChatTurnstile(false);
 
         // Render a console line
         function renderLine(role, content, opts) {
@@ -188,9 +204,13 @@
                 turnstileToken = turnstile.getResponse(chatWidgetId);
             }
 
-            // Fallback check in case the widget hasn't solved the invisible check yet
+            // Fallback check in case the widget hasn't solved the check yet
             if (!turnstileToken) {
-                throw new Error("Security check in progress. Please try again in a moment.");
+                if (isTurnstileVisible) {
+                    throw new Error("Please complete the CAPTCHA check to continue.");
+                } else {
+                    throw new Error("Security check in progress. Please try again in a moment.");
+                }
             }
 
             try {
@@ -201,7 +221,7 @@
                     body: JSON.stringify({ messages: messages, turnstileToken: turnstileToken }),
                 });
 
-                // 3. Reset the invisible widget so it generates a new token for the next message
+                // 3. Reset the widget so it generates a new token for the next message
                 if (chatWidgetId !== null && typeof turnstile !== 'undefined') {
                     turnstile.reset(chatWidgetId);
                 }
@@ -211,7 +231,19 @@
                 if (!data.ok) {
                     messages.pop();
                     saveMessages(messages);
+
+                    if (data.error && data.error.toLowerCase().includes('captcha')) {
+                        if (!isTurnstileVisible) {
+                            renderChatTurnstile(true);
+                            throw new Error("Anti-bot check failed. Please complete the CAPTCHA below and try again.");
+                        }
+                    }
+
                     throw new Error(data.error || 'Something went wrong.');
+                }
+
+                if (isTurnstileVisible) {
+                    renderChatTurnstile(false);
                 }
 
                 messages.push({ role: 'assistant', content: data.reply });
