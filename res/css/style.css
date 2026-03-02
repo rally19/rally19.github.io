@@ -2324,3 +2324,387 @@ main.fade-out {
   mix-blend-mode: screen;
   transition: transform 0.4s ease-out;
 }
+
+/* ============================================
+   AI Chat Console — Terminal Theme
+   ============================================ */
+
+.ai-console {
+  background: rgba(8, 8, 14, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(0, 255, 136, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Scanline overlay */
+.ai-console::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 136, 0.015) 2px,
+      rgba(0, 255, 136, 0.015) 4px);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* --- Title bar --- */
+.ai-console-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: rgba(20, 20, 28, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 6;
+}
+
+.ai-console-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.ai-console-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.ai-console-dot--red {
+  background: #ff5f57;
+}
+
+.ai-console-dot--yellow {
+  background: #febc2e;
+}
+
+.ai-console-dot--green {
+  background: #28c840;
+}
+
+.ai-console-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.ai-console-clear {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s;
+  flex-shrink: 0;
+}
+
+.ai-console-clear:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* --- Message body --- */
+.ai-console-body {
+  padding: 1.25rem 1.25rem 0.5rem;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 6;
+  scroll-behavior: smooth;
+}
+
+.ai-console-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.ai-console-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ai-console-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 136, 0.2);
+  border-radius: 3px;
+}
+
+.ai-console-body::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* --- Console lines --- */
+.ai-console-line {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  word-break: break-word;
+}
+
+.ai-console-prompt {
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-right: 0;
+}
+
+.ai-prompt-user {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.ai-prompt-at {
+  color: var(--text-muted);
+}
+
+.ai-prompt-host {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ai-prompt-sep {
+  color: var(--text-muted);
+}
+
+.ai-prompt-ai {
+  color: #c084fc;
+  font-weight: 600;
+}
+
+.ai-prompt-sys {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ai-console-content {
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+}
+
+.ai-console-line--system .ai-console-content {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Markdown rendering inside AI responses */
+.ai-console-line--assistant .ai-console-content p {
+  margin: 0 0 0.4rem;
+}
+
+.ai-console-line--assistant .ai-console-content p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-console-line--assistant .ai-console-content strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ai-console-line--assistant .ai-console-content a {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ai-console-line--assistant .ai-console-content a:hover {
+  color: var(--accent);
+}
+
+.ai-console-line--assistant .ai-console-content ul,
+.ai-console-line--assistant .ai-console-content ol {
+  padding-left: 1.2rem;
+  margin: 0.3rem 0;
+}
+
+.ai-console-line--assistant .ai-console-content li {
+  list-style: disc;
+  margin-bottom: 0.15rem;
+}
+
+.ai-console-line--assistant .ai-console-content code {
+  background: rgba(0, 255, 136, 0.1);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.ai-console-line--assistant .ai-console-content pre {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  margin: 0.4rem 0;
+  overflow-x: auto;
+}
+
+.ai-console-line--assistant .ai-console-content pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+/* --- Typing indicator --- */
+.ai-console-typing-dots {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.ai-console-typing-dots span {
+  color: #c084fc;
+  font-weight: 700;
+  animation: ai-dots-bounce 1.4s ease-in-out infinite;
+}
+
+.ai-console-typing-dots span:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.ai-console-typing-dots span:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes ai-dots-bounce {
+
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* --- Input row --- */
+.ai-console-input-row {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(12, 12, 18, 0.6);
+  position: relative;
+  z-index: 6;
+}
+
+.ai-console-input-prefix {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  white-space: nowrap;
+  margin-right: 0.4rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.ai-console-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  caret-color: var(--accent);
+  padding: 0;
+}
+
+.ai-console-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.ai-console-input:disabled {
+  opacity: 0.4;
+}
+
+.ai-console-send {
+  background: none;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.ai-console-send:hover {
+  background: rgba(0, 255, 136, 0.15);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.15);
+}
+
+/* --- Blinking cursor after input --- */
+.ai-console-blink {
+  display: inline-block;
+  width: 8px;
+  height: 1rem;
+  background: var(--accent);
+  margin-left: 2px;
+  animation: ai-cursor-blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  flex-shrink: 0;
+}
+
+.ai-console-input:focus~.ai-console-blink {
+  animation: ai-cursor-blink 0.6s step-end infinite;
+}
+
+@keyframes ai-cursor-blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .ai-console-body {
+    max-height: 300px;
+    padding: 1rem 0.75rem 0.5rem;
+  }
+
+  .ai-console-line {
+    font-size: 0.78rem;
+  }
+
+  .ai-console-input-row {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .ai-console-input {
+    font-size: 0.78rem;
+  }
+}

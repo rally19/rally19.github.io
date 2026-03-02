@@ -230,6 +230,36 @@
                 </div>
             </div>
         </section>
+
+        <!-- AI Chat Console -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header gs-hidden">
+                    <p class="section-label">ai assistant</p>
+                    <h2 class="section-title" data-text="Ask Rally AI">Ask Rally AI</h2>
+                    <p class="section-subtitle">Chat with an AI that knows about Leonel's skills, projects, and
+                        experience.</p>
+                </div>
+                <div class="ai-console gs-hidden">
+                    <div class="ai-console-header">
+                        <div class="ai-console-dots">
+                            <span class="ai-console-dot ai-console-dot--red"></span>
+                            <span class="ai-console-dot ai-console-dot--yellow"></span>
+                            <span class="ai-console-dot ai-console-dot--green"></span>
+                        </div>
+                        <span class="ai-console-title">rally_ai &gt; terminal</span>
+                        <button class="ai-console-clear" type="button">clear</button>
+                    </div>
+                    <div class="ai-console-body"></div>
+                    <form class="ai-console-form ai-console-input-row" autocomplete="off">
+                        <span class="ai-console-input-prefix">&gt;</span>
+                        <input type="text" class="ai-console-input" placeholder="Ask about Leonel..."
+                            autocomplete="off" />
+                        <button type="submit" class="ai-console-send">send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -337,6 +367,10 @@
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <!-- GSAP Animations -->
     <script src="res/js/animations.js"></script>
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- AI Chat Console -->
+    <script src="res/js/chat.js"></script>
 </body>
 
 </html>
