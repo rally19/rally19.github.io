@@ -213,6 +213,7 @@ function animateCards() {
 function animatePinnedCarousel() {
   const container = document.querySelector('.gsap-pinned-carousel');
   const track = document.querySelector('.gsap-carousel-track');
+  const logoTrack = document.querySelector('.gsap-logo-track');
 
   if (!container || !track) return;
 
@@ -224,20 +225,35 @@ function animatePinnedCarousel() {
     return Math.max(0, amount);
   }
 
-  const tween = gsap.to(track, {
-    x: () => -getScrollAmount(), // Use getter to avoid stale values initially
-    ease: "none"
+  function getLogoScrollAmount() {
+    if (!logoTrack) return 0;
+    let trackWidth = logoTrack.scrollWidth;
+    let amount = trackWidth - window.innerWidth;
+    return Math.max(0, amount);
+  }
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "top top",
+      end: () => `+=${getScrollAmount()}`, // Use main track's scroll amount for pin duration
+      pin: true,
+      scrub: 1, // Smooth scrubbing
+      invalidateOnRefresh: true
+    }
   });
 
-  ScrollTrigger.create({
-    trigger: container,
-    start: "top top",
-    end: () => `+=${getScrollAmount()}`, // Positive scroll duration equal to track's scroll width
-    pin: true,
-    animation: tween,
-    scrub: 1, // Smooth scrubbing
-    invalidateOnRefresh: true
-  });
+  tl.to(track, {
+    x: () => -getScrollAmount(), // Use getter to avoid stale values initially
+    ease: "none"
+  }, 0);
+
+  if (logoTrack) {
+    tl.to(logoTrack, {
+      x: () => -getLogoScrollAmount(),
+      ease: "none"
+    }, 0);
+  }
 }
 
 // --- Image Slider Logic ---
