@@ -155,12 +155,28 @@
             const messages = loadMessages();
             messages.push({ role: 'user', content: userText });
 
+            // 1. Grab the active Turnstile token
+            const turnstileToken = typeof turnstile !== 'undefined' ? turnstile.getResponse() : '';
+
+            // Fallback check in case the form submission check failed
+            if (!turnstileToken) {
+                throw new Error("Please complete the captcha above before chatting.");
+            }
+
             try {
                 const response = await fetch(AI_ENDPOINT, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ messages: messages }),
+                    // 2. Attach the token to your payload
+                    body: JSON.stringify({ messages: messages, turnstileToken: turnstileToken }),
                 });
+
+                // 3. Reset the widget because the token was consumed by the backend!
+                if (typeof turnstile !== 'undefined') {
+                    turnstile.reset();
+                    isTurnstileVerified = false; // Reset your global state
+                    if (typeof validateForm !== 'undefined') validateForm(); // Re-disable submit buttons
+                }
 
                 const data = await response.json();
 
