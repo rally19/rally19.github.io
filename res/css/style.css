@@ -1,5 +1,5 @@
-﻿/* ============================================
-   LEONEL R.S. â€” Portfolio Design System
+/* ============================================
+   LEONEL R.S. — Portfolio Design System
    Dark, Minimalistic, Corporate, Programmer
    ============================================ */
 
@@ -951,7 +951,7 @@ h4 {
 }
 
 .timeline-body li::before {
-  content: 'â€”';
+  content: '—';
   position: absolute;
   left: 0;
   color: var(--text-muted);

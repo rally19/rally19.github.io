@@ -1,4 +1,4 @@
-﻿/* 
+/* 
  * Interactive Background - Constellation Effect
  * Lightweight canvas animation for programmer portfolio
  */

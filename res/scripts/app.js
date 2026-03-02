@@ -1,4 +1,4 @@
-﻿/* app.js - Enhanced Interactive Cursor & Magnetic Buttons */
+/* app.js - Enhanced Interactive Cursor & Magnetic Buttons */
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lenis for smooth scrolling
