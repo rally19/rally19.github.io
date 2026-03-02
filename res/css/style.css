@@ -1576,6 +1576,7 @@ h4 {
   font-size: 0.85rem;
   color: var(--text-secondary);
   margin-bottom: 0.5rem;
+  cursor: none;
 }
 
 .form-label .required {
