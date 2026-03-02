@@ -9,6 +9,16 @@
     const AI_ENDPOINT = 'https://rally19ai.rally19.workers.dev/chat';
     const STORAGE_KEY = 'rally_ai_messages';
     const MAX_MESSAGES = 40;
+    const TURNSTILE_SITEKEY = '0x4AAAAAABr-AERL8GcnCf_B';
+
+    // Ensure Turnstile script is loaded globally
+    if (!document.querySelector('script[src*="turnstile/v0/api.js"]')) {
+        const tsScript = document.createElement('script');
+        tsScript.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+        tsScript.async = true;
+        tsScript.defer = true;
+        document.head.appendChild(tsScript);
+    }
 
     // --- sessionStorage helpers ---
     function loadMessages() {
@@ -45,6 +55,23 @@
         const clearBtn = consoleEl.querySelector('.ai-console-clear');
 
         if (!body || !form || !input) return;
+
+        // --- Turnstile Setup for Chat ---
+        const tsContainer = document.createElement('div');
+        consoleEl.appendChild(tsContainer);
+        let chatWidgetId = null;
+
+        function renderChatTurnstile() {
+            if (typeof turnstile !== 'undefined') {
+                chatWidgetId = turnstile.render(tsContainer, {
+                    sitekey: TURNSTILE_SITEKEY,
+                    size: 'invisible'
+                });
+            } else {
+                setTimeout(renderChatTurnstile, 200);
+            }
+        }
+        renderChatTurnstile();
 
         // Render a console line
         function renderLine(role, content, opts) {
@@ -155,12 +182,15 @@
             const messages = loadMessages();
             messages.push({ role: 'user', content: userText });
 
-            // 1. Grab the active Turnstile token
-            const turnstileToken = typeof turnstile !== 'undefined' ? turnstile.getResponse() : '';
+            // 1. Grab the active Turnstile token from the chat's invisible widget
+            let turnstileToken = '';
+            if (chatWidgetId !== null && typeof turnstile !== 'undefined') {
+                turnstileToken = turnstile.getResponse(chatWidgetId);
+            }
 
-            // Fallback check in case the form submission check failed
+            // Fallback check in case the widget hasn't solved the invisible check yet
             if (!turnstileToken) {
-                throw new Error("Please complete the captcha above before chatting.");
+                throw new Error("Security check in progress. Please try again in a moment.");
             }
 
             try {
@@ -171,11 +201,9 @@
                     body: JSON.stringify({ messages: messages, turnstileToken: turnstileToken }),
                 });
 
-                // 3. Reset the widget because the token was consumed by the backend!
-                if (typeof turnstile !== 'undefined') {
-                    turnstile.reset();
-                    isTurnstileVerified = false; // Reset your global state
-                    if (typeof validateForm !== 'undefined') validateForm(); // Re-disable submit buttons
+                // 3. Reset the invisible widget so it generates a new token for the next message
+                if (chatWidgetId !== null && typeof turnstile !== 'undefined') {
+                    turnstile.reset(chatWidgetId);
                 }
 
                 const data = await response.json();
@@ -204,12 +232,6 @@
             e.preventDefault();
             const text = input.value.trim();
             if (!text) return;
-
-            // Gate behind Turnstile — reuse the contact form's verification
-            if (typeof isTurnstileVerified !== 'undefined' && !isTurnstileVerified) {
-                renderLine('system', 'Please complete the captcha above before chatting.');
-                return;
-            }
 
             input.value = '';
             input.disabled = true;
