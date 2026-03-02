@@ -1,5 +1,5 @@
-/* ============================================
-   GSAP Animations — Shared across all pages
+﻿/* ============================================
+   GSAP Animations â€” Shared across all pages
    ============================================ */
 
 gsap.registerPlugin(ScrollTrigger);
