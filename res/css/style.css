@@ -483,7 +483,7 @@ h4 {
 
 .hero-greeting {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.83rem;
   color: var(--accent);
   margin-bottom: 0.75rem;
   display: flex;
@@ -492,7 +492,9 @@ h4 {
 }
 
 .hero-greeting::before {
-  content: '>';
+  content: '\f3c5';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
   opacity: 0.6;
 }
 
