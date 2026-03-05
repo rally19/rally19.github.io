@@ -11,11 +11,48 @@ ScrollTrigger.config({ ignoreMobileResize: true });
 function initScrollProgress() {
   const bar = document.getElementById('scroll-progress');
   if (!bar) return;
+
+  // Update progress on scroll
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     bar.style.width = progress + '%';
+  });
+
+  // Out animation when navigating away
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      // Only intercept standard left clicks without modifier keys
+      if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+
+      const href = this.getAttribute('href');
+      // Ignore if no href, hash link, javascript, mailto, tel
+      if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      // Ignore if it opens in a new tab or is a download link
+      if (this.target === '_blank' || this.hasAttribute('download')) return;
+      // Ignore external links
+      if (href.startsWith('http') && !this.href.includes(window.location.hostname)) return;
+
+      e.preventDefault();
+
+      gsap.to(bar, {
+        opacity: 0,
+        x: -1000,
+        duration: 0.3,
+        ease: 'power2.in',
+        onComplete: () => {
+          window.location.href = this.href;
+        }
+      });
+    });
+  });
+
+  // Restore visibility if page is loaded from bfcache (e.g., hitting the back button)
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      gsap.set(bar, { clearProps: 'opacity,x' });
+    }
   });
 }
 
