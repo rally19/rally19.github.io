@@ -51,6 +51,9 @@
     <link rel="stylesheet" href="res/css/style.css" type="text/css">
     <link rel="icon" type="image/x-icon" href="img/leo1.avif">
 
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
 
@@ -269,24 +272,35 @@
                 <div class="grid-2 stagger-group">
                     <div class="card stagger-item">
                         <h2 class="card-title"><i class="fas fa-language text-accent"></i>&nbsp; Languages</h2>
-                        <div class="interest-tags" style="margin-top: 0.5rem;">
-                            <span class="interest-tag">Indonesian</span>
-                            <span class="interest-tag">English</span>
-                            <span class="interest-tag">Javanese</span>
-                        </div>
+                        <ul class="lang-list">
+                            <li class="lang-item">
+                                <span class="fi fi-id fis lang-icon"></span>
+                                <span class="lang-name">Indonesian</span>
+                            </li>
+                            <li class="lang-item">
+                                <span class="fi fi-us fis lang-icon"></span>
+                                <span class="lang-name">English</span>
+                            </li>
+                            <li class="lang-item">
+                                <img src="svg/Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg" alt="Yogyakarta"
+                                    class="lang-svg">
+                                <span class="lang-name">Javanese</span>
+                            </li>
+                        </ul>
                     </div>
+
                     <div class="card stagger-item">
                         <h2 class="card-title"><i class="fas fa-heart text-accent"></i>&nbsp; Interests</h2>
-                        <div class="interest-tags" style="margin-top: 0.5rem;">
-                            <span class="interest-tag">Software Development</span>
-                            <span class="interest-tag">Web Development</span>
-                            <span class="interest-tag">Game Development</span>
-                            <span class="interest-tag">UI/UX Design</span>
-                            <span class="interest-tag">Gaming</span>
-                            <span class="interest-tag">Science</span>
-                            <span class="interest-tag">Computers</span>
-                            <span class="interest-tag">Drawing</span>
-                            <span class="interest-tag">Art</span>
+                        <div class="interest-tags" style="margin-top: 1.5rem;">
+                            <span class="interest-tag"><i class="fas fa-laptop-code"></i> Software Development</span>
+                            <span class="interest-tag"><i class="fas fa-layer-group"></i> Web Development</span>
+                            <span class="interest-tag"><i class="fas fa-gamepad"></i> Game Development</span>
+                            <span class="interest-tag"><i class="fas fa-palette"></i> UI/UX Design</span>
+                            <span class="interest-tag"><i class="fas fa-ghost"></i> Gaming</span>
+                            <span class="interest-tag"><i class="fas fa-flask"></i> Science</span>
+                            <span class="interest-tag"><i class="fas fa-microchip"></i> Computers</span>
+                            <span class="interest-tag"><i class="fas fa-pencil-alt"></i> Drawing</span>
+                            <span class="interest-tag"><i class="fas fa-paint-brush"></i> Art</span>
                         </div>
                     </div>
                 </div>
@@ -300,79 +314,117 @@
                     <p class="section-label">tech stack</p>
                     <h2 class="section-title" data-text="Skills">Skills</h2>
                 </div>
-                <div class="card gs-hidden">
-                    <div class="grid-3" style="gap: 2rem;">
-                        <div class="skills-group">
-                            <h3 class="skills-group-title"><i class="fas fa-desktop"></i> Operating Systems</h3>
-                            <div class="skills-tags">
-                                <span class="skill-tag"><i class="fab fa-windows"></i> Windows</span>
-                                <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
-                            </div>
+                <div class="bento-grid gs-hidden">
+                    <!-- Operating Systems -->
+                    <div class="bento-card">
+                        <h3 class="skills-group-title"><i class="fas fa-desktop"></i> OS & Environments</h3>
+                        <div class="skills-tags">
+                            <span class="bento-skill-tag"><img src="svg/windows-174-svgrepo-com.svg" alt="Windows">
+                                Windows</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/linux/white"
+                                    alt="Linux"> Linux</span>
                         </div>
-                        <div class="skills-group">
-                            <h3 class="skills-group-title"><i class="fas fa-code"></i> Programming Languages</h3>
-                            <div class="skills-tags">
-                                <span class="skill-tag"><i class="fab fa-html5"></i> HTML</span>
-                                <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</span>
-                                <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
-                                <span class="skill-tag"><i class="fab fa-php"></i> PHP</span>
-                                <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-                                <span class="skill-tag"><i class="fas fa-code"></i> C++</span>
-                                <span class="skill-tag"><i class="fas fa-hashtag"></i> C#</span>
-                                <span class="skill-tag"><i class="fas fa-moon"></i> Lua</span>
-                                <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
-                                <span class="skill-tag"><i class="fas fa-code"></i> Kotlin</span>
-                            </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="bento-card">
+                        <h3 class="skills-group-title"><i class="fas fa-code"></i> Languages</h3>
+                        <div class="skills-tags">
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/html5/white" alt="HTML">
+                                HTML</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/css/white" alt="CSS">
+                                CSS</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/javascript/white"
+                                    alt="JavaScript"> JavaScript</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/php/white" alt="PHP">
+                                PHP</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/python/white"
+                                    alt="Python"> Python</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/cplusplus/white"
+                                    alt="C++"> C++</span>
+                            <span class="bento-skill-tag"><img src="svg/icons8-c-sharp-logo.svg" alt="C#"> C#</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/lua/white" alt="Lua">
+                                Lua</span>
+                            <span class="bento-skill-tag"><img src="svg/java-logo-svgrepo-com.svg" alt="Java">
+                                Java</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/kotlin/white"
+                                    alt="Kotlin"> Kotlin</span>
                         </div>
-                        <div class="skills-group">
-                            <h3 class="skills-group-title"><i class="fas fa-database"></i> Databases</h3>
-                            <div class="skills-tags">
-                                <span class="skill-tag"><i class="fas fa-database"></i> PostgreSQL</span>
-                                <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
-                            </div>
+                    </div>
+
+                    <!-- Frameworks & DBs -->
+                    <div class="bento-card">
+                        <h3 class="skills-group-title"><i class="fas fa-layer-group"></i> Frameworks & DBs</h3>
+                        <div class="skills-tags">
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/react/white"
+                                    alt="React"> React</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/nextdotjs/white"
+                                    alt="Next.js"> Next.js</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/express/white"
+                                    alt="Express"> Express</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/svelte/white"
+                                    alt="SvelteKit"> SvelteKit</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/laravel/white"
+                                    alt="Laravel"> Laravel</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/wordpress/white"
+                                    alt="WordPress"> WordPress</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/postgresql/white"
+                                    alt="PostgreSQL"> PostgreSQL</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/mysql/white"
+                                    alt="MySQL"> MySQL</span>
                         </div>
-                        <div class="skills-group">
-                            <h3 class="skills-group-title"><i class="fas fa-layer-group"></i> Frameworks & CMS</h3>
-                            <div class="skills-tags">
-                                <span class="skill-tag"><i class="fab fa-react"></i> React</span>
-                                <span class="skill-tag"><i class="fas fa-laptop-code"></i> Next.js</span>
-                                <span class="skill-tag"><i class="fas fa-server"></i> Express JS</span>
-                                <span class="skill-tag"><i class="fas fa-code"></i> SvelteKit</span>
-                                <span class="skill-tag"><i class="fab fa-laravel"></i> Laravel</span>
-                                <span class="skill-tag"><i class="fab fa-wordpress"></i> WordPress</span>
-                            </div>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div class="bento-card">
+                        <h3 class="skills-group-title"><i class="fas fa-tools"></i> Development Tools</h3>
+                        <div class="skills-tags">
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/git/white" alt="Git">
+                                Git</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/nodedotjs/white"
+                                    alt="NodeJS"> NodeJS</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/apache/white"
+                                    alt="Apache"> Apache</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/xampp/white"
+                                    alt="XAMPP"> XAMPP</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/laragon/white"
+                                    alt="Laragon"> Laragon</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/phpmyadmin/white"
+                                    alt="PHPMyAdmin"> PHPMyAdmin</span>
+                            <span class="bento-skill-tag"><img src="svg/VMW.D.svg" alt="VMWare"> VMWare</span>
                         </div>
-                        <div class="skills-group">
-                            <h3 class="skills-group-title"><i class="fas fa-tools"></i> Development Tools</h3>
-                            <div class="skills-tags">
-                                <span class="skill-tag"><i class="fas fa-server"></i> Apache</span>
-                                <span class="skill-tag"><i class="fas fa-tools"></i> XAMPP</span>
-                                <span class="skill-tag"><i class="fas fa-tools"></i> Laragon</span>
-                                <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
-                                <span class="skill-tag"><i class="fab fa-node-js"></i> NodeJS</span>
-                                <span class="skill-tag"><i class="fas fa-server"></i> VMWare</span>
-                                <span class="skill-tag"><i class="fas fa-server"></i> PHPMyAdmin</span>
-                            </div>
+                    </div>
+
+                    <!-- IDEs -->
+                    <div class="bento-card">
+                        <h3 class="skills-group-title"><i class="fas fa-laptop-code"></i> IDEs</h3>
+                        <div class="skills-tags">
+                            <span class="bento-skill-tag"><img src="svg/vscode-alt.svg" alt="VS Code"> VS Code</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/androidstudio/white"
+                                    alt="Android Studio"> Android</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/intellijidea/white"
+                                    alt="IntelliJ"> IntelliJ IDEA</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/unity/white"
+                                    alt="Unity"> Unity</span>
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/robloxstudio/white"
+                                    alt="Roblox Studio"> Roblox Studio</span>
                         </div>
-                        <div class="skills-group">
-                            <h3 class="skills-group-title"><i class="fas fa-laptop-code"></i> IDEs</h3>
-                            <div class="skills-tags">
-                                <span class="skill-tag"><i class="fas fa-gamepad"></i> Roblox Studio</span>
-                                <span class="skill-tag"><i class="fab fa-android"></i> Android Studio</span>
-                                <span class="skill-tag"><i class="fas fa-code"></i> Visual Studio Code</span>
-                                <span class="skill-tag"><i class="fas fa-code"></i> IntelliJ IDEA</span>
-                                <span class="skill-tag"><i class="fab fa-unity"></i> Unity</span>
-                            </div>
-                        </div>
-                        <div class="skills-group">
-                            <h3 class="skills-group-title"><i class="fas fa-paint-brush"></i> Creative & Multimedia</h3>
-                            <div class="skills-tags">
-                                <span class="skill-tag"><i class="fas fa-video"></i> Wondershare Filmora</span>
-                                <span class="skill-tag"><i class="fas fa-palette"></i> Adobe Photoshop</span>
-                                <span class="skill-tag"><i class="fas fa-film"></i> Adobe Premiere</span>
-                                <span class="skill-tag"><i class="fab fa-figma"></i> Figma</span>
-                                <span class="skill-tag"><i class="fas fa-paint-brush"></i> Canva</span>
-                            </div>
+                    </div>
+
+                    <!-- Creative -->
+                    <div class="bento-card">
+                        <h3 class="skills-group-title"><i class="fas fa-palette"></i> Creative & Multimedia</h3>
+                        <div class="skills-tags">
+                            <span class="bento-skill-tag"><img src="https://cdn.simpleicons.org/figma/white"
+                                    alt="Figma"> Figma</span>
+                            <span class="bento-skill-tag"><img src="svg/canva.svg" alt="Canva"> Canva</span>
+                            <span class="bento-skill-tag"><img
+                                    src="https://cdn.simpleicons.org/wondersharefilmora/white"
+                                    alt="Wondershare Filmora"> Wondershare Filmora</span>
+                            <span class="bento-skill-tag"><img src="svg/photoshop-svgrepo-com.svg" alt="Photoshop">
+                                Photoshop</span>
+                            <span class="bento-skill-tag"><img src="svg/premiere-svgrepo-com.svg" alt="Premiere">
+                                Premiere</span>
                         </div>
                     </div>
                 </div>
