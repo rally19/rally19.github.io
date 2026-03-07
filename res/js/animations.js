@@ -349,38 +349,45 @@ window.moveSlider = function (sliderId, direction) {
 };
 
 // --- Image Slider Touch/Swipe Support ---
-document.querySelectorAll('.slider-container').forEach(container => {
-  let startX = 0;
-  let currentX = 0;
+function initSliderSwipe() {
+  document.querySelectorAll('.slider-container').forEach(container => {
+    // Avoid attaching multiple event listeners to the same container
+    if (container.dataset.swipeInitialized) return;
+    container.dataset.swipeInitialized = 'true';
 
-  container.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    currentX = startX; // Reset currentX to prevent carry-over
-  }, { passive: true });
+    let startX = 0;
+    let currentX = 0;
 
-  container.addEventListener('touchmove', (e) => {
-    currentX = e.touches[0].clientX;
-  }, { passive: true });
+    container.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      currentX = startX; // Reset currentX to prevent carry-over
+    }, { passive: true });
 
-  container.addEventListener('touchend', (e) => {
-    if (!startX || !currentX) return;
-    let diffX = startX - currentX;
+    container.addEventListener('touchmove', (e) => {
+      currentX = e.touches[0].clientX;
+    }, { passive: true });
 
-    // 50px threshold for a valid swipe
-    if (Math.abs(diffX) > 50) {
-      const track = container.querySelector('.slider-track');
-      if (track && track.id) {
-        if (diffX > 0) {
-          window.moveSlider(track.id, 1); // Swiped left -> Next Image
-        } else {
-          window.moveSlider(track.id, -1); // Swiped right -> Previous Image
+    container.addEventListener('touchend', (e) => {
+      if (!startX || !currentX) return;
+      let diffX = startX - currentX;
+
+      // 50px threshold for a valid swipe
+      if (Math.abs(diffX) > 50) {
+        const track = container.querySelector('.slider-track');
+        if (track && track.id) {
+          if (diffX > 0) {
+            window.moveSlider(track.id, 1); // Swiped left -> Next Image
+          } else {
+            window.moveSlider(track.id, -1); // Swiped right -> Previous Image
+          }
         }
       }
-    }
-    startX = 0;
-    currentX = 0;
+      startX = 0;
+      currentX = 0;
+    });
   });
-});
+}
+window.initSliderSwipe = initSliderSwipe;
 
 // --- Mobile Overlay Toggle on Project Cards ---
 document.querySelectorAll('.project-card').forEach(card => {

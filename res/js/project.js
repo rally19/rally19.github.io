@@ -50,14 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
         seoScript.textContent = JSON.stringify(seoData, null, 2);
     }
 
-    function getIconForLink(type, text) {
+    function getIconForLink(type) {
         if (type === 'github-source') return 'fab fa-github';
         if (type === 'download') return 'fas fa-download';
-        if (type === 'visit-site') {
-            if (text.includes('Live Demo')) return 'fas fa-external-link-alt';
-            if (text.includes('Visit Live')) return 'fas fa-rocket';
-            return 'fas fa-globe';
-        }
+        if (type === 'visit-site') return 'fas fa-external-link-alt';
         return 'fas fa-link';
     }
 
@@ -100,13 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Or we can just use a flex wrap container for all.
                 // Looking at Company Profile, it had a secondary div for the 2 github links.
                 // Let's use a generic flex wrapper which works well for all.
-                project.links.forEach(link => {
-                    const iconClass = getIconForLink(link.type, link.text);
+                project.links.forEach((link, index) => {
+                    const iconClass = getIconForLink(link.type);
                     const btnClass = getBtnClassForLink(link.type);
                     // Use btn-sm if it's a secondary link (e.g., github source when there's already a visit-site link)
                     // but for simplicity, we can just use the regular btn or match the exact class structure from HTML.
                     // For company profile's github repos, it used 'btn btn-sm btn-dark'. We can apply btn-sm if it's a github link and not the first link.
-                    const isSecondary = project.links.length > 2 && link.type === 'github-source';
+                    const isSecondary = index > 0 && link.type === 'github-source';
                     const finalBtnClass = isSecondary ? 'btn btn-sm btn-dark' : btnClass;
 
                     linksHtml += `
@@ -124,14 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 linksContainerHtml = `
                     <div class="project-card-links">
                         <a href="${project.links[0].url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary custom-cursor-target">
-                            <i class="${getIconForLink(project.links[0].type, project.links[0].text)}"></i> ${project.links[0].text}
+                            <i class="${getIconForLink(project.links[0].type)}"></i> ${project.links[0].text}
                         </a>
                         <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
                             <a href="${project.links[1].url}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark custom-cursor-target">
-                                <i class="${getIconForLink(project.links[1].type, project.links[1].text)}"></i> ${project.links[1].text}
+                                <i class="${getIconForLink(project.links[1].type)}"></i> ${project.links[1].text}
                             </a>
                             <a href="${project.links[2].url}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark custom-cursor-target">
-                                <i class="${getIconForLink(project.links[2].type, project.links[2].text)}"></i> ${project.links[2].text}
+                                <i class="${getIconForLink(project.links[2].type)}"></i> ${project.links[2].text}
                             </a>
                         </div>
                     </div>
@@ -189,9 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 ScrollTrigger.refresh();
             }
 
-            // Re-bind cursor events if needed
-            if (typeof initCustomCursor === 'function') {
-                initCustomCursor();
+            // Re-bind cursor and magnetic button events
+            if (typeof window.initInteractiveElements === 'function') {
+                window.initInteractiveElements();
+            }
+
+            // Bind swipe slider events for mobile
+            if (typeof initSliderSwipe === 'function') {
+                initSliderSwipe();
             }
         }, 50);
     }

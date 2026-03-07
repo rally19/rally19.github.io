@@ -174,12 +174,12 @@
                     "type": "visit-site"
                 },
                 {
-                    "text": "UI Repo",
+                    "text": "Landing Repo",
                     "url": "https://github.com/rally19/company-profile-landing-page",
                     "type": "github-source"
                 },
                 {
-                    "text": "Dash Repo",
+                    "text": "Dashboard Repo",
                     "url": "https://github.com/rally19/company-profile-dashboard",
                     "type": "github-source"
                 }
@@ -225,7 +225,7 @@
             ],
             "links": [
                 {
-                    "text": "Live App",
+                    "text": "Visit Demo",
                     "url": "https://travelid.ct.ws/",
                     "type": "visit-site"
                 },

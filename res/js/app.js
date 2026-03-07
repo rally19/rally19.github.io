@@ -48,55 +48,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. Add hover states to interactive elements
-    // We select all links, buttons, and anything with class custom-cursor-target
-    const interactiveElements = document.querySelectorAll('a, button, .custom-cursor-target');
+    window.initInteractiveElements = function () {
+        const interactiveElements = document.querySelectorAll('a, button, .custom-cursor-target');
 
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorDot.classList.add('active');
-            cursorOutline.classList.add('active');
+        interactiveElements.forEach(el => {
+            if (el.dataset.cursorInitialized) return;
+            el.dataset.cursorInitialized = 'true';
 
-            // Handle custom text or icons inside cursor outline
-            const cursorText = el.getAttribute('data-cursor-text');
-            if (cursorText) {
-                cursorDot.innerHTML = cursorText;
-                cursorDot.classList.add('has-text');
-            } else if (el.tagName.toLowerCase() === 'a' && el.getAttribute('target') === '_blank') {
-                // Show external link icon for target="_blank"
-                cursorDot.innerHTML = '<i class="fas fa-external-link-alt" style="font-size: 1.2rem;"></i>';
-                cursorDot.classList.add('has-text');
-            }
+            el.addEventListener('mouseenter', () => {
+                cursorDot.classList.add('active');
+                cursorOutline.classList.add('active');
+
+                // Handle custom text or icons inside cursor outline
+                const cursorText = el.getAttribute('data-cursor-text');
+                if (cursorText) {
+                    cursorDot.innerHTML = cursorText;
+                    cursorDot.classList.add('has-text');
+                } else if (el.tagName.toLowerCase() === 'a' && el.getAttribute('target') === '_blank') {
+                    // Show external link icon for target="_blank"
+                    cursorDot.innerHTML = '<i class="fas fa-external-link-alt" style="font-size: 1.2rem;"></i>';
+                    cursorDot.classList.add('has-text');
+                }
+            });
+
+            el.addEventListener('mouseleave', () => {
+                cursorDot.classList.remove('active');
+                cursorOutline.classList.remove('active');
+
+                // Reset custom cursor text and icons
+                if (el.hasAttribute('data-cursor-text') || (el.tagName.toLowerCase() === 'a' && el.getAttribute('target') === '_blank')) {
+                    cursorDot.innerHTML = '';
+                    cursorDot.classList.remove('has-text');
+                }
+            });
         });
 
-        el.addEventListener('mouseleave', () => {
-            cursorDot.classList.remove('active');
-            cursorOutline.classList.remove('active');
+        // 3. Magnetic effect for primary buttons and nav-cta
+        const magneticElements = document.querySelectorAll('.btn, .nav-cta');
 
-            // Reset custom cursor text and icons
-            if (el.hasAttribute('data-cursor-text') || (el.tagName.toLowerCase() === 'a' && el.getAttribute('target') === '_blank')) {
-                cursorDot.innerHTML = '';
-                cursorDot.classList.remove('has-text');
-            }
+        magneticElements.forEach(elem => {
+            if (elem.dataset.magneticInitialized) return;
+            elem.dataset.magneticInitialized = 'true';
+
+            elem.addEventListener('mousemove', (e) => {
+                const rect = elem.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                // Move item slightly towards cursor
+                elem.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+
+            elem.addEventListener('mouseleave', () => {
+                elem.style.transform = `translate(0px, 0px)`;
+            });
         });
-    });
+    };
 
-    // 3. Magnetic effect for primary buttons and nav-cta
-    const magneticElements = document.querySelectorAll('.btn, .nav-cta');
-
-    magneticElements.forEach(elem => {
-        elem.addEventListener('mousemove', (e) => {
-            const rect = elem.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            // Move item slightly towards cursor
-            elem.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-        });
-
-        elem.addEventListener('mouseleave', () => {
-            elem.style.transform = `translate(0px, 0px)`;
-        });
-    });
+    // Run on initial load
+    window.initInteractiveElements();
 
     // 4. Initialize 3D Vanilla Tilt on cards
     if (typeof VanillaTilt !== 'undefined') {
