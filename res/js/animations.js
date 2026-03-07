@@ -420,6 +420,15 @@ function animateParallax() {
 function animateTimeline() {
   const container = document.querySelector('.journey-image-container');
 
+  // Kill existing timeline ScrollTriggers cleanly before re-initializing
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.getAll().forEach(t => {
+      if (t.trigger && t.trigger.classList && t.trigger.classList.contains('timeline-trigger')) {
+        t.kill();
+      }
+    });
+  }
+
   gsap.utils.toArray('.timeline-trigger').forEach((item, i) => {
     // 1. Entrance animation removed to avoid conflict with pinning and visibility bugs
 

@@ -1,0 +1,51 @@
+[
+    {
+        "order": 1,
+        "date": "July 2023 – May 2026",
+        "title": "Software Engineering",
+        "tag": "Education",
+        "subtitle": "SMKN 3 Palu, Central Sulawesi",
+        "bullets": [
+            "Focused on practical and theoretical aspects of software development including web programming, database management, and UI/UX design.",
+            "Gained hands-on experience through real projects, team collaboration, and use of industry-standard tools."
+        ],
+        "image": "img/SMK3.avif"
+    },
+    {
+        "order": 2,
+        "date": "August 2025",
+        "title": "TOEIC Certification",
+        "tag": "Certification",
+        "subtitle": "Test of English for International Communication",
+        "bullets": [
+            "Achieved an outstanding score of 940, indicating strong English language skills in listening and reading.",
+            "Demonstrated full working proficiency for professional and academic environments."
+        ],
+        "image": "img/TOEIC_Leonel.avif"
+    },
+    {
+        "order": 3,
+        "date": "October 2025",
+        "title": "4th Place - ClimaGlobe",
+        "tag": "Award",
+        "subtitle": "NextGen Learning Challenge (NLC) - National Level",
+        "bullets": [
+            "Achieved 4th Place (Juara Harapan 1) at the national level NLC event themed \"Education for Action\" hosted by LPMPP Universitas Tadulako.",
+            "Awarded for ClimaGlobe, an immersive Android AR application utilizing Unity and C# to educate users on climate trends and environmental awareness using generative AI."
+        ],
+        "image": "img/LOMBA_CLIMAGLOBE_UNTAD.avif"
+    },
+    {
+        "order": 4,
+        "date": "December 2025 – April 2026",
+        "title": "Web Developer Intern",
+        "tag": "Experience",
+        "subtitle": "PT. Wesclic Indonesia Neotech, Bantul, Yogyakarta",
+        "bullets": [
+            "Interned at Wesclic, a digital transformation company, working within the web development team using modern, industry-standard technologies.",
+            "Gained hands-on experience across the full software development lifecycle, from requirements analysis and coding through to testing and deployment.",
+            "Worked in a professional, collaborative environment guided by principles of quality, innovation, and client success."
+        ],
+        "image": "img/Foto_bersama_wesclic.avif"
+    }
+]
