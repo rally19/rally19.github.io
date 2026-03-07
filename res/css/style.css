@@ -1661,7 +1661,7 @@ h4 {
 }
 
 .project-card-desc {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: 0.95rem;
   margin-bottom: 1.25rem;
   line-height: 1.6;
