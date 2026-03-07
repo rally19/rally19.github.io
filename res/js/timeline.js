@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Fetch the JSON data
-    fetch('timeline.json')
+    fetch('json/timeline.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error("HTTP error " + response.status);

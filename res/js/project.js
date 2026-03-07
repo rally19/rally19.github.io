@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let projectData = [];
 
     // Fetch the JSON data
-    fetch('project.json')
+    fetch('json/project.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error("HTTP error " + response.status);

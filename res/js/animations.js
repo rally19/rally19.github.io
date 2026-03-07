@@ -155,7 +155,8 @@ function animateHero() {
 // --- Section reveals on scroll ---
 function animateSections() {
   // Animate all .gs-hidden elements
-  gsap.utils.toArray('.gs-hidden').forEach(el => {
+  gsap.utils.toArray('.gs-hidden:not(.gs-animated)').forEach(el => {
+    el.classList.add('gs-animated');
     gsap.fromTo(el,
       { y: 30, autoAlpha: 0 },
       {
@@ -176,7 +177,8 @@ function animateSections() {
   });
 
   // Animate .gs-hidden-left
-  gsap.utils.toArray('.gs-hidden-left').forEach(el => {
+  gsap.utils.toArray('.gs-hidden-left:not(.gs-animated)').forEach(el => {
+    el.classList.add('gs-animated');
     gsap.fromTo(el,
       { x: -40, autoAlpha: 0 },
       {
@@ -197,7 +199,8 @@ function animateSections() {
   });
 
   // Animate .gs-hidden-right
-  gsap.utils.toArray('.gs-hidden-right').forEach(el => {
+  gsap.utils.toArray('.gs-hidden-right:not(.gs-animated)').forEach(el => {
+    el.classList.add('gs-animated');
     gsap.fromTo(el,
       { x: 40, autoAlpha: 0 },
       {
@@ -398,7 +401,8 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 // --- Global Parallax ---
 function animateParallax() {
-  gsap.utils.toArray('.giant-project-bg').forEach(bg => {
+  gsap.utils.toArray('.giant-project-bg:not(.gs-parallax-animated)').forEach(bg => {
+    bg.classList.add('gs-parallax-animated');
 
     // Retrieve speed from data-speed attribute, default to 0.5
     const speed = bg.dataset.speed ? parseFloat(bg.dataset.speed) : 0.5;
