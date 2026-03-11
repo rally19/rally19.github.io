@@ -36,6 +36,10 @@ function initScrollProgress() {
 
       e.preventDefault();
 
+      if (document.querySelector('.footer')) {
+        gsap.to('.footer', { opacity: 0, duration: 0.3, ease: 'power2.in' });
+      }
+
       gsap.to(bar, {
         opacity: 0,
         x: -1000,
@@ -52,6 +56,9 @@ function initScrollProgress() {
   window.addEventListener('pageshow', (e) => {
     if (e.persisted) {
       gsap.set(bar, { clearProps: 'opacity,x' });
+      if (document.querySelector('.footer')) {
+        gsap.set('.footer', { clearProps: 'opacity' });
+      }
     }
   });
 }
@@ -533,19 +540,15 @@ function animateSkillTags() {
 // --- Footer entrance ---
 function animateFooter() {
   gsap.fromTo('.footer',
-    { y: 30, autoAlpha: 0 },
+    { autoAlpha: 0 },
     {
-      y: 0,
       autoAlpha: 1,
       duration: 0.8,
       ease: 'power3.out',
       scrollTrigger: {
         trigger: '.footer',
         start: 'top 98%',
-        toggleActions: 'play none none none'
-      },
-      onComplete: () => {
-        gsap.set('.footer', { clearProps: 'transform' });
+        toggleActions: 'play none none reverse'
       }
     }
   );

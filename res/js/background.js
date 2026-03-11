@@ -32,6 +32,21 @@ vignette.style.pointerEvents = 'none';
 vignette.style.background = 'radial-gradient(circle at center, transparent 20%, #0a0a0f 120%)';
 vignette.style.opacity = '0';
 
+const blurOverlay = document.createElement('div');
+blurOverlay.id = 'bg-blur-overlay';
+document.body.appendChild(blurOverlay);
+
+blurOverlay.style.position = 'fixed';
+blurOverlay.style.top = '0';
+blurOverlay.style.left = '0';
+blurOverlay.style.width = '100%';
+blurOverlay.style.height = '100%';
+blurOverlay.style.zIndex = '-1';
+blurOverlay.style.pointerEvents = 'none';
+blurOverlay.style.backdropFilter = 'blur(4px)';
+blurOverlay.style.webkitBackdropFilter = 'blur(4px)';
+blurOverlay.style.opacity = '0';
+
 // Fade in the background smoothly
 if (window.gsap) {
     gsap.to(canvas, {
@@ -47,10 +62,17 @@ if (window.gsap) {
         ease: 'power2.out',
         delay: 0.2
     });
+    gsap.to(blurOverlay, {
+        opacity: 1,
+        duration: 1.5,
+        ease: 'power2.out',
+        delay: 0.2
+    });
 } else {
     canvas.style.opacity = '1';
     canvas.style.filter = 'none';
     vignette.style.opacity = '1';
+    blurOverlay.style.opacity = '1';
 }
 
 let width, height;
@@ -58,7 +80,7 @@ let particles = [];
 const cursorDot = document.querySelector('.cursor-dot');
 
 // Configuration
-const particleCount = 40; // Number of nodes
+const particleCount = 60; // Number of nodes
 const connectionDistance = 150; // Distance to draw lines
 const mouseDistance = 100; // Interaction radius
 
@@ -158,7 +180,7 @@ class Particle {
     }
 
     draw() {
-        ctx.fillStyle = 'rgba(0, 255, 136, 0.4)'; // Green accent
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'; // White accent
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -192,7 +214,7 @@ function animate() {
             let distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < connectionDistance) {
-                ctx.strokeStyle = `rgba(0, 255, 136, ${1 - distance / connectionDistance})`;
+                ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / connectionDistance})`;
                 ctx.lineWidth = 0.5;
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
@@ -207,7 +229,7 @@ function animate() {
             let dy = particles[i].y - mouse.y;
             let distance = Math.sqrt(dx * dx + dy * dy);
             if (distance < mouseDistance * 2) {
-                ctx.strokeStyle = `rgba(0, 255, 136, ${1 - distance / (mouseDistance * 2)})`;
+                ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / (mouseDistance * 2)})`;
                 ctx.lineWidth = 0.5;
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
