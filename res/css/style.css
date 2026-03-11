@@ -801,6 +801,13 @@ h4 {
   transform: translateY(-8px) scale(1.02);
 }
 
+/* Remove hover lift on specific pages */
+.index-page .card:hover,
+.about-page .card:hover,
+.contact-page .card:hover {
+  transform: none;
+}
+
 .card.card-static:hover {
   background: rgba(22, 22, 30, 0.65);
 }
@@ -1358,6 +1365,11 @@ h4 {
   border-color: rgba(0, 255, 136, 0.4);
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 25px 50px rgba(0, 255, 136, 0.15), inset 0 0 0 1px rgba(0, 255, 136, 0.1);
+}
+
+/* Remove hover lift from project cards on index page */
+.index-page .project-card:hover {
+  transform: translateY(0) scale(1.02);
 }
 
 /* Make the slider container fill the card as a background */

@@ -110,7 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Initialize 3D Vanilla Tilt on cards
     if (typeof VanillaTilt !== 'undefined') {
-        const cards = document.querySelectorAll('.card, .project-card');
+        const isIndex = document.body.classList.contains('index-page');
+        const selector = isIndex ? '.project-card' : '.card, .project-card';
+        const cards = document.querySelectorAll(selector);
         if (cards.length > 0) {
             VanillaTilt.init(cards, {
                 max: 5,
