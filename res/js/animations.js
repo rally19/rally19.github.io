@@ -42,17 +42,15 @@ function initScrollProgress() {
 
       e.preventDefault();
 
-      // Instantly hide the scrollbar thumb
-      document.body.classList.add('hide-scrollbar');
-
       if (document.querySelector('.footer')) {
         gsap.to('.footer', { opacity: 0, duration: 0.3, ease: 'power2.in' });
       }
 
-      // Fade out the scrollbar progress by animating the variable
+      // Slide up the scrollbar thumb and fade out progress
       gsap.to(document.documentElement, {
         '--scroll-percent': '0%',
-        duration: 0.3,
+        '--thumb-y': '100%',
+        duration: 0.4,
         ease: 'power2.in',
         onComplete: () => {
           window.location.href = this.href;
