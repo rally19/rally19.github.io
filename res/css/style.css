@@ -42,6 +42,7 @@
 
   --max-width: 1120px;
   --scroll-percent: 0%;
+  --thumb-y: 100%;
 }
 
 /* --- Reset & Base --- */
@@ -88,12 +89,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-betweendary);
+  background: linear-gradient(to top, transparent var(--thumb-y), var(--text-betweendary) var(--thumb-y)) no-repeat;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent !important;
 }
 
 a {

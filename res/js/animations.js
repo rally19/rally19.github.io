@@ -12,6 +12,12 @@ function initScrollProgress() {
   const bar = document.getElementById('scroll-progress');
   if (!bar) return;
 
+  // Initialize and animate thumb entrance
+  gsap.fromTo(document.documentElement,
+    { '--thumb-y': '100%' },
+    { '--thumb-y': '0%', duration: 1, ease: 'power2.out', delay: 0.5 }
+  );
+
   // Update progress on scroll
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
@@ -36,6 +42,9 @@ function initScrollProgress() {
 
       e.preventDefault();
 
+      // Instantly hide the scrollbar thumb
+      document.body.classList.add('hide-scrollbar');
+
       if (document.querySelector('.footer')) {
         gsap.to('.footer', { opacity: 0, duration: 0.3, ease: 'power2.in' });
       }
@@ -55,7 +64,8 @@ function initScrollProgress() {
   // Restore visibility if page is loaded from bfcache (e.g., hitting the back button)
   window.addEventListener('pageshow', (e) => {
     if (e.persisted) {
-      gsap.set(bar, { clearProps: 'opacity,x' });
+      document.body.classList.remove('hide-scrollbar');
+      document.documentElement.style.setProperty('--thumb-y', '0%');
       if (document.querySelector('.footer')) {
         gsap.set('.footer', { clearProps: 'opacity' });
       }
