@@ -13,6 +13,7 @@
   --bg-input: #1a1a24;
 
   --text-primary: #e4e4e7;
+  --text-betweendary: #c2c7ce;
   --text-secondary: #9ca3af;
   --text-muted: #6b7280;
   --text-heading: #f4f4f5;
@@ -22,6 +23,8 @@
   --accent-hover: #e2e8f0;
   --accent-secondary: #808080;
   --accent-tertiary: #4e4e4e;
+  --accent-cyan: #22d3ee;
+  --accent-blue: #3b82f6;
 
   --border: #1e1e2a;
   --border-light: #2a2a3a;
@@ -311,7 +314,7 @@ h4 {
 .section-label {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--accent);
+  color: var(--text-secondary);
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -458,6 +461,16 @@ h4 {
 .section-subtitle {
   color: var(--text-secondary);
   font-size: 1rem;
+}
+
+.section-subtitle a {
+  color: var(--text-betweendary);
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.section-subtitle a:hover {
+  color: var(--accent);
 }
 
 /* --- Hero --- */
@@ -860,7 +873,7 @@ h4 {
 }
 
 .info-value a {
-  color: var(--accent-secondary);
+  color: var(--text-betweendary);
   transition: color 0.3s;
 }
 
@@ -1894,11 +1907,12 @@ h4 {
 }
 
 .footer-copy a {
-  color: var(--accent);
+  color: var(--text-betweendary);
   transition: var(--transition);
 }
 
 .footer-copy a:hover {
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -2598,7 +2612,7 @@ main.fade-out {
 }
 
 .ai-prompt-user {
-  color: var(--accent-secondary);
+  color: var(--accent-cyan);
   font-weight: 600;
 }
 
@@ -2651,7 +2665,7 @@ main.fade-out {
 }
 
 .ai-console-line--assistant .ai-console-content a {
-  color: var(--accent-secondary);
+  color: var(--accent-cyan);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
