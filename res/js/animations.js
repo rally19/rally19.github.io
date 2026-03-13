@@ -26,39 +26,6 @@ function initScrollProgress() {
     document.documentElement.style.setProperty('--scroll-percent', progress + '%');
   });
 
-  // Out animation when navigating away
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function (e) {
-      // Only intercept standard left clicks without modifier keys
-      if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
-
-      const href = this.getAttribute('href');
-      // Ignore if no href, hash link, javascript, mailto, tel
-      if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-      // Ignore if it opens in a new tab or is a download link
-      if (this.target === '_blank' || this.hasAttribute('download')) return;
-      // Ignore external links
-      if (href.startsWith('http') && !this.href.includes(window.location.hostname)) return;
-
-      e.preventDefault();
-
-      if (document.querySelector('.footer')) {
-        gsap.to('.footer', { opacity: 0, duration: 0.3, ease: 'power2.in' });
-      }
-
-      // Slide up the scrollbar thumb and fade out progress
-      gsap.to(document.documentElement, {
-        '--scroll-percent': '0%',
-        '--thumb-y': '100%',
-        duration: 0.4,
-        ease: 'power2.in',
-        onComplete: () => {
-          window.location.href = this.href;
-        }
-      });
-    });
-  });
-
   // Restore visibility if page is loaded from bfcache (e.g., hitting the back button)
   window.addEventListener('pageshow', (e) => {
     if (e.persisted) {

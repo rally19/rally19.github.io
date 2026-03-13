@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             smoothTouch: false,
             touchMultiplier: 2,
         });
+        window.lenis = lenis;
 
         // Sync Lenis with GSAP ScrollTrigger
         if (window.ScrollTrigger) {
@@ -203,20 +204,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hijack internal links for fade out
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', (e) => {
+            // Only intercept standard left clicks without modifier keys
+            if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+
             const href = link.getAttribute('href');
-            // Check if it's an internal link and not a hash link or target="_blank"
-            if (href && href.endsWith('.html') && link.getAttribute('target') !== '_blank') {
-                e.preventDefault();
+            // Ignore if no href, hash link, javascript, mailto, tel
+            if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+            // Ignore if it opens in a new tab or is a download link
+            if (link.target === '_blank' || link.hasAttribute('download')) return;
+            // Ignore external links
+            if (href.startsWith('http') && !link.href.includes(window.location.hostname)) return;
 
-                if (mainContent) {
-                    mainContent.classList.add('fade-out');
-                } else {
-                    document.body.style.transition = 'opacity 0.5s ease';
-                    document.body.style.opacity = '0';
-                }
+            e.preventDefault();
 
-                // Animate Navbar out
-                if (window.gsap && document.querySelector('.nav')) {
+            // 1. Actual scroll to top
+            if (window.lenis) {
+                window.lenis.scrollTo(0, {
+                    duration: 0.8,
+                    easing: (t) => t * t
+                });
+            }
+
+            // 2. Animate scrollbar progress & thumb
+            if (window.gsap) {
+                gsap.to(document.documentElement, {
+                    '--scroll-percent': '0%',
+                    '--thumb-y': '100%',
+                    duration: 0.8,
+                    ease: 'power2.inOut'
+                });
+
+                // 3. Animate Navbar out
+                if (document.querySelector('.nav')) {
                     gsap.to('.nav', {
                         y: -64,
                         autoAlpha: 0,
@@ -226,8 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
 
-                // Animate Background out
-                if (window.gsap && document.getElementById('bg-canvas')) {
+                // 4. Animate Background out
+                if (document.getElementById('bg-canvas')) {
                     gsap.to('#bg-canvas', {
                         autoAlpha: 0,
                         filter: 'blur(10px)',
@@ -236,10 +255,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
 
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500);
+                // 5. Fade out main content
+                if (mainContent) {
+                    mainContent.classList.add('fade-out');
+                }
             }
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 800); // Wait for scroll and animations
         });
     });
 });
