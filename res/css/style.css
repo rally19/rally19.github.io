@@ -20,8 +20,8 @@
   --accent: #ffffff;
   --accent-dim: rgba(255, 255, 255, 0.15);
   --accent-hover: #e2e8f0;
-  --accent-cyan: #808080;
-  --accent-blue: #4e4e4e;
+  --accent-secondary: #808080;
+  --accent-tertiary: #4e4e4e;
 
   --border: #1e1e2a;
   --border-light: #2a2a3a;
@@ -119,7 +119,7 @@ h4 {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-cyan));
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
   z-index: 9999;
   width: 0%;
   transition: width 0.05s linear;
@@ -348,7 +348,7 @@ h4 {
   animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
   color: var(--bg-primary);
   /* Hide original text visually to emphasize glitch */
-  text-shadow: 2px 0 var(--accent-cyan), -2px 0 var(--accent);
+  text-shadow: 2px 0 var(--accent-secondary), -2px 0 var(--accent);
 }
 
 .section-title:hover::before {
@@ -520,7 +520,7 @@ h4 {
 .hero-typed-wrap {
   font-family: var(--font-mono);
   font-size: 1.1rem;
-  color: var(--accent-cyan);
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
   min-height: 3.8rem;
   /* Anticipate 2 lines to prevent layout shift */
@@ -718,13 +718,13 @@ h4 {
 }
 
 .btn-primary {
-  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, var(--accent), var(--accent-cyan));
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)), linear-gradient(135deg, var(--accent), var(--accent-secondary));
   color: var(--accent);
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
 .btn-primary:hover {
-  background-image: linear-gradient(var(--accent-hover), var(--accent-hover)), linear-gradient(135deg, var(--accent), var(--accent-cyan));
+  background-image: linear-gradient(var(--accent-hover), var(--accent-hover)), linear-gradient(135deg, var(--accent), var(--accent-secondary));
   color: var(--bg-primary);
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.35);
@@ -750,8 +750,8 @@ h4 {
 }
 
 .btn-dark:hover {
-  background-image: linear-gradient(rgba(30, 30, 45, 0.95), rgba(30, 30, 45, 0.95)), linear-gradient(135deg, var(--accent-cyan), var(--accent));
-  color: var(--accent-cyan);
+  background-image: linear-gradient(rgba(30, 30, 45, 0.95), rgba(30, 30, 45, 0.95)), linear-gradient(135deg, var(--accent-secondary), var(--accent));
+  color: var(--accent-secondary);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(34, 211, 238, 0.2);
 }
@@ -860,7 +860,7 @@ h4 {
 }
 
 .info-value a {
-  color: var(--accent-cyan);
+  color: var(--accent-secondary);
   transition: color 0.3s;
 }
 
@@ -2354,7 +2354,7 @@ main.fade-out {
 
 .terminal-splash.glitch-out .terminal-text-container {
   animation: glitch-skew 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  text-shadow: 3px 0 var(--accent-cyan), -3px 0 var(--accent);
+  text-shadow: 3px 0 var(--accent-secondary), -3px 0 var(--accent);
   position: relative;
 }
 
@@ -2598,7 +2598,7 @@ main.fade-out {
 }
 
 .ai-prompt-user {
-  color: var(--accent-cyan);
+  color: var(--accent-secondary);
   font-weight: 600;
 }
 
@@ -2651,7 +2651,7 @@ main.fade-out {
 }
 
 .ai-console-line--assistant .ai-console-content a {
-  color: var(--accent-cyan);
+  color: var(--accent-secondary);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
