@@ -7,18 +7,26 @@ gsap.registerPlugin(ScrollTrigger);
 // Prevent mobile address bar from causing constant refresh and jitter during scroll
 ScrollTrigger.config({ ignoreMobileResize: true });
 
-// --- Scroll Progress Bar ---
+// --- Scroll Progress (logo ring) ---
 function initScrollProgress() {
-  const bar = document.getElementById('scroll-progress');
-  if (!bar) return;
+  const container = document.getElementById('scroll-progress');
+  if (!container) return;
 
-  // Update progress on scroll
-  window.addEventListener('scroll', () => {
+  const ringFill = container.querySelector('.ring-fill');
+  if (!ringFill) return;
+
+  const circumference = 2 * Math.PI * 16;
+
+  function updateProgress() {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = progress + '%';
-  });
+    const offset = circumference * (1 - progress / 100);
+    ringFill.style.strokeDashoffset = offset;
+  }
+
+  window.addEventListener('scroll', updateProgress);
+  updateProgress(); // Set initial state
 
   // Out animation when navigating away
   document.querySelectorAll('a').forEach(link => {
@@ -40,9 +48,8 @@ function initScrollProgress() {
         gsap.to('.footer', { opacity: 0, duration: 0.3, ease: 'power2.in' });
       }
 
-      gsap.to(bar, {
+      gsap.to(ringFill, {
         opacity: 0,
-        x: -1000,
         duration: 0.3,
         ease: 'power2.in',
         onComplete: () => {
@@ -55,7 +62,7 @@ function initScrollProgress() {
   // Restore visibility if page is loaded from bfcache (e.g., hitting the back button)
   window.addEventListener('pageshow', (e) => {
     if (e.persisted) {
-      gsap.set(bar, { clearProps: 'opacity,x' });
+      gsap.set(ringFill, { clearProps: 'opacity' });
       if (document.querySelector('.footer')) {
         gsap.set('.footer', { clearProps: 'opacity' });
       }
