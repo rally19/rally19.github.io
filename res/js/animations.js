@@ -17,7 +17,7 @@ function initScrollProgress() {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = progress + '%';
+    document.documentElement.style.setProperty('--scroll-percent', progress + '%');
   });
 
   // Out animation when navigating away
@@ -40,9 +40,9 @@ function initScrollProgress() {
         gsap.to('.footer', { opacity: 0, duration: 0.3, ease: 'power2.in' });
       }
 
-      gsap.to(bar, {
-        opacity: 0,
-        x: -1000,
+      // Fade out the scrollbar progress by animating the variable
+      gsap.to(document.documentElement, {
+        '--scroll-percent': '0%',
         duration: 0.3,
         ease: 'power2.in',
         onComplete: () => {

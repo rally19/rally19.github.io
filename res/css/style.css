@@ -41,6 +41,7 @@
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   --max-width: 1120px;
+  --scroll-percent: 0%;
 }
 
 /* --- Reset & Base --- */
@@ -81,16 +82,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--accent) var(--scroll-percent), var(--bg-primary) var(--scroll-percent), var(--bg-primary) 100%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-light);
+  background: var(--text-betweendary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: var(--text-secondary);
 }
 
 a {
@@ -118,14 +119,7 @@ h4 {
 
 /* --- Scroll Progress Bar --- */
 #scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-  z-index: 9999;
-  width: 0%;
-  transition: width 0.05s linear;
+  display: none;
 }
 
 /* --- Navigation --- */
