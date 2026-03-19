@@ -41,6 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Listen for mouse movement
     document.addEventListener('mousemove', (e) => {
+        // Hide custom cursor when interacting with native vertical scrollbar (right edge)
+        if (e.clientX >= document.documentElement.clientWidth) {
+            cursorDot.style.opacity = '0';
+            cursorOutline.style.opacity = '0';
+        } else {
+            cursorDot.style.opacity = '1';
+            cursorOutline.style.opacity = '1';
+        }
+
         // Dot follows instantly (CSS adds delay natively)
         cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
 
@@ -131,6 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(spotlight);
 
     document.addEventListener('mousemove', (e) => {
+        // Hide spotlight when hovering over the scrollbar
+        if (e.clientX >= document.documentElement.clientWidth) {
+            spotlight.style.opacity = '0';
+        } else {
+            spotlight.style.opacity = '1';
+        }
+
         spotlight.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
     });
 

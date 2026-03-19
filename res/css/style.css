@@ -2467,7 +2467,7 @@ main.fade-out {
   /* Just below nav */
   transform: translate(-50%, -50%);
   mix-blend-mode: screen;
-  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 }
 
 /* ============================================
