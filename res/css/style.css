@@ -1334,6 +1334,19 @@ h4 {
   transform: translateY(-2px);
 }
 
+.tag-gray {
+  background: rgba(156, 163, 175, 0.1);
+  color: #d1d5db;
+  border: 1px solid rgba(156, 163, 175, 0.4);
+  box-shadow: 0 0 10px rgba(156, 163, 175, 0.15);
+}
+
+.tag-gray:hover {
+  background: rgba(156, 163, 175, 0.2);
+  box-shadow: 0 4px 15px rgba(156, 163, 175, 0.4);
+  transform: translateY(-2px);
+}
+
 .tag-cyan {
   background: rgba(34, 211, 238, 0.1);
   color: #67e8f9;

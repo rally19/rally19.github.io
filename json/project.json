@@ -416,27 +416,27 @@
             "tags": [
                 {
                     "text": "Assembly",
-                    "color": "indigo"
+                    "color": "gray"
                 },
                 {
                     "text": "x86 Real Mode",
-                    "color": "indigo"
+                    "color": "gray"
                 },
                 {
                     "text": "Python",
-                    "color": "indigo"
+                    "color": "gray"
                 },
                 {
                     "text": "JavaScript",
-                    "color": "indigo"
+                    "color": "gray"
                 },
                 {
                     "text": "CSS3",
-                    "color": "indigo"
+                    "color": "gray"
                 },
                 {
                     "text": "QEMU",
-                    "color": "indigo"
+                    "color": "gray"
                 }
             ],
             "links": [
