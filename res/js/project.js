@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Provide a wrapper for links if there are multiple, using flex to lay them out nicely.
             let linksContainerHtml = '';
-            if (project.id === 3 && project.links && project.links.length === 3) {
+            if (project.id === 4 && project.links && project.links.length === 3) {
                 // Specific Company Profile layout match to preserve EXACT original HTML tree structure.
                 linksContainerHtml = `
                     <div class="project-card-links">

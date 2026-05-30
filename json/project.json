@@ -98,7 +98,83 @@
         },
         {
             "id": 3,
-            "label": "03 / Enterprise Frontend",
+            "label": "03 / Collaborative SaaS",
+            "title": "FormTo.Link",
+            "description": "A multi‑tenant SaaS form builder with realtime multi‑cursor collaboration, conditional logic rules, asset management, and detailed submission analytics. Built with Next.js 16 (App Router), TypeScript, Tailwind CSS v4, and Liveblocks for multiplayer presence and editing, backed by Supabase Auth/Storage and a PostgreSQL database via Drizzle ORM.",
+            "tags": [
+                {
+                    "text": "TypeScript",
+                    "color": "blue"
+                },
+                {
+                    "text": "Next.js",
+                    "color": "blue"
+                },
+                {
+                    "text": "React",
+                    "color": "blue"
+                },
+                {
+                    "text": "Liveblocks",
+                    "color": "blue"
+                },
+                {
+                    "text": "Supabase",
+                    "color": "blue"
+                },
+                {
+                    "text": "Drizzle ORM",
+                    "color": "blue"
+                },
+                {
+                    "text": "PostgreSQL",
+                    "color": "blue"
+                },
+                {
+                    "text": "TailwindCSS",
+                    "color": "blue"
+                },
+                {
+                    "text": "Motion",
+                    "color": "blue"
+                },
+                {
+                    "text": "Zod",
+                    "color": "blue"
+                }
+            ],
+            "links": [
+                {
+                    "text": "Visit Website",
+                    "url": "https://formto.link",
+                    "type": "visit-site"
+                },
+                {
+                    "text": "Repository",
+                    "url": "https://github.com/rally19/goform",
+                    "type": "github-source"
+                }
+            ],
+            "images": [
+                "img/FormToLink1.avif",
+                "img/FormToLink2.avif",
+                "img/FormToLink3.avif",
+                "img/FormToLink4.avif",
+                "img/FormToLink5.avif",
+                "img/FormToLink6.avif",
+                "img/FormToLink7.avif",
+                "img/FormToLink8.avif",
+                "img/FormToLink9.avif",
+                "img/FormToLink10.avif",
+                "img/FormToLink11.avif",
+                "img/FormToLink12.avif",
+                "img/FormToLink13.avif",
+                "img/FormToLink14.avif"
+            ]
+        },
+        {
+            "id": 4,
+            "label": "04 / Enterprise Frontend",
             "title": "Company Profile",
             "description": "A highly polished full-stack company profile and analytics dashboard developed during my internship at Wesclic. Built with the latest React ecosystem (Next.js, TypeScript, Motion, Tanstack) for the frontend, powered by a robust backend using Express.js, Node.js, JWT authentication, and PostgreSQL.",
             "tags": [
@@ -193,8 +269,8 @@
             ]
         },
         {
-            "id": 4,
-            "label": "04 / Academic Fullstack",
+            "id": 5,
+            "label": "05 / Academic Fullstack",
             "title": "Travelid",
             "description": "Travelid is a comprehensive bus and travel ticketing platform developed as a final project for my 11th-grade Software Engineering class. It leverages PHP, Laravel, Livewire, Alpine.js, and an underlying MySQL database to deliver a seriously robust and dynamic booking experience secured with complete authentication flows.",
             "tags": [
@@ -244,8 +320,8 @@
             ]
         },
         {
-            "id": 5,
-            "label": "05 / Desktop GUI",
+            "id": 6,
+            "label": "06 / Desktop GUI",
             "title": "Calculatora",
             "description": "A clean, lightweight Python calculator utilizing the cross-platform Kivy framework for the graphical user interface. Demonstrating structural Python logic combined with responsive desktop application layouts.",
             "tags": [
@@ -275,8 +351,8 @@
             ]
         },
         {
-            "id": 6,
-            "label": "06 / Privacy Tooling",
+            "id": 7,
+            "label": "07 / Privacy Tooling",
             "title": "Stealth Note Reader",
             "description": "A desktop application that displays text files while intentionally utilizing the Windows API (<code>ctypes</code>) to block its window content from screen recordings and screenshots. Built with Python and <code>tkinter</code>, it leverages <code>pystray</code> for system tray integration and <code>tkinterdnd2</code> for seamless drag-and-drop mechanics.",
             "tags": [
@@ -330,6 +406,52 @@
                 "img/StealthNoteReader2.avif",
                 "img/StealthNoteReader3.avif",
                 "img/StealthNoteReader4.avif"
+            ]
+        },
+        {
+            "id": 8,
+            "label": "08 / Systems & Emulator",
+            "title": "TERCOMP",
+            "description": "An educational, lightweight 16-bit x86 Real Mode Operating System and Emulator built from scratch. It features a custom assembly bootloader and shell kernel running on a custom MicroFS filesystem, debuggable via a Python-based x86 CPU simulator, and visualized through a premium retro-styled CRT web emulation dashboard with real-time register and disassembly trace visualizers.",
+            "tags": [
+                {
+                    "text": "Assembly",
+                    "color": "indigo"
+                },
+                {
+                    "text": "x86 Real Mode",
+                    "color": "indigo"
+                },
+                {
+                    "text": "Python",
+                    "color": "indigo"
+                },
+                {
+                    "text": "JavaScript",
+                    "color": "indigo"
+                },
+                {
+                    "text": "CSS3",
+                    "color": "indigo"
+                },
+                {
+                    "text": "QEMU",
+                    "color": "indigo"
+                }
+            ],
+            "links": [
+                {
+                    "text": "View Source",
+                    "url": "https://github.com/rally19/TERCOMP",
+                    "type": "github-source"
+                }
+            ],
+            "images": [
+                "img/TERCOMP1.avif",
+                "img/TERCOMP2.avif",
+                "img/TERCOMP3.avif",
+                "img/TERCOMP4.avif",
+                "img/TERCOMP5.avif"
             ]
         }
     ]
