@@ -3,7 +3,7 @@
         {
             "id": 1,
             "label": "01 / AR App",
-            "titletag": "climaGlobe",
+            "titletag": "climaglobe",
             "title": "ClimaGlobe",
             "description": "An Android application directly addressing climate change education through Augmented Reality and Generative AI. Built with C# and Unity, it leverages Text-to-Speech and a Serverless Backend to create an interactive educational experience bridging the physical and digital gap.",
             "tags": [
