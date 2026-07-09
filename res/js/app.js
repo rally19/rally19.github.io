@@ -200,6 +200,27 @@ document.addEventListener('DOMContentLoaded', () => {
                         splash.remove();
                         document.documentElement.classList.remove('no-scroll');
                         if (lenis) lenis.start();
+
+                        if (window.location.hash) {
+                            // Wait a frame to ensure the element is in the DOM and ScrollTrigger ready
+                            requestAnimationFrame(() => {
+                                requestAnimationFrame(() => {
+                                    const target = document.querySelector(window.location.hash);
+                                    if (target) {
+                                        if (lenis) {
+                                            lenis.scrollTo(target, {
+                                                offset: 0,
+                                                duration: 1.2,
+                                                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                                            });
+                                        } else {
+                                            target.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }
+                                });
+                            });
+                        }
+
                         document.dispatchEvent(new Event('splashFinished')); // Notify animations
                     }, 600);
                 }, 500);

@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             projectEl.innerHTML = `
-                <div class="giant-project-bg" style="background-image: url('${project.images[0]}');" data-speed="0.5"></div>
+                <div class="giant-project-bg" style="background-image: url('${project.images[0]}');" data-speed="0.5" id="${project.titletag}"></div>
                 <div class="giant-project-content">
                     <div class="giant-project-slider-wrapper slider-container custom-cursor-target">
                         <div class="slider-track" id="proj-slider${project.id}">
