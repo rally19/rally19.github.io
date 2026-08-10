@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/hjfcailu/public_html/rally19-portofolio/
-    - /bin/cp -R * $DEPLOYPATH
