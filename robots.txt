@@ -5,4 +5,4 @@ Disallow: /img/TOEIC_Leonel.avif
 Disallow: /img/LOMBA_CLIMAGLOBE_UNTAD.avif
 Disallow: /img/Foto_bersama_wesclic.avif
 Allow: /
-Sitemap: https://rally19.github.io/sitemap.xml
+Sitemap: https://rally19.my.id/sitemap.xml
