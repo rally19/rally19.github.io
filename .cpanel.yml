@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/hjfcailu/public_html/portofolio/
+    - /bin/cp -R * $DEPLOYPATH
