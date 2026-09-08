@@ -53,49 +53,70 @@
         },
         {
             "id": 2,
-            "label": "02 / Web Architecture",
-            "titletag": "coffeemeex",
-            "title": "Coffeemeex",
-            "description": "Coffeemeex is a robust full-stack coffee shop platform developed for an intern project at Wesclic. Built with the modern PHP stack: Laravel, Livewire Volt, Alpine.js, and TailwindCSS backed by MySQL. It delivers instant, SPA-like performance without heavy client-side JavaScript frameworks.",
+            "label": "02 / Loyalty SaaS & PWA",
+            "titletag": "honda-customer-rewards",
+            "title": "Honda Customer Rewards",
+            "description": "A comprehensive digital customer loyalty and reward management platform built for AHASS Honda authorized dealer networks. Built with Laravel 13, React 19, Inertia.js v3, TypeScript, and Tailwind CSS v4. Features an installable PWA with offline caching, dynamic digital member cards with QR styling, web-based camera QR scanner for workshop cashiers, multi-tier loyalty mechanics, passkey/WebAuthn biometrics, 2FA security, reward catalog redemptions, and real-time point tracking.",
             "tags": [
                 {
                     "text": "PHP",
-                    "color": "amber"
-                },
-                {
-                    "text": "TailwindCSS",
-                    "color": "amber"
-                },
-                {
-                    "text": "Alpine.js",
-                    "color": "amber"
+                    "color": "red"
                 },
                 {
                     "text": "Laravel",
-                    "color": "amber"
+                    "color": "red"
                 },
                 {
-                    "text": "Livewire Volt",
-                    "color": "amber"
+                    "text": "React",
+                    "color": "red"
+                },
+                {
+                    "text": "Inertia.js",
+                    "color": "red"
+                },
+                {
+                    "text": "TypeScript",
+                    "color": "red"
+                },
+                {
+                    "text": "TailwindCSS",
+                    "color": "red"
+                },
+                {
+                    "text": "PWA",
+                    "color": "red"
+                },
+                {
+                    "text": "WebAuthn / Passkeys",
+                    "color": "red"
+                },
+                {
+                    "text": "Motion",
+                    "color": "red"
                 },
                 {
                     "text": "MySQL",
-                    "color": "amber"
+                    "color": "red"
                 }
             ],
             "links": [
                 {
+                    "text": "Repository",
+                    "url": "https://github.com/rally19/honda-customer-rewards",
+                    "type": "github-source"
+                },
+                {
                     "text": "Live Demo",
-                    "url": "https://coffeemeex.rally19.my.id/",
+                    "url": "https://honda-rewards.rally19.my.id/",
                     "type": "visit-site"
                 }
             ],
             "images": [
-                "img/Coffeemeex1.avif",
-                "img/Coffeemeex2.avif",
-                "img/Coffeemeex3.avif",
-                "img/Coffeemeex4.avif",
-                "img/Coffeemeex5.avif"
+                "img/HondaRewards1.avif",
+                "img/HondaRewards2.avif",
+                "img/HondaRewards3.avif",
+                "img/HondaRewards4.avif",
+                "img/HondaRewards5.avif"
             ]
         },
         {
@@ -177,7 +198,54 @@
         },
         {
             "id": 4,
-            "label": "04 / Enterprise Frontend",
+            "label": "04 / Web Architecture",
+            "titletag": "coffeemeex",
+            "title": "Coffeemeex",
+            "description": "Coffeemeex is a robust full-stack coffee shop platform developed for an intern project at Wesclic. Built with the modern PHP stack: Laravel, Livewire Volt, Alpine.js, and TailwindCSS backed by MySQL. It delivers instant, SPA-like performance without heavy client-side JavaScript frameworks.",
+            "tags": [
+                {
+                    "text": "PHP",
+                    "color": "amber"
+                },
+                {
+                    "text": "TailwindCSS",
+                    "color": "amber"
+                },
+                {
+                    "text": "Alpine.js",
+                    "color": "amber"
+                },
+                {
+                    "text": "Laravel",
+                    "color": "amber"
+                },
+                {
+                    "text": "Livewire Volt",
+                    "color": "amber"
+                },
+                {
+                    "text": "MySQL",
+                    "color": "amber"
+                }
+            ],
+            "links": [
+                {
+                    "text": "Live Demo",
+                    "url": "https://coffeemeex.rally19.my.id/",
+                    "type": "visit-site"
+                }
+            ],
+            "images": [
+                "img/Coffeemeex1.avif",
+                "img/Coffeemeex2.avif",
+                "img/Coffeemeex3.avif",
+                "img/Coffeemeex4.avif",
+                "img/Coffeemeex5.avif"
+            ]
+        },
+        {
+            "id": 5,
+            "label": "05 / Enterprise Frontend",
             "titletag": "company-profile",
             "title": "Company Profile",
             "description": "A highly polished full-stack company profile and analytics dashboard developed during my internship at Wesclic. Built with the latest React ecosystem (Next.js, TypeScript, Motion, Tanstack) for the frontend, powered by a robust backend using Express.js, Node.js, JWT authentication, and PostgreSQL.",
@@ -273,8 +341,8 @@
             ]
         },
         {
-            "id": 5,
-            "label": "05 / Academic Fullstack",
+            "id": 6,
+            "label": "06 / Academic Fullstack",
             "titletag": "travelid",
             "title": "Travelid",
             "description": "Travelid is a comprehensive bus and travel ticketing platform developed as a final project for my 11th-grade Software Engineering class. It leverages PHP, Laravel, Livewire, Alpine.js, and an underlying MySQL database to deliver a seriously robust and dynamic booking experience secured with complete authentication flows.",
@@ -325,8 +393,8 @@
             ]
         },
         {
-            "id": 6,
-            "label": "06 / Desktop GUI",
+            "id": 7,
+            "label": "07 / Desktop GUI",
             "titletag": "calculatora",
             "title": "Calculatora",
             "description": "A clean, lightweight Python calculator utilizing the cross-platform Kivy framework for the graphical user interface. Demonstrating structural Python logic combined with responsive desktop application layouts.",
@@ -357,8 +425,8 @@
             ]
         },
         {
-            "id": 7,
-            "label": "07 / Privacy Tooling",
+            "id": 8,
+            "label": "08 / Privacy Tooling",
             "titletag": "stealth-note-reader",
             "title": "Stealth Note Reader",
             "description": "A desktop application that displays text files while intentionally utilizing the Windows API (<code>ctypes</code>) to block its window content from screen recordings and screenshots. Built with Python and <code>tkinter</code>, it leverages <code>pystray</code> for system tray integration and <code>tkinterdnd2</code> for seamless drag-and-drop mechanics.",
@@ -416,8 +484,8 @@
             ]
         },
         {
-            "id": 8,
-            "label": "08 / Systems & Emulator",
+            "id": 9,
+            "label": "09 / Systems & Emulator",
             "titletag": "tercomp",
             "title": "TERCOMP",
             "description": "An educational, lightweight 16-bit x86 Real Mode Operating System and Emulator built from scratch. It features a custom assembly bootloader and shell kernel running on a custom MicroFS filesystem, debuggable via a Python-based x86 CPU simulator, and visualized through a premium retro-styled CRT web emulation dashboard with real-time register and disassembly trace visualizers.",
