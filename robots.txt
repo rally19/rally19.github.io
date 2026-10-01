@@ -4,5 +4,8 @@ Disallow: /img/Coffeemeex*
 Disallow: /img/TOEIC_Leonel.avif
 Disallow: /img/LOMBA_CLIMAGLOBE_UNTAD.avif
 Disallow: /img/Foto_bersama_wesclic.avif
+Disallow: /img/SMK3.avif
+Disallow: /img/SMKN3.avif
+Disallow: /img/AMIKOM.avif
 Allow: /
 Sitemap: https://rally19.my.id/sitemap.xml
