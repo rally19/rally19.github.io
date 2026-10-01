@@ -101,11 +101,6 @@
             ],
             "links": [
                 {
-                    "text": "Repository",
-                    "url": "https://github.com/rally19/honda-customer-rewards",
-                    "type": "github-source"
-                },
-                {
                     "text": "Live Demo",
                     "url": "https://hondacr.rally19.my.id/",
                     "type": "visit-site"
@@ -172,11 +167,6 @@
                     "text": "Visit Website",
                     "url": "https://formto.link",
                     "type": "visit-site"
-                },
-                {
-                    "text": "Repository",
-                    "url": "https://github.com/rally19/goform",
-                    "type": "github-source"
                 }
             ],
             "images": [

@@ -9,7 +9,7 @@
             "Focused on practical and theoretical aspects of software development including web programming, database management, and UI/UX design.",
             "Gained hands-on experience through real projects, team collaboration, and use of industry-standard tools."
         ],
-        "image": "img/SMK3.avif"
+        "image": "img/SMKN3.avif"
     },
     {
         "order": 2,
@@ -47,5 +47,17 @@
             "Worked in a professional, collaborative environment guided by principles of quality, innovation, and client success."
         ],
         "image": "img/Foto_bersama_wesclic.avif"
+    },
+    {
+        "order": 5,
+        "date": "September 2026 – Now",
+        "title": "Information Systems",
+        "tag": "Education",
+        "subtitle": "University of AMIKOM Yogyakarta",
+        "bullets": [
+            "Began tertiary education in Information Systems Bachelor Program at University of AMIKOM Yogyakarta, Indonesia's top private university for IT and Informatics.",
+            "Engaging in comprehensive study of software engineering, database systems, business analytics, and modern digital technologies to build a strong foundation in IT and management."
+        ],
+        "image": "img/AMIKOM.avif"
     }
 ]
